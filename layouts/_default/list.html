@@ -19,10 +19,11 @@
   <header class="post-header">
     {{ safeHTML (.Scratch.Get `firstEmoji`) }}
     <h2 class="post-title">{{ .Title }}</h2>
+    <p class="post-meta">{{ .Date.Format "2006.1.2" }}</p>
+    
   </header>
   <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}...</p>
   <footer class="post-footer">
-    <p class="post-meta">{{ .Date.Format "2006.1.2" }}</p>
   </footer>
   <a class="post-link" href="{{ .Permalink }}"></a>
 </article>
