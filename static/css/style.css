@@ -168,7 +168,8 @@ pre, code {
 /* Main
 ======================================================================= */
 .list {
-  background: #fafafa;
+  /* background: #fafafa; */
+  background: #fff;
 }
 /* Main
 ------------------------------ */
