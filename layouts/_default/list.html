@@ -22,7 +22,7 @@
   <header class="post-header">
     {{ safeHTML (.Scratch.Get `firstEmoji`) }}
     <a href="{{ .Permalink }}"><h2 class="post-title">{{ .Title }}</h2></a>
-    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} . 
+    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} · 
     {{ with .Params.categories }}
       {{ $categoriesLen := len . }}
         {{ if gt $categoriesLen 0 }}

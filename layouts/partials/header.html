@@ -10,7 +10,8 @@
     {{- if not .IsHome }}
     {{- if eq .Kind "page" }}{{ .Title }}
     {{- else if eq .Data.Singular "tag" }}{{ .Data.Term }}
-    {{- else }}Posts
+    {{- else }}
+    {{ with .Title }}{{ . }}{{ end }}
     {{- end }} - {{ end }}
     {{- .Site.Title -}}
   </title>
