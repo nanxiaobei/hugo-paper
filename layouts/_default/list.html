@@ -18,14 +18,23 @@
 <article class="post {{ .Scratch.Get `postClass` }}">
   <header class="post-header">
     {{ safeHTML (.Scratch.Get `firstEmoji`) }}
-    <h2 class="post-title">{{ .Title }}</h2>
-    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</p>
-    
+    <a href="{{ .Permalink }}"><h2 class="post-title">{{ .Title }}</h2></a>
+    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }} . 
+    {{ with .Params.categories }}
+      {{ $categoriesLen := len . }}
+        {{ if gt $categoriesLen 0 }}
+        <span>{{ i18n "post.categorized_in" }}</span>
+          {{ range $k, $v := . }}
+            <a class="category-link" href="{{ . | printf "%s%s" "/categories/" | urlize | lower | relLangURL }}">{{ . }}</a>{{ if lt $k (sub $categoriesLen 1) }}, {{ end }}
+          {{ end }}
+        {{ end }}
+    {{ end }}
+    </p>
   </header>
   <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}...</p>
   <footer class="post-footer">
   </footer>
-  <a class="post-link" href="{{ .Permalink }}"></a>
+  <!-- <a class="post-link" href="{{ .Permalink }}"></a> -->
 </article>
 {{ end }}
 {{ end }}
