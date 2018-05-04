@@ -10,7 +10,8 @@
     {{- if not .IsHome }}
     {{- if eq .Kind "page" }}{{ .Title }}
     {{- else if eq .Data.Singular "tag" }}{{ .Data.Term }}
-    {{- else }}Posts
+    {{- else }}
+    {{ with .Title }}{{ . }}{{ end }}
     {{- end }} - {{ end }}
     {{- .Site.Title -}}
   </title>
@@ -23,12 +24,12 @@
   <meta name="author" content="{{ .Site.Params.author }}">
   {{ end -}}
   <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.loli.net/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
   <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet">
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-  <link rel="icon" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.png">
   <!-- Generator -->
   <meta name="generator" content="Hugo {{ .Hugo.Version }}">
   <!-- RSS -->
