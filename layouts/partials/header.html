@@ -12,6 +12,7 @@
       {{- else }}Posts
       {{- end }} - {{ end }}
       {{- .Site.Title -}}
+      {{ if (or (eq .Kind "home") (eq .Kind "taxonomy")) }}{{if (and .Paginator (gt .Paginator.PageNumber 1)) }} - Page {{ T "page" }} {{ .Paginator.PageNumber }}{{ end }}{{ end }}
     </title>
     <!-- Meta -->
     {{- if eq .Kind "page" }}
