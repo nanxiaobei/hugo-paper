@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<article class="post-single">
+{{ .Content }}<!-- content of the markdown file. note that inside the range .Content will point to each page's content -->
+  {{ range (where .Site.Pages "Type" "post") }}
+  <article class="post-entry">
+    <h3>
+      <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+    </h3>
+    <div class="post-meta">
+      <span>
+      {{- if or .Params.author .Site.Params.author -}}
+      {{ .Params.author | default .Site.Params.author }} · {{ end }}
+      {{- .Date.Format (.Site.Params.dateFormat | default "2006.1.2") -}}
+      </span>
+    </div>
+      <!-- if you want pages summary you can print it here {{ .Summary }} -->
+  </article>
+  {{ end }}
+
+</article>
+
+{{ partial "footer.html" . }}
