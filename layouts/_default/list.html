@@ -1,8 +1,25 @@
-{{- partial "header.html" . }}
+{{- partial "header.html" . }} <!-- Get site-wide header -->
 
 {{- $scope := .Site }}
-{{- if .Title }}
-<header class="page-header"><h1>{{ .Title }}</h1></header>{{ $scope = . }}
+
+{{- if (in .Site.Home .Site.Title) }} <!-- If there is no index page (_index.md, _index.html etc), .Title will be set.-->
+<!-- If so, display the information we have. -->
+
+{{- if (or (or .Title  (eq .Site.Params.hidetitle false)) .Site.Params.subtitle) }}<header class="page-header">{{ end }} <!-- If anything here is displayed -->
+
+{{- if (and .Title (eq .Site.Params.showtitle true)) }}<h1>{{ .Title }}</h1>{{ end }} <!-- show title if set and not disabled -->
+{{- if .Site.Params.subtitle }}<p>{{ .Site.Params.subtitle }}</p>{{ end }} <!-- show subtitle if set -->
+
+{{- if (or (or .Title  (eq .Site.Params.hidetitle false)) .Site.Params.subtitle) }}</header>{{ end }}
+
+{{- else }}
+<!-- else, display the index file -->
+<header class="page-header">
+
+<!-- jc: I didn't find a better way on how I would get the path, other than trimming :/ -->
+{{ (readFile (strings.TrimPrefix "Page(" (strings.TrimSuffix ")" .Site.Home))) | markdownify }}
+
+</header>
 {{ end }}
 
 {{- $paginator := .Paginate (where $scope.RegularPages ".Params.type" "!=" "page") }}
@@ -10,7 +27,7 @@
 {{- range $index, $page := $paginator.Pages }}
 
 {{- $class := "post-entry" }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
+{{- if (and (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) ( ne .Site.Params.nolatestspecial true) )}} <!-- If is first page and user doesn't prohibit, label it as the first page (different styling) -->
 {{- $class = "first-entry" }}
 {{- else if .Data.Term }}
 {{- $class = "post-entry tag-entry" }}
@@ -41,5 +58,4 @@
   </nav>
 </footer>
 {{- end }}
-
 {{- partial "footer.html" . }}
