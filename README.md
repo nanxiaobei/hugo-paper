@@ -29,6 +29,12 @@ Hugo themes: https://themes.gohugo.io/hugo-paper/
 Inside the folder of your Hugo site, run:
 
 ```bash
+git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+```
+
+Using submodules makes it easier to update paper, but if you prefer, run:
+
+```bash
 git clone https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
