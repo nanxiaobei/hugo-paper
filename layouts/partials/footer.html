@@ -1,6 +1,14 @@
 </main>
 <footer class="footer">
-  <span>&copy; {{ now.Year }} <a href="{{ "" | absURL }}">{{ .Site.Title }}</a></span>
+  <span>
+  {{- if eq .Site.Copyright "" }}
+  &copy; {{ now.Year }} <a href="{{ "" | absURL }}">{{ .Site.Title }}</a>
+  {{ else if eq .Site.Copyright "CC BY 4.0" }}
+  <!--<p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}'s</a>--><a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+  {{ else }}
+  {{ .Site.Copyright | markdownify }}
+  {{ end }}
+  </span>
   <span>&middot;</span>
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>
