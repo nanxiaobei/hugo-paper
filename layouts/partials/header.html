@@ -9,10 +9,10 @@
     <!-- Meta -->
     {{- if eq .Kind "page" }}
     <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
+    <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}">
     {{- else }}
     <meta name="description" content="{{ .Site.Params.description }}">
-    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
     <!-- Styles -->
     <link href="{{ "an-old-hope.min.css" | absURL }}" rel="stylesheet">
