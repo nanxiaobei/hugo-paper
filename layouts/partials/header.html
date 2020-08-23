@@ -45,8 +45,8 @@
         let sunset;
 
         function setBodyClass() {
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches || now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches || !(now > sunrise && now < sunset))
+            document.body.classList.add('dark');
         }
 
         if (date !== prev) {
