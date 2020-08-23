@@ -32,12 +32,6 @@ Inside the folder of your Hugo site, run:
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
-Using submodules makes it easier to update paper, but if you prefer, run:
-
-```bash
-git clone https://github.com/nanxiaobei/hugo-paper themes/paper
-```
-
 Then change in `config.toml`:
 
 ```toml
@@ -48,4 +42,4 @@ For more information read the official [guide](https://gohugo.io/getting-started
 
 ## Dark Mode
 
-It's automatic, according to the natural time of day and night.
+It's automatic, according to your system settings, or the natural time of day and night.
