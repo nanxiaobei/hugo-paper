@@ -35,8 +35,12 @@
     <!-- Script -->
     <script>
       function setTheme() {
-        const time = new Date();
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark');
+          return;
+        }
 
+        const time = new Date();
         const prev = localStorage.getItem('date');
         const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
 
@@ -45,14 +49,14 @@
         let sunset;
 
         function setBodyClass() {
-          if (window.matchMedia("(prefers-color-scheme: dark)").matches || now > sunrise && now < sunset) return;
+          if (now > sunrise && now < sunset) return;
           document.body.classList.add('dark');
         }
 
         if (date !== prev) {
           fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then(res => res.json())
-            .then(data => {
+            .then((res) => res.json())
+            .then((data) => {
               sunrise = data.sunrise.split(':').map(Number);
               sunset = data.sunset.split(':').map(Number);
             })
