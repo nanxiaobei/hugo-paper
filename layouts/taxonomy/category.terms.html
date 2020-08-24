@@ -1,0 +1,84 @@
+{{ partial "header.html" . }}
+
+<header class="page-header"><h1>{{ .Title | default (.Type | title) }}</h1></header>
+<div class="tree">
+	{{ .Scratch.Delete "categories" }}
+	{{ range $.Site.RegularPages }}
+		{{ with .Param "categories" }}
+			{{ $.Scratch.Delete "category" }}
+			{{ range $index, $category := . }}
+				{{ $category := (printf `/%s` ($category | urlize)) }}
+				{{ $.Scratch.Add "category" $category }}
+				{{ $.Scratch.Add "categories" (slice ($.Scratch.Get "category")) }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ $categories := uniq (.Scratch.Get "categories") | sort }}
+
+	<ul class="list-categories">
+		{{ range $index, $value := $categories }}
+			{{ $categoryTerms := (split (strings.TrimPrefix "/" .) "/") }}
+			{{ $depth := (len $categoryTerms) }}
+			{{ $lastTerm := (delimit (last 1 $categoryTerms) " ") }}
+			{{ $url := urls.Parse $lastTerm }}
+			{{ $path := $url.Path }}
+
+			{{ with $.Site.GetPage (printf `/categories/%s` $path) }}
+				{{ $linkTarget := . }}
+
+				{{ $depthPrev := 0 }}
+				{{ if ge $index 1 }}
+					{{ $categoryPrev := index $categories (sub $index 1) }}
+					{{ $depthPrev = len (split (strings.TrimPrefix "/" $categoryPrev) "/") }}
+				{{ end }}
+
+				{{ $depthNext := 0 }}
+				{{ if lt $index (sub (len $categories) 1) }}
+					{{ $categoryNext := index $categories (add $index 1) }}
+					{{ $depthNext = len (split (strings.TrimPrefix "/" $categoryNext) "/") }}
+				{{ end }}
+
+				{{ if or (le $depth $depthPrev) (eq $index 0) }}
+					<li>
+				{{ end }}
+				{{ if and (gt $depth $depthPrev) (ne $index 0) }}
+					<ul class="list-categories"><li>
+				{{ end }}
+
+				<a href="{{ .RelPermalink }}" class="category-item">{{ .LinkTitle | default .Data.Term | default $path }}</a>
+				<span class="category-count">{{ printf "(%d)" (len .Data.category) }}</span>
+
+				{{ $.Scratch.Delete "pages" }}
+				{{ range $.Site.RegularPages }}
+					{{ $page := . }}
+					{{ with .Param "categories" }}
+						{{ $.Scratch.Delete "category" }}
+						{{ range . }}
+							{{ $category := (printf `/%s` (. | urlize)) }}
+							{{ $.Scratch.Add "category" $category }}
+						{{ end }}
+						{{ $category := $.Scratch.Get "category" }}
+						{{ if eq $value $category }}
+							{{ $.Scratch.Add "pages" (slice $page) }}
+						{{ end }}
+					{{ end }}
+				{{ end }}
+				{{ $pages := $.Scratch.Get "pages" }}
+				{{ partial "utils/limit-tree-posts.html" (dict "$" $ "pages" $pages "linkTarget" $linkTarget) }}
+
+				{{ if and (gt $depth $depthNext) (ne $index (sub (len $categories) 1)) }}
+					{{ range seq (sub $depth $depthNext) }}
+						{{ if le . (sub $depth $depthNext) }}
+							</li></ul>
+						{{ end }}
+					{{ end }}
+				{{ end }}
+				{{ if ge $depth $depthNext }}
+					</li>
+				{{ end }}
+			{{ end }}
+		{{ end }}
+	</ul>
+</div>
+
+{{ partial "footer.html" . }}

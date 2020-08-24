@@ -1,0 +1,29 @@
+{{- $ := index . "$" -}}
+{{- $htmlTitle := .title -}}
+<!-- Home -->
+{{- if eq $.Kind "home" -}}
+    {{- $htmlTitle = $htmlTitle | default $.Site.Title -}}
+<!-- Taxonomy -->
+{{- else if eq $.Kind "taxonomy" -}}
+    {{- $htmlTitle = $htmlTitle | default ($.Type | title) -}}
+<!-- Taxonomy Term -->
+{{- else if eq $.Kind "term" -}}
+    {{- $taxonomyTermTitle := $htmlTitle | default $.Data.Term | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $.Path) "/")) " ") -}}
+    {{- with $.Site.GetPage (printf "/%s" $.Data.Plural) -}}
+        {{- $htmlTitle = printf "%s: %s" (.Title | default (.Type | title)) $taxonomyTermTitle -}}
+    {{- end -}}
+<!-- Section -->
+{{- else if eq $.Kind "section" -}}
+    {{- $htmlTitle = $htmlTitle | default (delimit (last 1 (split (strings.TrimSuffix "/_index.md" $.Path) "/")) " ") -}}
+{{- end -}}
+
+{{- $htmlTitle = partial "utils/markdownify.html" (dict "$" $ "raw" $htmlTitle "isContent" false) -}}
+
+{{- $rawTitle := $htmlTitle | plainify | htmlUnescape -}}
+
+{{- $title := $rawTitle -}}
+{{- if ne $.Kind "home" -}}
+    {{- $title = printf "%s | %s" $title $.Site.Title -}}
+{{- end -}}
+
+{{- return dict "rawTitle" $rawTitle "title" $title "htmlTitle" $htmlTitle -}}

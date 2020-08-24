@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<header class="page-header"><h1>{{ .Title | default (.Type | title) }}</h1></header>
+{{ if ne (len $.Site.Taxonomies.tags) 0 }}
+	<ul class="tags-list">
+	{{ range $index, $tag := $.Site.Taxonomies.tags.ByCount }}
+		<li class="tag">
+		{{ with $.Site.GetPage (printf "/tags/%s" $tag.Name) }}
+		<a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Data.Term | default $tag.Name }}</a>
+		{{ end }}
+		<span class="tag-count">({{ $tag.Count }})</span>
+		</li>
+	{{ end }}
+	</ul>
+{{ end }}
+
+{{ partial "footer.html" . }}

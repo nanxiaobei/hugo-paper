@@ -526,3 +526,77 @@ img {
   font-size: 160px;
   font-weight: 700;
 }
+<<<<<<< HEAD
+
+/* Categories list page
+=======
+/* Categories
+>>>>>>> 1aff209... add categories page
+-------------------------------------------------- */
+.tree {
+  overflow: auto hidden;
+  white-space: nowrap;
+}
+
+.tree ul {
+  padding-left: 2.4em;
+  list-style-type: none;
+}
+
+.tree > ul {
+  padding: 0;
+}
+
+
+.list-categories > li {
+  position: relative;
+}
+
+.list-categories > li::before {
+  content: " ";
+  position: absolute;
+  top: 2.4em;
+  left: 0.1em;
+  width: 0.2em;
+  height: calc(100% - 2.8em);
+  background: var(--tertiary);
+}
+
+.category-item {
+  color: var(--primary);
+  font-size: 1.2em;
+  box-shadow: 0 1px 0 var(--primary);
+}
+
+.category-count {
+  color: var(--secondary);
+}
+
+.category-post:hover {
+  color: var(--secondary);
+}
+/* Tags list page
+-------------------------------------------------- */
+ul.tags-list {
+  overflow: hidden;
+  white-space: nowrap;
+  list-style-type: none;
+}
+
+ul.tags-list li.tag {
+  font-size: 1.2em;
+}
+
+ul.tags-list li.tag a {
+  text-decoration: none;
+  color: var(--primary);
+  box-shadow: 0 1px 0 var(--primary);;
+}
+
+ul.tags-list li.tag a:hover {
+  cursor: pointer;
+}
+
+ul.tags-list li.tag span.tag-count {
+  color: var(--secondary);
+}

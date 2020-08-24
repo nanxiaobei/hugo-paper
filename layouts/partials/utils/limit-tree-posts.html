@@ -1,0 +1,29 @@
+{{- $ := index . "$" -}}
+{{- $pages := .pages -}}
+{{- $linkTarget := .linkTarget -}}
+
+{{ with $pages }}
+    {{ $rawPages := . }}
+    {{ $limit := -1 }}
+    {{ if isset $.Site.Params "limitpostslimit" }}
+        {{ $limit = $.Site.Params.limitPostsLimit }}
+    {{ end }}
+    {{ if ge $limit 0 }}
+        {{ $pages = $pages | first $limit -}}
+    {{ end }}
+
+    <ul class="list-posts">
+        {{ range $pages }}
+            <li>
+                <a href="{{ .RelPermalink }}" class="category-post">{{ (partial "utils/title.html" (dict "$" . "title" .LinkTitle)).htmlTitle }}</a>
+            </li>
+        {{ end }}
+        {{ if and (gt $limit 0) (gt (len $rawPages) $limit) }}
+            {{ with $linkTarget }}
+                <li>
+                    <a href="{{ $linkTarget.RelPermalink }}" class="category-post more">{{ i18n "readMore" }} »</a>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+{{ end }}
