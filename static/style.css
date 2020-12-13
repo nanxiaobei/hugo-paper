@@ -402,6 +402,7 @@ img {
   margin-bottom: 32px;
   background: var(--hljs-bg) !important;
   border-radius: var(--radius);
+  overflow-x: auto;
 }
 .post-content ul pre {
   margin-left: calc(var(--gap) * -2);
