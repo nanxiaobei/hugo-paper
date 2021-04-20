@@ -1,0 +1,5 @@
+- id: prev_page
+  translation: "Сюда"
+
+- id: next_page
+  translation: "Туда"
