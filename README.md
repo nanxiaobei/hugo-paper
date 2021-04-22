@@ -1,51 +1,44 @@
-# Paper <sup><sup><sub>v4.9 (Dark Mode)</sub></sup></sup>
+# Papel <sup><sup><sub>v0.1</sub></sup></sup>
 
-A simple, clean, flexible Hugo theme.
+A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
-☄️ Fast | ☁️ Fluent | 🌙 Smooth
-
----
 
 ## Overview
 
-Demo: https://nanxiaobei.github.io/hugo-paper/
+First Iteration: Build-time themes
 
-<p>
-<kbd>
-  <img src="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png" alt="Paper">
-</kbd>
-</p>
+Configure by setting 
 
-<p>
-<kbd>
-  <img src="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_dark.png" alt="Paper Dark Mode">
-</kbd>
-</p>
+```yml
+params:
+  colorTheme: toothpaste
+```
 
-Hugo themes: https://themes.gohugo.io/hugo-paper/
+Current default theme: Gotham
+
+## Dark
+[X] - Gotham
+[X] - Toothpaste
+[ ] - Dracula
+
+## Light
+[ ] - Gandalf
+[ ] - Red Graphite
+[ ] - Duotone Snow
+
 
 ## Install
 
 Inside the folder of your Hugo site, run:
 
 ```bash
-git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+git submodule add https://github.com/raulcodes/hugo-papel themes/papel
 ```
 
-Then change in `config.toml`:
+Then change in `config.yml`:
 
-```toml
-theme = "paper"
+```yml
+theme: papel
 ```
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
-
-## Dark Mode
-
-It's automatic, according to your system settings, or the natural time of day and night.
-
-## Pitiless Ads
-
-If you use WeChat, please try "**FUTAKE**". It's a WeChat mini app for your inspiration moments. 🌈
-
-![FUTAKE](https://s3.jpg.cm/2021/04/19/TWOp8.jpg)

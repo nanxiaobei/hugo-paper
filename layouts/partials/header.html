@@ -14,11 +14,18 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
+    
+    <!-- Themes -->
+    {{ with .Site.Params.ColorTheme | default "gotham" }}
+    {{ $theme := printf "themes/%s.css" . | safeHTMLAttr }}
+    <link href="{{ $theme | absURL}}" rel="stylesheet">
+    {{ end }}
+
     <!-- Styles -->
     <link href="{{ "hljs.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "themes.css" | absURL }}" rel="stylesheet">
     <link href="{{ "style.css" | absURL }}" rel="stylesheet">
     <link href="{{ "custom.css" | absURL }}" rel="stylesheet">
+
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
@@ -81,7 +88,7 @@
       }
     </script> -->
   </head>
-  <body class="toothpaste {{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
+  <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
     <!-- <script>
       setTheme();
     </script> -->

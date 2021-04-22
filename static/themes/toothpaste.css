@@ -1,0 +1,15 @@
+/* https://github.com/toothpaste-theme/toothpaste */
+:root {
+  --theme:       #222E33; /* blue-gray-darkest */
+  --entry:       #13181B; /* blue-gray-dark */
+  --primary:     #73B3C0; /* Cyan */
+  --secondary:   #DAE3E8;
+  --tertiary:    #CC6666;
+  --quarternary: #DBCD7F;
+  --content:     #C5C5C0; /* Gray */
+
+  --hljs-bg:     #13181B;
+  --hljs-op:     #9DC777;
+  --code-bg:     #13181B;
+  --border:      #5b5d67;
+}

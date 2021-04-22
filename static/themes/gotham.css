@@ -1,0 +1,14 @@
+/* https://github.com/whatyouhide/gotham-contrib */
+:root {
+  --theme:       #0C1014;
+  --entry:       #091f2E;
+  --primary:     #2aa889;
+  --secondary:   #599cab;
+  --tertiary:    #d26937;
+  --quarternary: #2aa889;
+  --content:     #599cab;
+
+  --hljs-bg:     #091f2E;
+  --code-bg:     #091f2E;
+  --border:      #5b5d67;
+}

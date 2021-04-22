@@ -6,6 +6,16 @@
  * Updated in 2020.6.12
  */
 
+:root {
+  --gap: 24px;
+  --content-gap: 40px;
+  --nav-width: 1024px;
+  --main-width: 640px;
+  --header-height: 60px;
+  --footer-height: 60px;
+  --radius: 8px;
+}
+
 .list {
   background: var(--theme);
 }
