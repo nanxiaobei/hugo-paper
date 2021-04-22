@@ -17,14 +17,14 @@ params:
 Current default theme: Gotham
 
 ## Dark
-[X] - Gotham
-[X] - Toothpaste
-[ ] - Dracula
+- [X] Gotham
+- [X] Toothpaste
+- [ ] Dracula
 
 ## Light
-[ ] - Gandalf
-[ ] - Red Graphite
-[ ] - Duotone Snow
+- [ ] Gandalf
+- [ ] Red Graphite
+- [ ] Duotone Snow
 
 
 ## Install
