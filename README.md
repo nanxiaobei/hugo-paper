@@ -48,4 +48,4 @@ It's automatic, according to your system settings, or the natural time of day an
 
 If you use WeChat, please try "**FUTAKE**". It's a WeChat mini app for your inspiration moments. 🌈
 
-![FUTAKE](https://s3.jpg.cm/2021/04/19/TWOp8.jpg)
+![FUTAKE](https://s3.jpg.cm/2021/04/22/TDQuS.png)
