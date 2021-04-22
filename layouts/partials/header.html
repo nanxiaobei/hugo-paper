@@ -15,7 +15,8 @@
     <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
     <!-- Styles -->
-    <link href="{{ "an-old-hope.min.css" | absURL }}" rel="stylesheet">
+    <link href="{{ "hljs.css" | absURL }}" rel="stylesheet">
+    <link href="{{ "themes.css" | absURL }}" rel="stylesheet">
     <link href="{{ "style.css" | absURL }}" rel="stylesheet">
     <link href="{{ "custom.css" | absURL }}" rel="stylesheet">
     <!-- Favicons -->
@@ -80,7 +81,7 @@
       }
     </script> -->
   </head>
-  <body class="gotham {{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
+  <body class="toothpaste {{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
     <!-- <script>
       setTheme();
     </script> -->
