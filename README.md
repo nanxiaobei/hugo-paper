@@ -3,9 +3,7 @@
 A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
 
-## Overview
-
-First Iteration: Build-time themes
+## First Iteration: Build-time themes
 
 Configure by setting 
 
