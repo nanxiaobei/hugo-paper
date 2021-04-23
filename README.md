@@ -3,9 +3,7 @@
 A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
 
-## Overview
-
-First Iteration: Build-time themes
+## First Iteration: Build-time themes
 
 Configure by setting 
 
@@ -17,14 +15,14 @@ params:
 Current default theme: Gotham
 
 ## Dark
-[X] - Gotham
-[X] - Toothpaste
-[ ] - Dracula
+- [X] Gotham
+- [X] Toothpaste
+- [ ] Dracula
 
 ## Light
-[ ] - Gandalf
-[ ] - Red Graphite
-[ ] - Duotone Snow
+- [ ] Gandalf
+- [ ] Red Graphite
+- [ ] Duotone Snow
 
 
 ## Install
