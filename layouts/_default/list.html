@@ -4,7 +4,7 @@
 {{- if .Title }}
 <header class="page-header">
   <h1>{{ .Title }}</h1>
-  {{- if .Site.Params.description }}
+  {{- if (and .Site.Params.description .IsHome) }}
   <div class="page-description">
     {{ .Site.Params.description }}
   </div>
