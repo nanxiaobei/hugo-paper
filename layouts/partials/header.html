@@ -14,10 +14,20 @@
     <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
-    
-    <!-- Themes -->
+
+    <!-- Font (Serif or not) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    {{ if eq .Site.Params.FontStyle "sans" }}
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'IBM Plex Sans', serif !important }</style>
+    {{ else if eq .Site.Params.FontStyle "serif" }}
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'IBM Plex Serif', serif !important }</style>
+    {{ end }}
+
+    <!-- Color Themes -->
     {{ with .Site.Params.ColorTheme | default "gotham" }}
-    {{ $theme := printf "themes/%s.css" . | safeHTMLAttr }}
+    {{ $theme := printf "color-themes/%s.css" . | safeHTMLAttr }}
     <link href="{{ $theme | absURL}}" rel="stylesheet">
     {{ end }}
 
@@ -40,58 +50,8 @@
     {{- template "_internal/google_analytics_async.html" . }}
     {{- template "_internal/opengraph.html" . }}
     {{- end }}
-    <!-- Script -->
-    <!-- <script>
-      function setTheme() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark');
-          return;
-        }
-
-        const time = new Date();
-        const prev = localStorage.getItem('date');
-        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
-
-        const now = time.getTime();
-        let sunrise;
-        let sunset;
-
-        function setBodyClass() {
-          if (now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
-        }
-
-        if (date !== prev) {
-          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then((res) => res.json())
-            .then((data) => {
-              sunrise = data.sunrise.split(':').map(Number);
-              sunset = data.sunset.split(':').map(Number);
-            })
-            .catch(() => {
-              sunrise = [7, 0];
-              sunset = [19, 0];
-            })
-            .finally(() => {
-              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
-              sunset = time.setHours(sunset[0], sunset[1], 0);
-              setBodyClass();
-              localStorage.setItem('sunrise', sunrise);
-              localStorage.setItem('sunset', sunset);
-            });
-          localStorage.setItem('date', date);
-        } else {
-          sunrise = Number(localStorage.getItem('sunrise'));
-          sunset = Number(localStorage.getItem('sunset'));
-          setBodyClass();
-        }
-      }
-    </script> -->
   </head>
   <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-    <!-- <script>
-      setTheme();
-    </script> -->
     <header class="header">
       <nav class="nav">
         {{- if .IsHome }}
