@@ -244,8 +244,8 @@ img {
   margin-bottom: var(--gap);
   padding: var(--gap);
   background: var(--entry);
-  border-radius: var(--radius);
   transition: transform 0.1s;
+  border: .1px solid var(--border);
 }
 .post-entry:active {
   transform: scale(0.96);
@@ -399,7 +399,6 @@ img {
   margin-left: calc(var(--gap) * -1);
   margin-right: calc(var(--gap) * -1);
   margin-bottom: 32px;
-  border-radius: var(--radius);
   overflow-x: auto;
 }
 .post-content ul pre {
@@ -440,7 +439,8 @@ img {
   font-size: 0.78em;
   line-height: 1.5;
   background: var(--code-bg);
-  border-radius: 2px;
+  border-radius: 0;
+  border: 1px solid var(--border);
 }
 .post-content pre code {
   display: block;
