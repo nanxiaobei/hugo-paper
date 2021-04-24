@@ -20,6 +20,17 @@
   background: var(--theme);
 }
 
+.social-icons {
+  display: flex;
+  gap: 8px;
+}
+
+#icon {
+  height: 28px;
+  width: 28px;
+  color: var(--tertiary);
+}
+
 /* Reset
 -------------------------------------------------- */
 *,
@@ -149,6 +160,7 @@ img {
 }
 .menu a {
   font-size: 16px;
+  color: var(--tertiary);
 }
 /* Main
 -------------------------------------------------- */
@@ -163,10 +175,23 @@ img {
 .page-header {
   margin-top: 48px;
   margin-bottom: 144px;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  gap: 0 48px;
 }
 .page-header h1 {
   font-size: 40px;
 }
+.page-header-avatar {
+  margin: auto;
+}
+.page-description {
+  padding-bottom: 8px;
+}
+
 .pagination {
   display: flex;
 }

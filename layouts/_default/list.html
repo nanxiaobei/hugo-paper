@@ -1,16 +1,7 @@
 {{- partial "header.html" . }}
 
 <!-- Homepage Header -->
-{{- if .Title }}
-<header class="page-header">
-  <h1>{{ .Title }}</h1>
-  {{- if (and .Site.Params.description .IsHome) }}
-  <div class="page-description">
-    {{ .Site.Params.description }}
-  </div>
-  {{- end }}
-</header>
-{{ end }}
+{{- partial "hero.html" .}}
 
 {{- $pages := union .RegularPages .Sections }}
 
