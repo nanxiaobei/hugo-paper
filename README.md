@@ -36,13 +36,13 @@ Current default theme: Gotham
 Inside the folder of your Hugo site, run:
 
 ```bash
-git submodule add https://github.com/raulcodes/hugo-papel themes/papel
+git submodule add https://github.com/raulcodes/hugo-papel themes/hugo-papel
 ```
 
 Then change in `config.yml`:
 
 ```yml
-theme: papel
+theme: hugo-papel
 ```
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
