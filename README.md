@@ -17,7 +17,7 @@ Current default theme: Gotham
 ## Dark
 - [X] Gotham
 - [X] Toothpaste
-- [ ] Dracula
+- [X] Dracula
 
 ## Light
 - [ ] Gandalf
