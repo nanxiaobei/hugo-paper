@@ -295,7 +295,7 @@ img {
   font-size: 14px;
 }
 .post-content {
-  color: var(--content);
+  color: var(--secondary);
 }
 .post-content h1 {
   margin-top: 40px;
@@ -438,7 +438,7 @@ img {
   font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
   font-size: 0.78em;
   line-height: 1.5;
-  background: var(--code-bg);
+  background: var(--entry);
   border-radius: 0;
   border: 1px solid var(--border);
 }
@@ -482,7 +482,7 @@ img {
   color: var(--secondary);
   font-size: 14px;
   line-height: 34px;
-  background: var(--code-bg);
+  background: var(--entry);
   border-radius: 4px;
 }
 .post-tags a:hover {

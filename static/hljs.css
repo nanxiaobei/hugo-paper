@@ -53,7 +53,7 @@
 .hljs {
   display: block;
   overflow-x: auto;
-  background: var(--hljs-bg);
+  background: var(--entry);
   padding: .5em;
 }
 

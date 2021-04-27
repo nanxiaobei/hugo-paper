@@ -6,9 +6,5 @@
   --secondary:   hsl(191, 97%, 77%);
   --tertiary:    hsl(191, 97%, 77%);
   --quarternary: hsl(265, 89%, 78%);
-  --content:     hsl(60, 30%, 96%);
-
-  --hljs-bg:     hsl(231, 15%, 18%);
-  --code-bg:     hsl(231, 15%, 18%);
-  --border:      hsl(265, 89%, 78%);
+  --content:     hsl( 60, 30%, 96%);
 }
