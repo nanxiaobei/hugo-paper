@@ -1,10 +1,10 @@
 /* https://github.com/toothpaste-theme/toothpaste */
 :root {
-  --theme:       #222E33; /* blue-gray-darkest */
-  --entry:       #13181B; /* blue-gray-dark */
-  --primary:     #73B3C0; /* Cyan */
-  --secondary:   #DAE3E8;
-  --tertiary:    #CC6666;
-  --quarternary: #DBCD7F;
-  --content:     #C5C5C0; /* Gray */
+  --theme:        hsl(198, 20%, 17%); /* #222E33 */
+  --entry:       	hsl(203, 17%,  9%); /* #13181B */
+  --primary:     	hsl(190, 38%, 60%); /* #73B3C0 */
+  --secondary:    hsl(201, 23%, 88%); /* #DAE3E8 */
+  --tertiary:     hsl(  0, 50%, 60%); /* #CC6666 */
+  --quarternary:  hsl( 51, 56%, 68%); /* #DBCD7F */
+  --content:     	hsl( 60,  4%, 76%); /* #C5C5C0 */
 }
