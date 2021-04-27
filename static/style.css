@@ -29,6 +29,10 @@
   color: var(--tertiary);
 }
 
+#icon:hover {
+  color: var(--tertiary-tint);
+}
+
 /* Reset
 -------------------------------------------------- */
 *,
@@ -160,6 +164,11 @@ img {
   font-size: 16px;
   color: var(--tertiary);
 }
+
+.menu a:hover {
+  color: var(--tertiary-tint);
+}
+
 /* Main
 -------------------------------------------------- */
 .main {
@@ -243,7 +252,7 @@ img {
   padding: var(--gap);
   background: var(--entry);
   transition: transform 0.1s;
-  border: .1px solid var(--border);
+  border: .1px solid var(--quarternary);
 }
 .post-entry:active {
   transform: scale(0.96);
@@ -438,7 +447,7 @@ img {
   line-height: 1.5;
   background: var(--entry);
   border-radius: 0;
-  border: 1px solid var(--border);
+  border: 1px solid var(--quarternary);
 }
 .post-content pre code {
   display: block;

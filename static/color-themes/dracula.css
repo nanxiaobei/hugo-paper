@@ -4,7 +4,13 @@
   --entry:       hsl(231, 15%, 18%);
   --primary:     hsl(135, 94%, 65%);
   --secondary:   hsl(191, 97%, 77%);
-  --tertiary:    hsl(191, 97%, 77%);
+
+  /* Split tertiary hsl here in order to generate tint */
+  --tertiary-color: 191, 97%;
+  --tertiary-l:     77%;
+  --tertiary:       hsl(var(--tertiary-color), var(--tertiary-l));
+  --tertiary-tint:  hsl(var(--tertiary-color), calc(var(--tertiary-l) - 15%));
+
   --quarternary: hsl(265, 89%, 78%);
   --content:     hsl( 60, 30%, 96%);
 }
