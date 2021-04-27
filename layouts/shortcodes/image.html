@@ -1,0 +1,19 @@
+<style>
+  .oso-image {
+    max-width: 100%;
+    height: auto;
+    margin: 24px auto;
+    padding: 16px;
+    box-sizing: border-box;
+    background-color: var(--entry);
+    border: 1px solid var(--border);
+  }
+</style>
+
+<img 
+  class="oso-image"
+  src="{{ .Get "src" }}" 
+  alt="{{ .Get "alt" }}"
+  height="{{ .Get "height" }}"
+  width="{{ .Get "width" }}" 
+>
