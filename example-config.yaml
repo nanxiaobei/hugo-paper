@@ -1,7 +1,7 @@
 baseURL: 'https://raulcodes.com'
 title: Raul Camacho
 paginate: 5
-theme: hugo-papel
+theme: oso
 
 languages:
   en:
