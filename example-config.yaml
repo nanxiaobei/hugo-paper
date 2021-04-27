@@ -1,0 +1,46 @@
+baseURL: 'https://raulcodes.com'
+title: Raul Camacho
+paginate: 5
+theme: hugo-papel
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: dev
+          url: /tags/development
+          weight: 5
+        - name: music
+          url: /tags/music
+          weight: 10
+
+params:
+  env: production
+
+  params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+
+  # Available themes: gotham, toothpaste, dracula
+  colorTheme: dracula
+
+  # Font family: IBM Plex, available styles: serif, sans
+  fontStyle: sans 
+
+  homePage:
+    title: Raul Camacho
+    description: Welcome to my blog
+    author: Raul Camacho
+    avatar: memoji.png
+
+    socialIcons:
+    - name: github
+      url: 'https://github.com/raulcodes'
+    - name: dribbble
+      url: 'https://dribbble.com/raulcodes'
+    - name: twitter
+      url: 'https://twitter.com/_raulcodes'
+
+  assets:
+    favicon: '/favicon.ico'

@@ -2,12 +2,12 @@
 <section class="page-header">
   <div class="page-header-content">
     <h1>{{ .Title }}</h1>
-    {{- if (and .Site.Params.description .IsHome) }}
+    {{- if (and .Site.Params.HomePage.description .IsHome) }}
     <div class="page-description">
-      {{ .Site.Params.description }}
+      {{ .Site.Params.HomePage.description }}
     </div>
     <div class="social-icons">
-      {{- range .Site.Params.socialIcons }}
+      {{- range .Site.Params.HomePage.socialIcons }}
       <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
           {{ partial "icons.html" . }}
       </a>
@@ -15,9 +15,9 @@
     </div>
   </div>
   {{- end }}
-  {{- if .Site.Params.avatar }}
+  {{- if .Site.Params.HomePage.avatar }}
   <div class="page-header-avatar">
-    <img src="{{ .Site.Params.avatar | absURL }}" height=200 width=200 />
+    <img src="{{ .Site.Params.HomePage.avatar | absURL }}" height=200 width=200 />
   </div>
   {{- end }}
 </section>
