@@ -1,4 +1,4 @@
-# Papel <sup><sup><sub>v0.1</sub></sup></sup>
+# oso <sup><sup><sub>v0.1</sub></sup></sup>
 
 A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
@@ -36,13 +36,13 @@ Current default theme: Gotham
 Inside the folder of your Hugo site, run:
 
 ```bash
-git submodule add https://github.com/raulcodes/hugo-papel themes/hugo-papel
+git submodule add https://github.com/raulcodes/oso themes/oso
 ```
 
 Then change in `config.yml`:
 
 ```yml
-theme: hugo-papel
+theme: oso
 ```
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
