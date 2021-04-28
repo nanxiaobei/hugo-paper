@@ -252,7 +252,7 @@ img {
   padding: var(--gap);
   background: var(--entry);
   transition: transform 0.1s;
-  border: .1px solid var(--quarternary);
+  border: .1px solid var(--border);
 }
 .post-entry:active {
   transform: scale(0.96);
@@ -447,7 +447,7 @@ img {
   line-height: 1.5;
   background: var(--entry);
   border-radius: 0;
-  border: 1px solid var(--quarternary);
+  border: 1px solid var(--border);
 }
 .post-content pre code {
   display: block;

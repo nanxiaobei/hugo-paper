@@ -13,4 +13,5 @@
 
   --quarternary: hsl(265, 89%, 78%);
   --content:     hsl( 60, 30%, 96%);
+  --border:        var(--quarternary);
 }
