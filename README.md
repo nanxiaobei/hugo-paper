@@ -37,11 +37,11 @@ params:
  [Dracula](https://draculatheme.com/) | <img width="530" alt="Dracula" src="https://user-images.githubusercontent.com/10414043/115945428-678d9300-a481-11eb-9a5f-7cd8351b5cbf.png"> 
 
 
-# TODO
-## Light
-- [X] Gandalf
-- [ ] Red Graphite
-- [ ] Duotone Snow
+| | Light |
+| --- | --- |
+ [Gandalf](https://shinyfrog.net/) | <img width="1059" alt="Gandalf" src="https://user-images.githubusercontent.com/10414043/116337632-0a0a8680-a7a0-11eb-9956-86739a88488c.png">
+ Red Graphite | TODO
+ Duotone Snow | TODO
 
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
