@@ -39,7 +39,7 @@ params:
 
 | | Light |
 | --- | --- |
- [Gandalf](https://shinyfrog.net/) | <img width="1059" alt="Gandalf" src="https://user-images.githubusercontent.com/10414043/116337632-0a0a8680-a7a0-11eb-9956-86739a88488c.png">
+ [Gandalf](https://shinyfrog.net/) | <img width="530" alt="Gandalf" src="https://user-images.githubusercontent.com/10414043/116337632-0a0a8680-a7a0-11eb-9956-86739a88488c.png">
  Red Graphite | TODO
  Duotone Snow | TODO
 
