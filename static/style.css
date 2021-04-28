@@ -445,7 +445,6 @@ img {
   font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
   font-size: 0.78em;
   line-height: 1.5;
-  background: var(--entry);
   border-radius: 0;
   border: 1px solid var(--border);
 }
@@ -454,7 +453,6 @@ img {
   margin-left: 0;
   margin-right: 0;
   padding: var(--gap);
-  color: rgba(255, 255, 255, 0.8);
   border-radius: 0;
 }
 .post-content blockquote {

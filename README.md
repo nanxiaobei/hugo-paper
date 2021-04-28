@@ -39,7 +39,7 @@ params:
 
 # TODO
 ## Light
-- [ ] Gandalf
+- [X] Gandalf
 - [ ] Red Graphite
 - [ ] Duotone Snow
 
