@@ -180,8 +180,8 @@ img {
   padding: var(--gap);
 }
 .page-header {
-  margin-top: 48px;
-  margin-bottom: 144px;
+  margin-top: 4vh;
+  margin-bottom: 10vh;
   display: flex;
   flex-wrap: wrap-reverse;
   align-items: center;
