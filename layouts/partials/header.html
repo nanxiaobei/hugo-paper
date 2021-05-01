@@ -27,13 +27,14 @@
 
     <!-- Color Themes -->
     {{ with .Site.Params.ColorTheme | default "gotham" }}
-    {{ $theme := printf "color-themes/%s.css" . | safeHTMLAttr }}
-    <link href="{{ $theme | absURL}}" rel="stylesheet">
+    {{ $themeName := printf "css/color-themes/%s.css" . | safeHTMLAttr }}
+    {{ $theme     := resources.Get $themeName  }}
+    {{ $style     := resources.Get "css/style.css" }}
+    {{ $custom    := resources.Get "css/custom.css" }}
+    {{ $css       := slice $style $custom $theme | resources.Concat "css/styles.css" }}
+    {{ $minicss   := $css | resources.Minify }}
+    <link href="{{ $minicss.Permalink }}" rel="stylesheet">
     {{ end }}
-
-    <!-- Styles -->
-    <link href="{{ "style.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "custom.css" | absURL }}" rel="stylesheet">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
