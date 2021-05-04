@@ -2,6 +2,12 @@
 
 A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
+Oso strives to be beautiful, fast, and accessible. All without JS! 
+
+## Lighthouse
+
+[My personal blog](raulcodes.com) uses this theme and I aim to consistently score as perfectly as I can on Google's Lighthouse tool.
+
 ## Install
 
 Inside the folder of your Hugo site, run:
