@@ -8,6 +8,11 @@ Oso strives to be beautiful, fast, and accessible. All without JS!
 
 [My personal blog](raulcodes.com) uses this theme and I aim to consistently score as perfectly as I can on Google's Lighthouse tool.
 
+Report from May 4, 2021:
+
+<img width="547" alt="Lighthouse Report 2021-05-04 at 5 28 05 PM" src="https://user-images.githubusercontent.com/10414043/117078010-b8617f00-acfe-11eb-9e5d-264e572127e1.png">
+
+
 ## Install
 
 Inside the folder of your Hugo site, run:
