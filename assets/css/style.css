@@ -55,11 +55,7 @@ article,
 aside,
 figcaption,
 figure,
-footer,
-header,
 hgroup,
-main,
-nav,
 section {
   display: block;
 }
@@ -128,7 +124,7 @@ img {
 }
 /* Header
 -------------------------------------------------- */
-.nav {
+nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -136,7 +132,7 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
-.nav a {
+nav a {
   display: block;
   line-height: var(--header-height);
 }
@@ -169,7 +165,7 @@ img {
 
 /* Main
 -------------------------------------------------- */
-.main {
+main {
   position: relative;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   max-width: calc(var(--main-width) + var(--gap) * 2);
@@ -487,13 +483,14 @@ img {
   line-height: 34px;
   background: var(--entry);
   border-radius: 4px;
+  border: 1px solid var(--border);
 }
 .post-tags a:hover {
   background: var(--border);
 }
 /* Footer
 -------------------------------------------------- */
-.footer {
+footer {
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin-left: auto;
   margin-right: auto;
@@ -503,14 +500,14 @@ img {
   text-align: center;
   line-height: 24px;
 }
-.footer span {
+footer span {
   margin-left: 1px;
   margin-right: 1px;
 }
-.footer a {
+footer a {
   color: inherit;
 }
-.footer a:hover {
+footer a:hover {
   color: var(--primary);
   border-bottom: 1px solid var(--primary);
 }

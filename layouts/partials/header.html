@@ -52,8 +52,8 @@
     {{- end }}
   </head>
   <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-    <header class="header">
-      <nav class="nav">
+    <header>
+      <nav>
         {{- if .IsHome }}
         <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
         {{- else }}
@@ -70,4 +70,4 @@
         {{- end }}
       </nav>
     </header>
-    <main class="main">
+    <main>
