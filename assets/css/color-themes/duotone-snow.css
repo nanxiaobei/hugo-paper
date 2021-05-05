@@ -1,0 +1,17 @@
+/* https://github.com/nielsenramon/duotone-snow */
+:root {
+  --theme:        hsl(  0,  0%, 100%); /* #ffffff */
+  --entry:       	hsl(240, 33%,  99%); /* #fdfdfe */
+  --primary:      hsl(219, 31%,  46%); /* #516b9a */
+  --secondary:    hsl(221, 17%,  34%); /* #495266 */
+
+  /* Split tertiary hsl here in order to generate tint */
+  --tertiary-color: 3, 33%;
+  --tertiary-l:     41%;
+  --tertiary:       hsl(var(--tertiary-color), var(--tertiary-l)); 
+  --tertiary-tint:  hsl(var(--tertiary-color), calc(var(--tertiary-l) - 15%));
+
+  --quarternary:   hsl(217, 17%, 85%); /* #d2d7df */
+  --content:       hsl(219, 17%, 34%); /* #495366 */
+  --border:        hsl(217, 17%, 85%); /* #d2d7df */
+}
