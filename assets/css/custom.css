@@ -1,1 +1,36 @@
-/* Place a custom css file in your own project to use this. */
+.spotify-playlist-container ul {
+  padding: 0;
+}
+.spotify-playlist-header {
+  width: 100%;
+  display: flex;
+  gap: var(--gap);
+  margin-bottom: var(--gap);
+  padding: var(--gap);
+  background: var(--entry);
+  border: .1px solid var(--border);
+}
+.spotify-playlist-header img {
+  border-radius: 8px;
+}
+.spotify-playlist-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.spotify-playlist-track {
+  width: 47%;
+  list-style: none;
+  margin-bottom: var(--gap);
+  /* padding: var(--gap); */
+  background: var(--entry);
+  border: .1px solid var(--border);
+}
+.spotify-playlist-track-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.spotify-playlist-track-content {
+  padding: var(--gap);
+}
