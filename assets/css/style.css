@@ -141,7 +141,7 @@ nav a {
   margin-left: var(--gap);
   margin-right: var(--gap);
 }
-.logo a {
+.logo {
   font-size: 24px;
   font-weight: 700;
 }
@@ -163,8 +163,7 @@ nav a {
   color: var(--tertiary-tint);
 }
 
-/* Main
--------------------------------------------------- */
+/* --- Main --- */
 main {
   position: relative;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
@@ -488,8 +487,7 @@ main {
 .post-tags a:hover {
   background: var(--border);
 }
-/* Footer
--------------------------------------------------- */
+/* --- Footer --- */
 footer {
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin-left: auto;
@@ -511,8 +509,7 @@ footer a:hover {
   color: var(--primary);
   border-bottom: 1px solid var(--primary);
 }
-/* 404
--------------------------------------------------- */
+/* --- 404 --- */
 .not-found {
   position: absolute;
   left: 0;

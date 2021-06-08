@@ -26,9 +26,9 @@
   <section class="entry-content">
    <p>{{ .Summary | plainify | htmlUnescape }}...</p>
   </section>
-  <footer class="entry-footer">
+  <section class="entry-footer">
     <time>{{ .Date.Format "January 2, 2006" }}</time>
-  </footer>
+  </section>
   <a class="entry-link" href="{{ .Permalink }}" aria-label="{{ .Title }}"></a>
 </article>
 {{- end }}

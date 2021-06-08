@@ -15,6 +15,12 @@
     <meta name="author" content="{{ .Site.Author.name }}">
     {{- end }}
 
+    <!-- Plausible.io -->
+    {{- if and .Site.Params.Plausible (eq .Site.Params.Env "production") }}
+    {{ $url := urls.Parse .Site.BaseURL }}
+    <script async defer data-domain="{{ $url.Host }}" src="https://plausible.io/js/plausible.js"></script>
+    {{- end }}
+
     <!-- Font (Serif or not) -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     {{ if eq .Site.Params.FontStyle "sans" }}
@@ -57,7 +63,7 @@
         {{- if .IsHome }}
         <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
         {{- else }}
-        <p class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></p>
+        <a class="logo" href="{{ "" | absURL }}">{{ .Site.Title }}</a>
         {{- end }}
         {{- if .Site.Menus.main }}
         <ul class="menu">

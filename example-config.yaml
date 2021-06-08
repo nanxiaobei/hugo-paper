@@ -19,14 +19,14 @@ languages:
 params:
   env: production
 
-  params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-
   # Available themes: gotham, toothpaste, dracula
   colorTheme: dracula
 
   # Font family: IBM Plex, available styles: serif, sans
   fontStyle: sans 
+
+  # Plausible.io 
+  plausible: true
 
   homePage:
     title: Raul Camacho
