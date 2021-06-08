@@ -8,7 +8,7 @@ description = "A simple Hugo theme inspired by the popular iOS note-taking app, 
 homepage = "https://github.com/raulcodes/oso"
 tags = ["Responsive", "Simple", "Clean", "Light", "White", "Blog"]
 features = ["Responsive", "One Column", "Blog"]
-min_version = "0.1.0"
+min_version = "0.1.1"
 
 [author]
   name = "raulcodes"
