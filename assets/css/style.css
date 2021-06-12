@@ -23,8 +23,8 @@
 }
 
 #icon {
-  height: 28px;
-  width: 28px;
+  height: 32px;
+  width: 32px;
   color: var(--tertiary);
 }
 
@@ -32,8 +32,7 @@
   color: var(--tertiary-tint);
 }
 
-/* Reset
--------------------------------------------------- */
+/* --- Reset --- */
 *,
 *::before,
 *::after {
@@ -122,8 +121,7 @@ img {
   display: block;
   max-width: 100%;
 }
-/* Header
--------------------------------------------------- */
+/* --- Header --- */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -211,34 +209,7 @@ main {
   padding-left: 18px;
   padding-right: 16px;
 }
-/* Post entry
--------------------------------------------------- */
-.first-entry {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 320px;
-  margin-bottom: var(--header-height);
-}
-.first-entry .entry-header {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-.first-entry .entry-header h2 {
-  font-size: 40px;
-}
-.first-entry .entry-content {
-  margin-top: 14px;
-  margin-bottom: 14px;
-  font-size: 16px;
-  -webkit-line-clamp: 3;
-}
-.first-entry .entry-footer {
-  font-size: 14px;
-}
+/* --- Post entry --- */
 .post-entry {
   position: relative;
   margin-bottom: var(--gap);
@@ -279,8 +250,7 @@ main {
   top: 0;
   bottom: 0;
 }
-/* Post single
--------------------------------------------------- */
+/* --- Post single --- */
 .post-header {
   margin-top: 24px;
   margin-bottom: var(--content-gap);
@@ -409,7 +379,7 @@ main {
   margin-right: 0;
   margin-bottom: 0;
 }
-/* table */
+/* --- table --- */
 .post-content .highlighttable {
   table-layout: fixed;
 }
@@ -426,7 +396,7 @@ main {
 .post-content .highlighttable td .highlight pre code::-webkit-scrollbar {
   display: none;
 }
-/* inline */
+/* --- inline --- */
 .post-content .highlight span {
   background: transparent !important;
 }

@@ -36,8 +36,7 @@
     {{ $themeName := printf "css/color-themes/%s.css" . | safeHTMLAttr }}
     {{ $theme     := resources.Get $themeName  }}
     {{ $style     := resources.Get "css/style.css" }}
-    {{ $custom    := resources.Get "css/custom.css" }}
-    {{ $css       := slice $style $custom $theme | resources.Concat "css/styles.css" }}
+    {{ $css       := slice $style $theme | resources.Concat "css/styles.css" }}
     {{ $minicss   := $css | resources.Minify }}
     <link href="{{ $minicss.Permalink }}" rel="stylesheet">
     {{ end }}
@@ -45,6 +44,7 @@
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+  
     <!-- Generator -->
     {{- hugo.Generator }}
     <!-- RSS -->
@@ -53,7 +53,6 @@
     {{ end -}}
     <!-- Misc -->
     {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-    {{- template "_internal/google_analytics_async.html" . }}
     {{- template "_internal/opengraph.html" . }}
     {{- end }}
   </head>
