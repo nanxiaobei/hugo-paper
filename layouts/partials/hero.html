@@ -1,7 +1,7 @@
 {{- if .Title }}
 <section class="page-header">
   <div class="page-header-content">
-    <h1>{{ .Title }}</h1>
+    <h1>{{ .Site.Params.HomePage.Title }}</h1>
     {{- if (and .Site.Params.HomePage.description .IsHome) }}
     <div class="page-description">
       {{ .Site.Params.HomePage.description }}

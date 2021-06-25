@@ -184,7 +184,6 @@ main {
   align-items: center;
   justify-content: space-between;
   align-content: center;
-  gap: 0 48px;
 }
 .page-header-avatar {
   margin: auto;
