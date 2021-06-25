@@ -69,6 +69,9 @@ h6 {
   color: var(--primary);
   line-height: 1.2;
 }
+h1 {
+  font-size: 2.5rem;
+}
 p {
   margin-top: 0;
   margin-bottom: 0;
@@ -123,16 +126,19 @@ img {
 }
 /* --- Header --- */
 nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: calc(var(--nav-width) + var(--gap) * 2);
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
 }
 nav a {
   display: block;
   line-height: var(--header-height);
+}
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: calc(var(--nav-width) + var(--gap));
+  margin-left: auto;
+  margin-right: auto;
 }
 .logo,
 .menu {
@@ -179,9 +185,6 @@ main {
   justify-content: space-between;
   align-content: center;
   gap: 0 48px;
-}
-.page-header h1 {
-  font-size: 40px;
 }
 .page-header-avatar {
   margin: auto;
@@ -255,11 +258,6 @@ main {
   margin-top: 24px;
   margin-bottom: var(--content-gap);
 }
-.post-title {
-  margin-bottom: 2px;
-  font-size: 40px;
-  transform: translateX(-2px);
-}
 .post-meta {
   color: var(--secondary);
   font-size: 14px;
@@ -281,9 +279,6 @@ main {
 .post-content h6 {
   margin-top: 24px;
   margin-bottom: 16px;
-}
-.post-content h1 {
-  font-size: 40px;
 }
 .post-content h2 {
   font-size: 32px;
@@ -490,4 +485,13 @@ footer a:hover {
   height: 80%;
   font-size: 160px;
   font-weight: 700;
+}
+/* --- Sticky Nav --- */
+.sticky {
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  z-index: 99;
+  background-color: var(--entry);
+  border-bottom: .1px solid var(--border);
 }

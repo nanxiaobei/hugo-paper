@@ -57,22 +57,18 @@
     {{- end }}
   </head>
   <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-    <header>
-      <nav>
-        {{- if .IsHome }}
-        <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
-        {{- else }}
-        <a class="logo" href="{{ "" | absURL }}">{{ .Site.Title }}</a>
-        {{- end }}
-        {{- if .Site.Menus.main }}
-        <ul class="menu">
-          {{- range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
+      <nav id="navbar" class="sticky">
+        <div class="nav-container">
+          <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
+          {{- if .Site.Menus.main }}
+          <ul class="menu">
+            {{- range .Site.Menus.main }}
+            <li>
+              <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{- end }}
+          </ul>
           {{- end }}
-        </ul>
-        {{- end }}
+        </div>
       </nav>
-    </header>
     <main>
