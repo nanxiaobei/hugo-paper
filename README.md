@@ -2,11 +2,11 @@
 
 A simple Hugo theme inspired by the popular iOS note-taking app, Bear.
 
-Oso strives to be beautiful, fast, and accessible. All without JS! 
+Oso strives to be beautiful, fast, and accessible. All with minimal JS! 
 
 ## Lighthouse
 
-[My personal blog](raulcodes.com) uses this theme and I aim to consistently score as perfectly as I can on Google's Lighthouse tool.
+[My personal blog](raulcodes.com) uses this theme and I aim to consistently score as highly as I can on Google's Lighthouse tool.
 
 Report from May 4, 2021:
 
@@ -41,6 +41,8 @@ params:
 > Current default theme: Gotham
 
 [Currently Available Themes](./docs/themes.md)
+
+[Currently Available Social Icons](./docs/icons.md)
 
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.

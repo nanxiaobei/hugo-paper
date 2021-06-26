@@ -1,5 +1,5 @@
-baseURL: 'https://raulcodes.com'
-title: Raul Camacho
+baseURL: 'https://example.com'
+title: Ollie Fox
 paginate: 5
 theme: oso
 
@@ -19,28 +19,29 @@ languages:
 params:
   env: production
 
-  # Available themes: gotham, toothpaste, dracula
-  colorTheme: dracula
+  # Available themes: gotham, toothpaste, dracula, gandalf
+  colorTheme: gotham
 
   # Font family: IBM Plex, available styles: serif, sans
   fontStyle: sans 
 
-  # Plausible.io 
+  # Plausible.io is an open-source alternative to Google Analytics
   plausible: true
 
   homePage:
-    title: Raul Camacho
-    description: Welcome to my blog
-    author: Raul Camacho
+    title: Ollie Fox
+    description: Welcome to my blog!
+    author: Ollie Fox
     avatar: memoji.png
 
+    # Look in docs/icons.md for a full list of available social icons
     socialIcons:
     - name: github
-      url: 'https://github.com/raulcodes'
+      url: 'https://github.com/username'
     - name: dribbble
-      url: 'https://dribbble.com/raulcodes'
+      url: 'https://dribbble.com/username'
     - name: twitter
-      url: 'https://twitter.com/_raulcodes'
+      url: 'https://twitter.com/username'
 
   assets:
     favicon: '/favicon.ico'
