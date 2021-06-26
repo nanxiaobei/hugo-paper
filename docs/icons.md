@@ -1,49 +1,48 @@
 # Social Icons
 
-|-|
-| 123rf |
-| adobestock |
-| behance |
-| buymeacoffee |
-| codepen |
-| cryptohack |
-| ctftime |
-| dev |
-| discogs |
-| discord |
-| dreamstime |
-| dribbble |
-| email |
-| facebook |
-| freepik |
-| gitea |
-| github |
-| gitlab |
-| hackerone |
-| hackerrank |
-| hackthebox |
-| instagram |
-| itchio |
-| kakaotalk |
-| keybase |
-| kofi |
-| lastfm |
-| linkedin |
-| mastodon |
-| medium |
-| mixcloud |
-| nuget |
-| paypal |
-| qq |
-| reddit |
-| rss |
-| soundcloud |
-| shutterstock |
-| slack |
-| snapchat |
-| sourcerer |
-| telegram |
-| twitch |
-| twitter |
-| unsplash |
-| youtube |
+* 123rf
+* adobestock
+* behance
+* buymeacoffee
+* codepen
+* cryptohack
+* ctftime
+* dev
+* discogs
+* discord
+* dreamstime
+* dribbble
+* email
+* facebook
+* freepik
+* gitea
+* github
+* gitlab
+* hackerone
+* hackerrank
+* hackthebox
+* instagram
+* itchio
+* kakaotalk
+* keybase
+* kofi
+* lastfm
+* linkedin
+* mastodon
+* medium
+* mixcloud
+* nuget
+* paypal
+* qq
+* reddit
+* rss
+* soundcloud
+* shutterstock
+* slack
+* snapchat
+* sourcerer
+* telegram
+* twitch
+* twitter
+* unsplash
+* youtube
