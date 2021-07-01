@@ -179,9 +179,11 @@ main {
 .page-header {
   margin-top: 4vh;
   margin-bottom: 10vh;
+  padding-bottom: 5vh;
   display: grid;
-  grid-template-columns: auto-fit 70% 30%;
-  grid-template-rows: 10vh 10vh;
+  column-gap: 42px;
+  grid-template-columns: auto-fit 65% 35%;
+  grid-template-rows: 10vh 8vh;
   grid-template-areas: 
     "content avatar"
     ". ."
@@ -192,6 +194,9 @@ main {
 .page-header-avatar {
   margin: auto;
   grid-area: avatar;
+}
+.avatar {
+  border-radius: 50%;
 }
 .page-description {
   padding-bottom: 8px;
