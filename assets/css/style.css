@@ -199,11 +199,13 @@ main {
   border-radius: 50%;
 }
 .page-description {
-  padding-bottom: 8px;
+  padding: 12px 0;
 }
 
 @media (max-width: 720px) {
   .page-header {
+    column-gap: 0;
+    row-gap: 5vh;
     grid-template-rows: 25vh 17vh;
     grid-template-areas:
       "avatar ."
