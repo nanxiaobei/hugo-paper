@@ -179,17 +179,31 @@ main {
 .page-header {
   margin-top: 4vh;
   margin-bottom: 10vh;
-  display: flex;
-  flex-wrap: wrap-reverse;
-  align-items: center;
-  justify-content: space-between;
-  align-content: center;
+  display: grid;
+  grid-template-columns: auto-fit 70% 30%;
+  grid-template-rows: 10vh 10vh;
+  grid-template-areas: 
+    "content avatar"
+    ". ."
+}
+.page-header-content {
+  grid-area: content;
 }
 .page-header-avatar {
   margin: auto;
+  grid-area: avatar;
 }
 .page-description {
   padding-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .page-header {
+    grid-template-rows: 25vh 17vh;
+    grid-template-areas:
+      "avatar ."
+      "content ."
+  }
 }
 
 .pagination {
