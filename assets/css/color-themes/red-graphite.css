@@ -1,0 +1,17 @@
+/* https://github.com/dracula/dracula-theme */
+:root {
+  --theme:        #fcfdfc;
+  --entry:       	#ffffff;
+  --primary:      #333233;
+  --secondary:    #434343;
+
+  /* Split tertiary hsl here in order to generate tint */
+  --tertiary-color: 3, 46%;
+  --tertiary-l:     55%;
+  --tertiary:       hsl(var(--tertiary-color), var(--tertiary-l)); /* #c15e59 */
+  --tertiary-tint:  hsl(var(--tertiary-color), calc(var(--tertiary-l) - 15%));
+
+  --quarternary:   hsl(229, 18%, 82%); /* #c8cbd9 */
+  --content:       hsl(213, 13%, 33%); /* #48525e */
+  --border:        hsl(229, 18%, 82%); /* #c8cbd9 */
+}

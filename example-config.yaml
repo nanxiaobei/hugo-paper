@@ -19,7 +19,7 @@ languages:
 params:
   env: production
 
-  # Available themes: gotham, toothpaste, dracula, gandalf
+  # Available themes: gotham, toothpaste, dracula, gandalf, red-graphite
   colorTheme: gotham
 
   # Font family: IBM Plex, available styles: serif, sans

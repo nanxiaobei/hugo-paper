@@ -220,8 +220,11 @@ main {
   color: var(--theme);
   font-size: 13px;
   line-height: 36px;
-  background: var(--primary);
+  background: var(--tertiary);
   border-radius: calc(36px / 2);
+}
+.pagination a:hover {
+  background: var(--tertiary-tint);
 }
 .pagination .prev {
   padding-left: 16px;
@@ -486,13 +489,6 @@ footer {
 footer span {
   margin-left: 1px;
   margin-right: 1px;
-}
-footer a {
-  color: inherit;
-}
-footer a:hover {
-  color: var(--primary);
-  border-bottom: 1px solid var(--primary);
 }
 /* --- 404 --- */
 .not-found {

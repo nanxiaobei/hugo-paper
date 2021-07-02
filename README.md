@@ -44,5 +44,4 @@ params:
 
 [Currently Available Social Icons](./docs/icons.md)
 
-
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
