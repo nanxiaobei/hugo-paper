@@ -61,16 +61,16 @@
       ` $tag ("" | absURL) site.Title $tag | safeHTML }}
 
       <script>
-        const bodyClass = document.body.classList;
-        const schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
-        const buttonDark = document.querySelector('.btn-theme');
+        let bodyClass = document.body.classList;
+        let schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
+        let buttonDark = document.querySelector('.btn-theme');
 
-        const setDark = () => {
+        let setDark = () => {
           bodyClass.add('dark');
           localStorage.setItem('dark', 'true');
         };
 
-        const setLight = () => {
+        let setLight = () => {
           bodyClass.remove('dark');
           localStorage.removeItem('dark');
         };
