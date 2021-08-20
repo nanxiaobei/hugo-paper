@@ -92,7 +92,7 @@
 
       {{ if site.Menus.main }}
       <nav class="menu">
-        {{ $url := .URL }}
+        {{ $url := .Permalink }}
         {{ range site.Menus.main }}
         <a class="{{ if eq $url .URL }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
