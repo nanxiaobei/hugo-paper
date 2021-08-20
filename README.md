@@ -15,17 +15,10 @@ A simple, clean, flexible Hugo theme.
 
 ## Overview
 
-<p>
-<kbd>
-  <img src="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png" alt="Paper">
-</kbd>
-</p>
+![Desktop](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png)
+![Mobile](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_mobile.png)
 
-<p>
-<kbd>
-  <img src="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_dark.png" alt="Paper Dark Mode">
-</kbd>
-</p>
+Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 
 ## Install
 
@@ -41,9 +34,7 @@ Then change in `config.toml`:
 theme = "paper"
 ```
 
-For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
-
-Check on Hugo themes: https://themes.gohugo.io/hugo-paper/
+For more information read the [official guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
 
 ## Config
 
