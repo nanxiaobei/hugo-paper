@@ -6,7 +6,10 @@
 {{ else }}
 {{ errorf "missing value for param 'content': %s" .Position }}
 {{ end }}
-<p><details {{ if (eq (.Get "openByDefault") true) }} open=true {{ end }}>
-  <summary markdown="span">{{ .Get "summary" | markdownify }}</summary>
+
+<p>
+  <details {{ if (eq (.Get "openByDefault") true) }}open=true{{ end }}>
+    <summary markdown="span">{{ .Get "summary" | markdownify }}</summary>
     {{ .Get "content" | markdownify }}
-</details></p>
+  </details>
+</p>

@@ -1,45 +1,32 @@
-{{- partial "header.html" . }}
+{{ partial "header.html" . }}
 
-{{- $scope := .Site }}
-{{- if .Title }}
-<header class="page-header"><h1>{{ .Title }}</h1></header>{{ $scope = . }}
+{{ if .Title }}
+<h1 class="page-title">{{ .Title }}</h1>
 {{ end }}
 
-{{- $paginator := .Paginate (where $scope.RegularPages ".Params.type" "!=" "page") }}
+{{ $pages := union .RegularPages .Sections }}
+{{ if .IsHome }}
+{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ end }}
+{{ $paginator := .Paginate $pages }}
 
-{{- range $index, $page := $paginator.Pages }}
-
-{{- $class := "post-entry" }}
-{{- if (and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0)) }}
-{{- $class = "first-entry" }}
-{{- else if .Data.Term }}
-{{- $class = "post-entry tag-entry" }}
-{{- end }}
-<article class="{{ $class }}">
-  <header class="entry-header">
-    <h2>{{ .Title }}</h2>
-  </header>
-  <section class="entry-content">
-   <p>{{ .Summary | plainify | htmlUnescape }}...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>{{ .Date.Format "January 2, 2006" }}</time>
-  </footer>
-  <a class="entry-link" href="{{ .Permalink }}"></a>
+{{ range $index, $page := $paginator.Pages }}
+<article class="post-entry">
+  <h2>{{ .Title }}</h2>
+  <time>{{ .Date.Format "January 2, 2006" }}</time>
+  <a href="{{ .Permalink }}"></a>
 </article>
-{{- end }}
+{{ end }}
 
-{{- if gt $paginator.TotalPages 1 }}
-<footer class="page-footer">
-  <nav class="pagination">
-    {{- if $paginator.HasPrev }}
-    <a class="prev" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
-    {{- end }}
-    {{- if $paginator.HasNext }}
-    <a class="next" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
-    {{- end }}
-  </nav>
-</footer>
-{{- end }}
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="page-nav">
+  {{ if $paginator.HasPrev }}
+  <a class="prev" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+  {{ end }}
+  {{ if $paginator.HasNext }}
+  <a class="next" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+  {{ end }}
+</nav>
+{{ end }}
 
-{{- partial "footer.html" . }}
+{{ partial "footer.html" . }}

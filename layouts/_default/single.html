@@ -1,45 +1,50 @@
-{{- partial "header.html" . }}
+{{ partial "header.html" . }}
 
 <article class="post-single">
-  <header class="post-header">
-    <h1 class="post-title">{{ .Title }}</h1>
-    <div class="post-meta">
-      {{- if or .Params.Author .Site.Author.name }}
-      {{- .Params.Author | default .Site.Author.name }} · {{ end }}
-      {{- .Date.Format "January 2, 2006" -}}
-    </div>
+  <header class="post-title">
+    <aside>
+      <time>{{ .Date.Format "January 2, 2006" }}</time>
+      {{ if or .Params.Author site.Author.name }}
+      <span>{{ .Params.Author | default site.Author.name }}</span>
+      {{ end }}
+    </aside>
+
+    <h1>{{ .Title }}</h1>
   </header>
-  <div class="post-content">{{ .Content }}</div>
-  {{- if .Params.tags }}
-  <footer class="post-footer">
-    <ul class="post-tags">
-      {{- range .Params.tags }}
-      {{- $href := print (absURL "tags/") (urlize .) }}
-      <li><a href="{{ $href }}">{{ . }}</a></li>
-      {{- end }}
-    </ul>
+
+  <section class="post-content">{{ .Content }}</section>
+
+  {{ if .Params.tags }}
+  <footer class="post-tags">
+    {{ range .Params.tags }}
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <a href="{{ $href }}">{{ . }}</a>
+    {{ end }}
   </footer>
-  {{- end }}
-  <!-- Comments area start -->
-  {{- if not (eq .Params.comments false) }}
-  {{- if .Site.DisqusShortname }}
-  <div id="disqus_thread"></div>
+  {{ end }}
+
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ if and (gt (len $pages) 1) (in $pages . ) }}
+  <nav class="post-nav">
+    {{ with $pages.Next . }}
+    <a class="prev" href="{{ .Permalink }}"><span>←</span><span>{{ .Name }}</span></a>
+    {{ end }}
+    {{ with $pages.Prev . }}
+    <a class="next" href="{{ .Permalink }}"><span>{{ .Name }}</span><span>→</span></a>
+    {{ end }}
+  </nav>
+  {{ end }}
+
+  {{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
+  <div id="disqus_thread" class="post-comments"></div>
   <script>
-    var disqus_shortname = '{{ .Site.DisqusShortname }}';
-    (function() {
-      var d = document, s = d.createElement('script');
-      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
+    var disqusShortname = '{{ site.DisqusShortname }}';
+    var script = document.createElement('script');
+    script.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
+    script.setAttribute('data-timestamp', +new Date());
+    document.head.appendChild(script);
   </script>
-  <noscript>
-    Please enable JavaScript to view the
-    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-  </noscript>
-  <!-- Comments area end -->
-  {{- end }}
-  {{- end }}
+  {{ end }}
 </article>
 
-{{- partial "footer.html" . }}
+{{ partial "footer.html" . }}

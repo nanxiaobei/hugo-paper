@@ -1,105 +1,114 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ site.LanguageCode }}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Title -->
-    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
+
     <!-- Meta -->
-    {{- if eq .Kind "page" }}
+    {{ if eq .Kind "page" }}
     <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}">
-    {{- else }}
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <meta name="author" content="{{ .Site.Author.name }}">
-    {{- end }}
-    <!-- Styles -->
-    <link href="{{ "an-old-hope.min.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "style.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "custom.css" | absURL }}" rel="stylesheet">
+    <meta name="author" content="{{ .Params.Author | default site.Author.name }}">
+    {{ else }}
+    <meta name="description" content="{{ site.Params.description }}">
+    <meta name="author" content="{{ site.Author.name }}">
+    {{ end }}
+
+    <!-- Styles & Scripts -->
+    {{ $app_css := resources.Get "app.css" }}
+    {{ $custom_css := resources.Get "custom.css" }}
+    {{ $css := slice $app_css $custom_css | resources.Concat "app.css" | minify }}
+    <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}">
+
+    {{ if and .IsPage (not site.Params.disableHLJS) }}
+    <link rel="preload stylesheet" as="style" href="{{ `an-old-hope.min.css` | absURL }}">
+    <script defer src="{{ `highlight.min.js` | absURL }}" onload="hljs.initHighlightingOnLoad();"></script>
+    {{ end }}
+
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel="icon" href="{{ `favicon.ico` | absURL }}">
+    <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}">
+
     <!-- Generator -->
-    {{- hugo.Generator }}
+    {{ hugo.Generator }}
+
     <!-- RSS -->
-    {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
+    {{ range .AlternativeOutputFormats }}
+    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+    {{ end }}
+
     <!-- Misc -->
-    {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-    {{- template "_internal/google_analytics_async.html" . }}
-    {{- template "_internal/opengraph.html" . }}
-    {{- end }}
-    <!-- Script -->
-    <script>
-      function setTheme() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark');
-          return;
-        }
-
-        const time = new Date();
-        const prev = localStorage.getItem('date');
-        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
-
-        const now = time.getTime();
-        let sunrise;
-        let sunset;
-
-        function setBodyClass() {
-          if (now > sunrise && now < sunset) return;
-          document.body.classList.add('dark');
-        }
-
-        if (date !== prev) {
-          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
-            .then((res) => res.json())
-            .then((data) => {
-              sunrise = data.sunrise.split(':').map(Number);
-              sunset = data.sunset.split(':').map(Number);
-            })
-            .catch(() => {
-              sunrise = [7, 0];
-              sunset = [19, 0];
-            })
-            .finally(() => {
-              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
-              sunset = time.setHours(sunset[0], sunset[1], 0);
-              setBodyClass();
-              localStorage.setItem('sunrise', sunrise);
-              localStorage.setItem('sunset', sunset);
-            });
-          localStorage.setItem('date', date);
-        } else {
-          sunrise = Number(localStorage.getItem('sunrise'));
-          sunset = Number(localStorage.getItem('sunset'));
-          setBodyClass();
-        }
-      }
-    </script>
+    {{ if hugo.IsProduction | eq site.Params.env "production" }}
+    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_news.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/schema.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ end }}
   </head>
-  <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-    <script>
-      setTheme();
-    </script>
+
+  <body class="not-ready" data-menu="{{ isset site.Menus `main` }}">
     <header class="header">
-      <nav class="nav">
-        {{- if .IsHome }}
-        <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
-        {{- else }}
-        <p class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></p>
-        {{- end }}
-        {{- if .Site.Menus.main }}
-        <ul class="menu">
-          {{- range .Site.Menus.main }}
-          <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-          {{- end }}
-        </ul>
-        {{- end }}
+      {{ $tag := cond .IsHome "h1" "p" }}
+      {{ printf `
+      <%s class="logo">
+        <a class="site-name" href="%s">%s</a>
+        <a class="btn-theme"></a>
+      </%s>
+      ` $tag ("" | absURL) site.Title $tag | safeHTML }}
+
+      <script>
+        const bodyClass = document.body.classList;
+        const schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
+        const buttonDark = document.querySelector('.btn-theme');
+
+        const setDark = () => {
+          bodyClass.add('dark');
+          localStorage.setItem('dark', 'true');
+        };
+
+        const setLight = () => {
+          bodyClass.remove('dark');
+          localStorage.removeItem('dark');
+        };
+
+        if (schemeDark.matches || localStorage.getItem('dark')) setDark();
+
+        requestAnimationFrame(() => {
+          bodyClass.remove('not-ready');
+        });
+
+        schemeDark.addEventListener('change', event => {
+          event.matches ? setDark() : setLight();
+        });
+
+        buttonDark.addEventListener('click', () => {
+          bodyClass.contains('dark') ? setLight() : setDark();
+        });
+      </script>
+
+      {{ if site.Menus.main }}
+      <nav class="menu">
+        {{ range site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
       </nav>
+      {{ end }}
+
+      {{ if site.Params.twitter }}
+      <a class="social-icon twitter" href="https://twitter.com/{{ site.Params.twitter }}" target="_blank"></a>
+      {{ end }}
+
+      {{ if site.Params.github }}
+      <a class="social-icon github" href="https://github.com/{{ site.Params.github }}" target="_blank"></a>
+      {{ end }}
+
+      {{ if site.Params.instagram }}
+      <a class="social-icon instagram" href="https://www.instagram.com/{{ site.Params.instagram }}/" target="_blank"></a>
+      {{ end }}
+
     </header>
     <main class="main">
