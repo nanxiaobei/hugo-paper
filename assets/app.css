@@ -29,6 +29,7 @@
 }
 
 html {
+  height: 100%;
   -webkit-tap-highlight-color: transparent;
   font-size: 8px;
 }
@@ -44,7 +45,7 @@ body {
 
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
   padding-right: var(--gap);
   padding-left: var(--gap);
   margin: 0;
@@ -72,10 +73,6 @@ body > * {
 @media (max-width: 1199px) {
   html {
     font-size: 7px;
-  }
-
-  body {
-    min-height: -webkit-fill-available;
   }
 }
 
