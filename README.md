@@ -41,13 +41,13 @@ For more information, please read the [official guide](https://gohugo.io/getting
 Available options to `config.toml`:
 
 ```toml
-disqusShortname = 'YOUR_DISQUES_SHORTNAME'
+disqusShortname = 'YOUR_DISQUES_SHORTNAME'   # add disqus comments
 
 [params]
-  disableHLJS = true                      # don't use highlight.js
-  twitter = 'YOUR_TWITTER_ID'
-  github = 'YOUR_GITHUB_ID'
-  instagram = 'YOUR_INSTAGRAM_ID'
+  disableHLJS = true                         # don't use highlight.js
+  twitter = 'YOUR_TWITTER_ID'                # twitter.com/YOUR_TWITTER_ID
+  github = 'YOUR_GITHUB_ID'                  # github.com/YOUR_GITHUB_ID
+  instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
 ```
 
 ## Pitiless Ads
