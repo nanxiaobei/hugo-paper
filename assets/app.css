@@ -213,15 +213,15 @@ img {
 }
 
 .social-icon.twitter {
-  background-image: url('/twitter.svg');
+  background-image: url('./twitter.svg');
 }
 
 .social-icon.github {
-  background-image: url('/github.svg');
+  background-image: url('./github.svg');
 }
 
 .social-icon.instagram {
-  background-image: url('/instagram.svg');
+  background-image: url('./instagram.svg');
 }
 
 .dark .social-icon {
