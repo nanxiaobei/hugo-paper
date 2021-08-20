@@ -1,14 +1,19 @@
-# Paper <sup><sup><sub>v4.9 (Dark Mode)</sub></sup></sup>
+<div align="center">
+<h1>Paper <sup><sup><sub>5.0</sub></sup></sup></h1>
+
+Demo → [nanxiaobei.github.io/hugo-paper](https://nanxiaobei.github.io/hugo-paper)
+
+<hr />
 
 A simple, clean, flexible Hugo theme.
 
-☄️ Fast | ☁️ Fluent | 🌙 Smooth
+⚡️ Fast | 🦋 Fluent | 🪀 Smooth
+
+</div>
 
 ---
 
 ## Overview
-
-Demo: https://nanxiaobei.github.io/hugo-paper/
 
 <p>
 <kbd>
@@ -21,8 +26,6 @@ Demo: https://nanxiaobei.github.io/hugo-paper/
   <img src="https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_dark.png" alt="Paper Dark Mode">
 </kbd>
 </p>
-
-Hugo themes: https://themes.gohugo.io/hugo-paper/
 
 ## Install
 
@@ -40,9 +43,21 @@ theme = "paper"
 
 For more information read the official [guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
 
-## Dark Mode
+Check on Hugo themes: https://themes.gohugo.io/hugo-paper/
 
-It's automatic, according to your system settings, or the natural time of day and night.
+## Config
+
+Available configurations to `config.toml`:
+
+```toml
+disqusShortname = 'YOUR_DISQUES_SHORTNAME'
+
+[params]
+  disableHLJS = true                      # don't load highlight.js
+  twitter = 'YOUR_TWITTER_ID'
+  github = 'YOUR_GITHUB_ID'
+  instagram = 'YOUR_INSTAGRAM_ID'
+```
 
 ## Pitiless Ads
 
