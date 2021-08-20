@@ -92,8 +92,9 @@
 
       {{ if site.Menus.main }}
       <nav class="menu">
+        {{ $url := .URL }}
         {{ range site.Menus.main }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
+        <a class="{{ if eq $url .URL }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       </nav>
       {{ end }}
