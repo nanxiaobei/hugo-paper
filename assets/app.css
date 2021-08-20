@@ -65,8 +65,7 @@ body > * {
 }
 
 .not-ready,
-.not-ready *,
-.not-ready *::before {
+.not-ready * {
   transition: none !important;
 }
 
@@ -183,21 +182,17 @@ img {
 }
 
 .btn-theme {
+  align-self: center;
   width: 3rem;
+  height: 3rem;
   margin-left: 2rem;
-  overflow: hidden;
-  font-size: 3rem;
   cursor: pointer;
+  background: url(./theme.png) left / cover no-repeat;
+  transition: background-position 0.4s steps(6);
 }
 
-.btn-theme::before {
-  white-space: nowrap;
-  content: '☀️🌕🌖🌗🌘🌑🌙';
-  transition: transform 0.4s steps(6);
-}
-
-.dark .btn-theme::before {
-  transform: translateX(-18rem);
+.dark .btn-theme {
+  background-position: right;
 }
 
 .menu {
@@ -208,6 +203,10 @@ img {
 
 .menu a + a {
   margin-left: var(--gap);
+}
+
+.menu a.active {
+  opacity: 0.4;
 }
 
 .social-icon {
