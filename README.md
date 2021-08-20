@@ -22,29 +22,29 @@ Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 
 ## Install
 
-Inside the folder of your Hugo site, run:
+Inside the folder of your Hugo project, run:
 
 ```bash
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
-Then change in `config.toml`:
+Open `config.toml`, change `theme` to `"paper"`:
 
 ```toml
 theme = "paper"
 ```
 
-For more information read the [official guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
+For more information, please read the [official guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
 
-## Config
+## Options
 
-Available configurations to `config.toml`:
+Available options to `config.toml`:
 
 ```toml
 disqusShortname = 'YOUR_DISQUES_SHORTNAME'
 
 [params]
-  disableHLJS = true                      # don't load highlight.js
+  disableHLJS = true                      # don't use highlight.js
   twitter = 'YOUR_TWITTER_ID'
   github = 'YOUR_GITHUB_ID'
   instagram = 'YOUR_INSTAGRAM_ID'
