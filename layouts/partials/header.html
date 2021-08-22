@@ -30,8 +30,17 @@
 
     <!-- Preload -->
     <link rel="preload" as="image" href="{{ `theme.png` | absURL }}">
+    {{ if site.Params.twitter }}
+    <link rel="preload" as="image" href="{{ `twitter.svg` | absURL }}">
+    {{ end }}
+    {{ if site.Params.github }}
+    <link rel="preload" as="image" href="{{ `github.svg` | absURL }}">
+    {{ end }}
+    {{ if site.Params.instagram }}
+    <link rel="preload" as="image" href="{{ `instagram.svg` | absURL }}">
+    {{ end }}
 
-    <!-- Favicons -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ `favicon.ico` | absURL }}">
     <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}">
 
