@@ -28,6 +28,9 @@
     <script defer src="{{ `highlight.min.js` | absURL }}" onload="hljs.initHighlightingOnLoad();"></script>
     {{ end }}
 
+    <!-- Preload -->
+    <link rel="preload" as="image" href="{{ `theme.png` | absURL }}">
+
     <!-- Favicons -->
     <link rel="icon" href="{{ `favicon.ico` | absURL }}">
     <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}">
