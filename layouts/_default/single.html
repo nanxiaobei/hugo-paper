@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
 <article class="post-single">
   <header class="post-title">
@@ -8,33 +8,32 @@
       <span>{{ .Params.Author | default site.Author.name }}</span>
       {{ end }}
     </aside>
-
     <h1>{{ .Title }}</h1>
   </header>
-
   <section class="post-content">{{ .Content }}</section>
 
+  <!-- Post Tags -->
   {{ if .Params.tags }}
   <footer class="post-tags">
-    {{ range .Params.tags }}
-    {{ $href := print (absURL "tags/") (urlize .) }}
+    {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a href="{{ $href }}">{{ . }}</a>
     {{ end }}
   </footer>
   {{ end }}
 
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  <!-- Post Nav -->
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
   {{ if and (gt (len $pages) 1) (in $pages . ) }}
   <nav class="post-nav">
     {{ with $pages.Next . }}
     <a class="prev" href="{{ .Permalink }}"><span>←</span><span>{{ .Name }}</span></a>
-    {{ end }}
-    {{ with $pages.Prev . }}
+    {{ end }} {{ with $pages.Prev . }}
     <a class="next" href="{{ .Permalink }}"><span>{{ .Name }}</span><span>→</span></a>
     {{ end }}
   </nav>
   {{ end }}
 
+  <!-- Disqus -->
   {{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
   <div id="disqus_thread" class="post-comments"></div>
   <script>
@@ -47,4 +46,4 @@
   {{ end }}
 </article>
 
-{{ partial "footer.html" . }}
+{{ end }}

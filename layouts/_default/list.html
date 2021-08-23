@@ -1,16 +1,17 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
+<!-- Main Title -->
 {{ if .Title }}
-<h1 class="page-title">{{ .Title }}</h1>
+<h1 class="main-title">{{ .Title }}</h1>
 {{ end }}
 
+<!-- $pages -->
 {{ $pages := union .RegularPages .Sections }}
-{{ if .IsHome }}
-{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+<!---->{{ if .IsHome }} {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ end }}
-{{ $paginator := .Paginate $pages }}
 
-{{ range $index, $page := $paginator.Pages }}
+<!-- Articles -->
+{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
 <article class="post-entry">
   <h2>{{ .Title }}</h2>
   <time>{{ .Date.Format "January 2, 2006" }}</time>
@@ -18,15 +19,16 @@
 </article>
 {{ end }}
 
+<!-- Main Nav -->
 {{ if gt $paginator.TotalPages 1 }}
-<nav class="page-nav">
+<nav class="main-nav">
   {{ if $paginator.HasPrev }}
   <a class="prev" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
-  {{ end }}
+  {{ end }}<!---->
   {{ if $paginator.HasNext }}
   <a class="next" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
   {{ end }}
 </nav>
-{{ end }}
+{{ end }}<!---->
 
-{{ partial "footer.html" . }}
+{{ end }}

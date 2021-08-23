@@ -1,0 +1,73 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
+
+  <!-- Meta -->
+  {{ if eq .Kind "page" }}
+  <meta name="description" content="{{ .Summary }}" />
+  <meta name="author" content="{{ .Params.Author | default site.Author.name }}" />
+  {{ else }}
+  <meta name="description" content="{{ site.Params.description }}" />
+  <meta name="author" content="{{ site.Author.name }}" />
+  {{ end }}
+
+  <!-- Styles & Scripts -->
+  {{ $app_css := resources.Get "app.css" }}
+  <!---->
+  {{ $custom_css := resources.Get "custom.css" }}
+  <!---->
+  {{ $css := slice $app_css $custom_css | resources.Concat "app.css" | minify }}
+  <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
+
+  {{ if and .IsPage (not site.Params.disableHLJS) }}
+  <link rel="preload stylesheet" as="style" href="{{ `an-old-hope.min.css` | absURL }}" />
+  <script
+    defer
+    src="{{ `highlight.min.js` | absURL }}"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  {{ end }}
+
+  <!-- Preload -->
+  <link rel="preload" as="image" href="{{ `theme.png` | absURL }}" />
+
+  {{ range $key, $val := $.Scratch.Get "social-map" }}
+  <link rel="preload" as="image" href="{{ printf `%s.svg` $key | absURL }}" />
+  {{ end }}
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ `favicon.ico` | absURL }}" />
+  <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}" />
+
+  <!-- Generator -->
+  {{ hugo.Generator }}
+
+  <!-- RSS -->
+  {{ range .AlternativeOutputFormats }}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink }}"
+    title="{{ site.Title }}"
+  />
+  {{ end }}
+
+  <!-- Misc -->
+  {{ if hugo.IsProduction | eq site.Params.env "production" }}
+  <!---->
+  {{ template "_internal/google_analytics_async.html" . }}
+  <!---->
+  {{ template "_internal/google_news.html" . }}
+  <!---->
+  {{ template "_internal/opengraph.html" . }}
+  <!---->
+  {{ template "_internal/schema.html" . }}
+  <!---->
+  {{ template "_internal/twitter_cards.html" . }}
+  <!---->
+  {{ end }}
+</head>

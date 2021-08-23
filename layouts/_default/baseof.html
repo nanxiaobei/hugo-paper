@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{{ $social := slice "twitter" "github" "instagram" }}<!---->
+{{ range $key, $val := site.Params }}<!---->
+{{ if in $social $key }}<!---->
+{{ $.Scratch.SetInMap "social-map" $key $val }}<!---->
+{{ end }}<!---->
+{{ end }}<!---->
+
+<html lang="{{ site.LanguageCode }}">
+  {{ partial "head.html" . }}
+
+  <body class="not-ready" data-menu="{{ isset site.Menus `main` }}">
+    {{ partial "header.html" . }}
+
+    <main class="main">{{ block "main" . }}{{ end }}</main>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>

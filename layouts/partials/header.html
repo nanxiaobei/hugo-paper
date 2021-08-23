@@ -1,127 +1,60 @@
-<!DOCTYPE html>
-<html lang="{{ site.LanguageCode }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<header class="header">
+  {{ if .IsHome }}
+  <h1 class="logo">
+    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-theme"></a>
+  </h1>
+  {{ else }}
+  <p class="logo">
+    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-theme"></a>
+  </p>
+  {{ end }}
 
-    <!-- Title -->
-    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
+  <script>
+    let bodyClass = document.body.classList;
+    let buttonDark = document.querySelector('.btn-theme');
+    let schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    <!-- Meta -->
-    {{ if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.Author | default site.Author.name }}">
-    {{ else }}
-    <meta name="description" content="{{ site.Params.description }}">
-    <meta name="author" content="{{ site.Author.name }}">
+    let setDark = () => {
+      bodyClass.add('dark');
+      localStorage.setItem('dark', 'true');
+    };
+    let setLight = () => {
+      bodyClass.remove('dark');
+      localStorage.removeItem('dark');
+    };
+
+    if (schemeDark.matches || localStorage.getItem('dark')) setDark();
+    requestAnimationFrame(() => {
+      bodyClass.remove('not-ready');
+    });
+
+    buttonDark.addEventListener('click', () => {
+      bodyClass.contains('dark') ? setLight() : setDark();
+    });
+    schemeDark.addEventListener('change', event => {
+      event.matches ? setDark() : setLight();
+    });
+  </script>
+
+  {{ $url := .RelPermalink }}<!---->
+  {{ with site.Menus.main }}
+  <nav class="menu">
+    {{ range . }}
+    <a class="{{ if eq .URL $url }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
+  </nav>
+  {{ end }}<!---->
 
-    <!-- Styles & Scripts -->
-    {{ $app_css := resources.Get "app.css" }}
-    {{ $custom_css := resources.Get "custom.css" }}
-    {{ $css := slice $app_css $custom_css | resources.Concat "app.css" | minify }}
-    <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}">
-
-    {{ if and .IsPage (not site.Params.disableHLJS) }}
-    <link rel="preload stylesheet" as="style" href="{{ `an-old-hope.min.css` | absURL }}">
-    <script defer src="{{ `highlight.min.js` | absURL }}" onload="hljs.initHighlightingOnLoad();"></script>
+  {{ with $.Scratch.Get "social-map" }}
+  <nav class="social">
+    {{ range $key, $val := . }}
+    <a
+      class="{{ $key }}"
+      style="--img: url(./{{ printf `%s.svg` $key }})"
+      href="https://{{ $key }}.com/{{ $val }}"
+      target="_blank"
+    ></a>
     {{ end }}
-
-    <!-- Preload -->
-    <link rel="preload" as="image" href="{{ `theme.png` | absURL }}">
-    {{ if site.Params.twitter }}
-    <link rel="preload" as="image" href="{{ `twitter.svg` | absURL }}">
-    {{ end }}
-    {{ if site.Params.github }}
-    <link rel="preload" as="image" href="{{ `github.svg` | absURL }}">
-    {{ end }}
-    {{ if site.Params.instagram }}
-    <link rel="preload" as="image" href="{{ `instagram.svg` | absURL }}">
-    {{ end }}
-
-    <!-- Favicon -->
-    <link rel="icon" href="{{ `favicon.ico` | absURL }}">
-    <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}">
-
-    <!-- Generator -->
-    {{ hugo.Generator }}
-
-    <!-- RSS -->
-    {{ range .AlternativeOutputFormats }}
-    <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
-    {{ end }}
-
-    <!-- Misc -->
-    {{ if hugo.IsProduction | eq site.Params.env "production" }}
-    {{ template "_internal/google_analytics_async.html" . }}
-    {{ template "_internal/google_news.html" . }}
-    {{ template "_internal/opengraph.html" . }}
-    {{ template "_internal/schema.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
-    {{ end }}
-  </head>
-
-  <body class="not-ready" data-menu="{{ isset site.Menus `main` }}">
-    <header class="header">
-      {{ $tag := cond .IsHome "h1" "p" }}
-      {{ printf `
-      <%s class="logo">
-        <a class="site-name" href="%s">%s</a>
-        <a class="btn-theme"></a>
-      </%s>
-      ` $tag ("" | absURL) site.Title $tag | safeHTML }}
-
-      <script>
-        let bodyClass = document.body.classList;
-        let schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
-        let buttonDark = document.querySelector('.btn-theme');
-
-        let setDark = () => {
-          bodyClass.add('dark');
-          localStorage.setItem('dark', 'true');
-        };
-
-        let setLight = () => {
-          bodyClass.remove('dark');
-          localStorage.removeItem('dark');
-        };
-
-        if (schemeDark.matches || localStorage.getItem('dark')) setDark();
-
-        requestAnimationFrame(() => {
-          bodyClass.remove('not-ready');
-        });
-
-        schemeDark.addEventListener('change', event => {
-          event.matches ? setDark() : setLight();
-        });
-
-        buttonDark.addEventListener('click', () => {
-          bodyClass.contains('dark') ? setLight() : setDark();
-        });
-      </script>
-
-      {{ if site.Menus.main }}
-      <nav class="menu">
-        {{ $url := .Permalink }}
-        {{ range site.Menus.main }}
-        <a class="{{ if eq $url .URL }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-        {{ end }}
-      </nav>
-      {{ end }}
-
-      {{ if site.Params.twitter }}
-      <a class="social-icon twitter" href="https://twitter.com/{{ site.Params.twitter }}" target="_blank"></a>
-      {{ end }}
-
-      {{ if site.Params.github }}
-      <a class="social-icon github" href="https://github.com/{{ site.Params.github }}" target="_blank"></a>
-      {{ end }}
-
-      {{ if site.Params.instagram }}
-      <a class="social-icon instagram" href="https://www.instagram.com/{{ site.Params.instagram }}/" target="_blank"></a>
-      {{ end }}
-
-    </header>
-    <main class="main">
+  </nav>
+  {{ end }}
+</header>
