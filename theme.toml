@@ -13,9 +13,3 @@ min_version = "0.57.1"
 [author]
   name = "nanxiaobei"
   homepage = "https://lee.so/"
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
