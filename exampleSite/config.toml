@@ -1,4 +1,4 @@
-baseURL = "https://gohugo.io"
+baseURL = "https://hugo-paper.vercel.app/"
 # title = "Hugo Themes"
 author = "Steve Francia"
 copyright = "Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved."
@@ -12,7 +12,12 @@ ignoreErrors = ["error-remote-getjson"]
 
 # ------------------------------
 theme = "hugo-paper"
+#themesDir = "../.."
 title = "Paper"
+
+[module]
+  [[module.imports]]
+  path = "github.com/nanxiaobei/hugo-paper"
 
 [params]
    twitter = 'nanxiaobei'

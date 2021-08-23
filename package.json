@@ -8,7 +8,8 @@
   "scripts": {
     "site": "hugo server -Dw --minify --disableFastRender --themesDir ../.. --source exampleSite",
     "open": "open http://localhost:1313/",
-    "dev": "yarn open & yarn site"
+    "dev": "yarn open & yarn site",
+    "build": "hugo --gc --minify --themesDir ../.. --source exampleSite"
   },
   "dependencies": {
     "prettier": "^2.3.2",
