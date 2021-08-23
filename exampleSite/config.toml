@@ -1,7 +1,7 @@
 baseURL = "https://gohugo.io"
-title = "Hugo Themes"
+# title = "Hugo Themes"
 author = "Steve Francia"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+copyright = "Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved."
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
@@ -9,6 +9,17 @@ enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
 ignoreErrors = ["error-remote-getjson"]
+
+# ------------------------------
+theme = "hugo-paper"
+title = "Paper"
+
+[params]
+   twitter = 'nanxiaobei'
+   github = 'nanxiaobei'
+   instagram = 'nan.xiaobei'
+
+# ------------------------------
 
 [menu]
 
