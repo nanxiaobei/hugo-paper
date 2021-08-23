@@ -1,0 +1,9 @@
+/exampleSite
+/images
+/static
+
+.git*
+*.toml
+.prettierignore
+LICENSE
+yarn.lock
