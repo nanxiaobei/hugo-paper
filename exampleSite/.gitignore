@@ -11,6 +11,8 @@ _test
 *.[568vq]
 [568vq].out
 
+go.mod
+go.sum
 *.cgo1.go
 *.cgo2.c
 _cgo_defun.c

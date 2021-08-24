@@ -1,0 +1,4 @@
+# Only used for build theme demo site on vercel.com
+[module]
+  [[module.imports]]
+    path = "github.com/nanxiaobei/hugo-paper"

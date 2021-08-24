@@ -14,14 +14,10 @@ ignoreErrors = ["error-remote-getjson"]
 theme = "hugo-paper"
 title = "Paper"
 
-[module]
-  [[module.imports]]
-  path = "github.com/nanxiaobei/hugo-paper"
-
 [params]
-   twitter = 'nanxiaobei'
-   github = 'nanxiaobei'
-   instagram = 'nan.xiaobei'
+  twitter = 'nanxiaobei'
+  github = 'nanxiaobei'
+  instagram = 'nan.xiaobei'
 # ------------------------------
 
 [menu]
