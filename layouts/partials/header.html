@@ -45,13 +45,13 @@
   </nav>
   {{ end }}<!---->
 
-  {{ with $.Scratch.Get "social-map" }}
+  {{ with $.Scratch.Get "social-list" }}
   <nav class="social">
-    {{ range $key, $val := . }}
+    {{ range . }}
     <a
-      class="{{ $key }}"
-      style="--url: url(./{{ printf `%s.svg` $key }})"
-      href="https://{{ $key }}.com/{{ $val }}"
+      class="{{ . }}"
+      style="--url: url(./{{ . }}.svg)"
+      href="https://{{ . }}.com/{{ site.Params.Get . }}"
       target="_blank"
     ></a>
     {{ end }}

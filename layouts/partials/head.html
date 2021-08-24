@@ -35,8 +35,8 @@
   <!-- Preload -->
   <link rel="preload" as="image" href="{{ `theme.png` | absURL }}" />
 
-  {{ range $key, $val := $.Scratch.Get "social-map" }}
-  <link rel="preload" as="image" href="{{ printf `%s.svg` $key | absURL }}" />
+  {{ range $.Scratch.Get "social-list" }}
+  <link rel="preload" as="image" href="{{ printf `%s.svg` . | absURL }}" />
   {{ end }}
 
   <!-- Favicon -->

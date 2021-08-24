@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 {{ $social := slice "twitter" "github" "instagram" }}<!---->
-{{ range $key, $val := site.Params }}<!---->
-{{ if in $social $key }}<!---->
-{{ $.Scratch.SetInMap "social-map" $key $val }}<!---->
+{{ range $social }}<!---->
+{{ if isset site.Params . }}<!---->
+{{ $.Scratch.Add "social-list" (slice .) }}<!---->
 {{ end }}<!---->
 {{ end }}<!---->
 
