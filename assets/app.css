@@ -15,11 +15,25 @@
   --narrow: 80rem;
   --side: calc((var(--wide) - var(--narrow)) / 2);
   --header: 8rem;
-  --footer: 8rem;
+  --footer: calc(8rem + var(--safe-bottom));
 
   --light: 255, 255, 255;
   --dark: 22, 22, 22;
   --hljs-bg: #111;
+
+  --safe-bottom: 0;
+}
+
+@supports (bottom: constant(safe-area-inset-bottom)) {
+  :root {
+    --safe-bottom: constant(safe-area-inset-bottom);
+  }
+}
+
+@supports (bottom: env(safe-area-inset-bottom)) {
+  :root {
+    --safe-bottom: env(safe-area-inset-bottom);
+  }
 }
 
 .dark {
@@ -634,6 +648,7 @@ img {
   justify-content: center;
   max-width: var(--narrow);
   height: var(--footer);
+  padding-bottom: var(--safe-bottom);
   margin-top: auto;
   font-size: 1.6rem;
   color: var(--lit);
