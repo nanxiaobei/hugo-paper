@@ -3,7 +3,7 @@
  * A simple, clean, flexible Hugo theme
  * https://github.com/nanxiaobei/hugo-paper
  * Designed by 南小北 (https://lee.so/)
- * Updated in 2021.8.20
+ * Updated in 2021.8.24
  */
 
 /* Theme
@@ -432,7 +432,7 @@ img {
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-  margin-block: 3rem;
+  margin-block: 2rem;
 }
 
 .post-content h1 {
@@ -459,6 +459,10 @@ img {
 
 .post-content h6 {
   font-size: 1.5rem;
+}
+
+.post-content img {
+  margin-inline: auto;
 }
 
 .post-content a {
