@@ -1,39 +1,30 @@
 <header class="header">
   {{ if .IsHome }}
   <h1 class="logo">
-    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-theme"></a>
+    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-dark"></a>
   </h1>
   {{ else }}
   <p class="logo">
-    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-theme"></a>
+    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-dark"></a>
   </p>
   {{ end }}
 
   <script>
-    let bodyClass = document.body.classList;
-    let buttonDark = document.querySelector('.btn-theme');
-    let schemeDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
 
-    let setDark = () => {
-      bodyClass.add('dark');
-      localStorage.setItem('dark', 'true');
-    };
-    let setLight = () => {
-      bodyClass.remove('dark');
-      localStorage.removeItem('dark');
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
     };
 
-    if (schemeDark.matches || localStorage.getItem('dark')) setDark();
-    requestAnimationFrame(() => {
-      bodyClass.remove('not-ready');
-    });
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
 
-    buttonDark.addEventListener('click', () => {
-      bodyClass.contains('dark') ? setLight() : setDark();
-    });
-    schemeDark.addEventListener('change', (event) => {
-      event.matches ? setDark() : setLight();
-    });
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
   </script>
 
   {{ $url := .RelPermalink }}<!---->

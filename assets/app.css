@@ -202,7 +202,7 @@ img {
   white-space: nowrap;
 }
 
-.btn-theme {
+.btn-dark {
   width: 3rem;
   margin-left: 2rem;
   cursor: pointer;
@@ -210,7 +210,7 @@ img {
   transition: background-position 0.4s steps(6);
 }
 
-.dark .btn-theme {
+.dark .btn-dark {
   background-position: right;
 }
 
