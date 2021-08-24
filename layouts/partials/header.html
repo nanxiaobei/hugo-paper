@@ -31,7 +31,7 @@
     buttonDark.addEventListener('click', () => {
       bodyClass.contains('dark') ? setLight() : setDark();
     });
-    schemeDark.addEventListener('change', event => {
+    schemeDark.addEventListener('change', (event) => {
       event.matches ? setDark() : setLight();
     });
   </script>
@@ -50,7 +50,7 @@
     {{ range $key, $val := . }}
     <a
       class="{{ $key }}"
-      style="--img: url(./{{ printf `%s.svg` $key }})"
+      style="--url: url(./{{ printf `%s.svg` $key }})"
       href="https://{{ $key }}.com/{{ $val }}"
       target="_blank"
     ></a>

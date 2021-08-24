@@ -221,7 +221,7 @@ img {
 .social a {
   width: 3rem;
   margin-left: 3rem;
-  background: var(--img) center center no-repeat;
+  background: var(--url) center center no-repeat;
 }
 
 .dark .social a {
