@@ -12,7 +12,6 @@ ignoreErrors = ["error-remote-getjson"]
 
 # ------------------------------
 theme = "hugo-paper"
-#themesDir = "../.."
 title = "Paper"
 
 [module]
@@ -23,7 +22,6 @@ title = "Paper"
    twitter = 'nanxiaobei'
    github = 'nanxiaobei'
    instagram = 'nan.xiaobei'
-
 # ------------------------------
 
 [menu]
