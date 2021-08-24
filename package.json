@@ -6,10 +6,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "server": "hugo server -Dw --minify --disableFastRender --themesDir ../.. --source exampleSite",
-    "open": "open http://localhost:1313/",
+    "server": "hugo server -Dw --minify --disableFastRender --themesDir=../.. --source=exampleSite --bind=0.0.0.0",
+    "open": "open http://0.0.0.0:1313/",
     "go": "cp exampleSite/go.default.mod exampleSite/go.mod",
-    "site": "hugo --gc --minify --config go.toml,config.toml --themesDir ../.. --source exampleSite",
+    "site": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
     "dev": "yarn open & yarn server",
     "build": "yarn go & yarn site"
   },
