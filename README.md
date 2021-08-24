@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Paper <sup><sup><sub>5.0</sub></sup></sup></h1>
 
-Demo → [nanxiaobei.github.io/hugo-paper](https://nanxiaobei.github.io/hugo-paper)
+Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
 <hr />
 
