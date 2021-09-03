@@ -2,12 +2,12 @@
 
 <article class="post-single">
   <header class="post-title">
-    <aside>
-      <time>{{ .Date.Format "January 2, 2006" }}</time>
+    <p>
+      <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ if or .Params.Author site.Author.name }}
       <span>{{ .Params.Author | default site.Author.name }}</span>
       {{ end }}
-    </aside>
+    </p>
     <h1>{{ .Title }}</h1>
   </header>
   <section class="post-content">{{ .Content }}</section>

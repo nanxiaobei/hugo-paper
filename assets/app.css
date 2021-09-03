@@ -276,7 +276,7 @@ img {
 }
 
 .main-title {
-  margin-bottom: calc(var(--y-gap) - 1rem);
+  margin-bottom: calc(var(--y-gap));
   font-size: 4rem;
   font-weight: 400;
   color: var(--air);
@@ -288,11 +288,12 @@ img {
 }
 
 .main-nav a {
+  font-size: 1.8rem;
   line-height: 5.5rem;
   color: var(--white);
   background: var(--black);
   border-radius: 0.5rem;
-  padding-inline: 2.5rem;
+  padding-inline: 3rem;
 }
 
 .main-nav .next {
@@ -320,7 +321,7 @@ img {
 
 .post-entry h2 {
   padding-right: 2rem;
-  font-size: 3rem;
+  font-size: 2.8rem;
 }
 
 .post-entry time {
@@ -337,20 +338,20 @@ img {
 /* Post single
  -------------------------------------------------- */
 .post-title {
-  display: flex;
   margin-bottom: calc(var(--y-gap) + 1rem);
 }
 
-.post-title aside {
+.post-title p {
   display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  width: var(--side);
-  padding-right: var(--gap);
-  margin-left: calc(var(--side) * -1);
-  font-size: 1.5rem;
-  color: var(--air);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  color: var(--lit);
   transform: translateY(0.4rem);
+}
+
+.post-title p span::before {
+  content: '·';
+  margin-inline: 0.5rem;
 }
 
 .post-title h1 {
@@ -379,10 +380,7 @@ img {
   display: flex;
   justify-content: space-between;
   margin-top: var(--y-gap);
-  margin-right: calc(var(--gap) * -1);
-  margin-left: calc(var(--gap) * -1);
-  color: var(--white);
-  background: var(--black);
+  background: rgba(var(--dark), 0.05);
   border-radius: 0.5rem;
 }
 
@@ -391,7 +389,7 @@ img {
   align-items: center;
   width: 50%;
   padding: var(--gap);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -451,24 +449,24 @@ img {
 
 .post-content h1 {
   margin-top: var(--y-gap);
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 
 .post-content h2 {
   margin-top: 6rem;
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .post-content h3 {
-  font-size: 3rem;
-}
-
-.post-content h4 {
   font-size: 2.5rem;
 }
 
+.post-content h4 {
+  font-size: 2.2rem;
+}
+
 .post-content h5 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .post-content h6 {
@@ -481,7 +479,7 @@ img {
 
 .post-content a {
   padding-bottom: 1px;
-  border-bottom: 1.5px solid var(--pro);
+  border-bottom: 1.5px dashed var(--air);
 }
 
 .post-content a code {
