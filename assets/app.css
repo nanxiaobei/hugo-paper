@@ -197,7 +197,7 @@ img {
   max-width: calc(100% - 2rem - 3rem);
   padding-bottom: 0.3rem;
   overflow: auto;
-  font-size: 3.5rem;
+  font-size: 3.4rem;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -207,7 +207,7 @@ img {
   margin-left: 2rem;
   cursor: pointer;
   background: url(./theme.png) left / auto 3rem no-repeat;
-  transition: background-position 0.4s steps(6);
+  transition: background-position 0.4s steps(5);
 }
 
 .dark .btn-dark {
@@ -276,10 +276,10 @@ img {
 }
 
 .main-title {
-  margin-bottom: calc(var(--y-gap));
-  font-size: 4rem;
+  margin-bottom: calc(var(--y-gap) + 1rem);
+  font-size: 3rem;
   font-weight: 400;
-  color: var(--air);
+  color: var(--lit);
 }
 
 .main-nav {
@@ -304,9 +304,6 @@ img {
  -------------------------------------------------- */
 .post-entry {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding-block: 2rem;
   transition: transform 0.1s;
 }
@@ -320,13 +317,13 @@ img {
 }
 
 .post-entry h2 {
-  padding-right: 2rem;
-  font-size: 2.8rem;
+  margin-bottom: 0.2rem;
+  font-size: 3rem;
 }
 
 .post-entry time {
   flex-shrink: 0;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   color: var(--air);
 }
 
@@ -343,15 +340,15 @@ img {
 
 .post-title p {
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: 1.6rem;
-  color: var(--lit);
+  color: var(--air);
   transform: translateY(0.4rem);
 }
 
 .post-title p span::before {
   content: '·';
-  margin-inline: 0.5rem;
+  margin-inline: 0.8rem;
 }
 
 .post-title h1 {
@@ -365,11 +362,12 @@ img {
 
 .post-tags a {
   display: inline-block;
-  padding-inline: 2rem;
+  font-weight: 500;
   line-height: 5rem;
   color: var(--lit);
-  border: 1px solid var(--fog);
+  background: rgba(var(--dark), 0.05);
   border-radius: 0.5rem;
+  padding-inline: 2rem;
 }
 
 .post-tags a + a {
@@ -389,7 +387,7 @@ img {
   align-items: center;
   width: 50%;
   padding: var(--gap);
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -478,8 +476,9 @@ img {
 }
 
 .post-content a {
-  padding-bottom: 1px;
-  border-bottom: 1.5px dashed var(--air);
+  padding-bottom: 0.2rem;
+  font-weight: 500;
+  border-bottom: 2px solid var(--pro);
 }
 
 .post-content a code {
@@ -628,9 +627,9 @@ img {
 
 .post-content hr {
   height: 1px;
-  margin-block: 8rem;
   background: var(--fog);
   border: 0;
+  margin-block: 12rem;
 }
 
 .post-content iframe {
