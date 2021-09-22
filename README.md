@@ -50,8 +50,12 @@ disqusShortname = 'YOUR_DISQUES_SHORTNAME'   # add disqus comments
   instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
 ```
 
-## Pitiless Ads
+## License
 
-If you use WeChat, please try "**FUTAKE**". It's a WeChat mini app for your inspiration moments. 🌈
+[MIT License](https://github.com/nanxiaobei/hugo-paper/blob/master/LICENSE) (c) [nanxiaobei](https://lee.so/)
 
-![FUTAKE](https://s3.jpg.cm/2021/04/22/TDQuS.png)
+## FUTAKE
+
+Try [**FUTAKE**](https://sotake.com/f) in WeChat. A mini app for your inspiration moments. 🌈
+
+![FUTAKE](https://s3.jpg.cm/2021/09/21/IFG3wi.png)
