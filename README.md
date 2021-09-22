@@ -41,7 +41,7 @@ For more information, please read the [official guide](https://gohugo.io/getting
 Available options to `config.toml`:
 
 ```toml
-disqusShortname = 'YOUR_DISQUES_SHORTNAME'   # add disqus comments
+disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
   disableHLJS = true                         # don't use highlight.js
