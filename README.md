@@ -15,8 +15,9 @@ A simple, clean, flexible Hugo theme.
 
 ## Overview
 
-![Desktop](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png)
-![Mobile](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_mobile.png)
+![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png)
+![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_dark.png)
+![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_mobile.png)
 
 Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 
