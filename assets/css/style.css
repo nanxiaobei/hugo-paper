@@ -184,7 +184,7 @@ main {
   column-gap: 42px;
   grid-template-columns: auto-fit 65% 35%;
   grid-template-rows: 10vh 8vh;
-  grid-template-areas: 
+  grid-template-areas:
     "content avatar"
     ". ."
 }
@@ -194,6 +194,11 @@ main {
 .page-header-avatar {
   margin: auto;
   grid-area: avatar;
+}
+.avatar-border {
+  border: 4px solid var(--tertiary);
+  padding: 5px;
+  border-radius: 50%;
 }
 .avatar {
   border-radius: 50%;

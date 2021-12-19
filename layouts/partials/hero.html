@@ -17,7 +17,9 @@
   {{- end }}
   {{- if .Site.Params.HomePage.avatar }}
   <div class="page-header-avatar">
-    <img class="avatar" src="{{ .Site.Params.HomePage.avatar | absURL }}" alt="avatar" height=185 width=185 />
+    <div class="avatar-border">
+      <img class="avatar" src="{{ .Site.Params.HomePage.avatar | absURL }}" alt="avatar" height=185 width=185 />
+    </div>
   </div>
   {{- end }}
 </section>
