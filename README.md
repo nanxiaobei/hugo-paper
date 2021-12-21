@@ -13,13 +13,17 @@ A simple, clean, flexible Hugo theme.
 
 ---
 
+## Links
+
+Product Hunt: [producthunt.com/posts/hugo-paper](https://www.producthunt.com/posts/hugo-paper)
+
+Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
+
 ## Overview
 
 ![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot.png)
 ![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_dark.png)
 ![](https://raw.githubusercontent.com/nanxiaobei/hugo-paper/master/images/screenshot_mobile.png)
-
-Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 
 ## Install
 
