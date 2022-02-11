@@ -20,6 +20,12 @@ title = "Paper"
   instagram = 'nan.xiaobei'
 # ------------------------------
 
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [menu]
 
   [[menu.main]]

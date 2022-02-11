@@ -27,3 +27,4 @@ _testmain.go
 /public
 /themes
 .DS_Store
+.hugo_build.lock
