@@ -50,14 +50,6 @@ body {
   word-break: break-word;
   background: var(--theme);
 }
-article,
-aside,
-figcaption,
-figure,
-hgroup,
-section {
-  display: block;
-}
 h1,
 h2,
 h3,
@@ -201,6 +193,7 @@ main {
   border-radius: 50%;
 }
 .avatar {
+  height: 23vh;
   border-radius: 50%;
 }
 .page-description {
@@ -211,7 +204,7 @@ main {
   .page-header {
     column-gap: 0;
     row-gap: 5vh;
-    grid-template-rows: 25vh 17vh;
+    grid-template-rows: 28vh 17vh;
     grid-template-areas:
       "avatar ."
       "content ."

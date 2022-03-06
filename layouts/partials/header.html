@@ -1,74 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Title -->
-    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
-    <!-- Meta -->
-    {{- if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
-    <meta name="author" content="{{ .Params.Author | default .Site.Author.name }}">
-    {{- else }}
-    <meta name="description" content="{{ .Site.Params.HomePage.description }}">
-    <meta name="author" content="{{ .Site.Author.name }}">
+<nav id="navbar" class="sticky">
+  <div class="nav-container">
+    <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
+    {{- if .Site.Menus.main }}
+    <ul class="menu">
+      {{- range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+      {{- end }}
+    </ul>
     {{- end }}
-
-    <!-- Plausible.io -->
-    {{- if and .Site.Params.Plausible (eq .Site.Params.Env "production") }}
-    {{ $url := urls.Parse .Site.BaseURL }}
-    <script async defer data-domain="{{ $url.Host }}" src="https://plausible.io/js/plausible.js"></script>
-    {{- end }}
-
-    <!-- Font (Serif or not) -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    {{ if eq .Site.Params.FontStyle "sans" }}
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'IBM Plex Sans', serif !important }</style>
-    {{ else if eq .Site.Params.FontStyle "serif" }}
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'IBM Plex Serif', serif !important }</style>
-    {{ end }}
-
-    <!-- Color Themes -->
-    {{ with .Site.Params.ColorTheme | default "gotham" }}
-    {{ $themeName := printf "css/color-themes/%s.css" . | safeHTMLAttr }}
-    {{ $theme     := resources.Get $themeName  }}
-    {{ $style     := resources.Get "css/style.css" }}
-    {{ $css       := slice $style $theme | resources.Concat "css/styles.css" }}
-    {{ $minicss   := $css | resources.Minify }}
-    <link href="{{ $minicss.Permalink }}" rel="stylesheet">
-    {{ end }}
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
-  
-    <!-- Generator -->
-    {{- hugo.Generator }}
-    <!-- RSS -->
-    {{ range .AlternativeOutputFormats -}}
-    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-    <!-- Misc -->
-    {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") }}
-    {{- template "_internal/opengraph.html" . }}
-    {{- end }}
-  </head>
-  <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-      <nav id="navbar" class="sticky">
-        <div class="nav-container">
-          <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
-          {{- if .Site.Menus.main }}
-          <ul class="menu">
-            {{- range .Site.Menus.main }}
-            <li>
-              <a href="{{ .URL }}">{{ .Name }}</a>
-            </li>
-            {{- end }}
-          </ul>
-          {{- end }}
-        </div>
-      </nav>
-    <main>
+  </div>
+</nav>
+<main>
