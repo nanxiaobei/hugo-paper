@@ -132,14 +132,20 @@ nav a {
   margin-left: auto;
   margin-right: auto;
 }
-.logo,
+.title,
 .menu {
   margin-left: var(--gap);
   margin-right: var(--gap);
 }
-.logo {
-  font-size: 24px;
+.title {
   font-weight: 700;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.pronouns {
+  font-size: 16px;
+  color: var(--tertiary);
 }
 .menu {
   display: flex;
@@ -171,11 +177,9 @@ main {
 .page-header {
   margin-top: 4vh;
   margin-bottom: 10vh;
-  padding-bottom: 5vh;
   display: grid;
   column-gap: 42px;
-  grid-template-columns: auto-fit 65% 35%;
-  grid-template-rows: 10vh 8vh;
+  grid-template-columns: auto-fit 70% 30%;
   grid-template-areas:
     "content avatar"
     ". ."
@@ -191,9 +195,10 @@ main {
   border: 4px solid var(--tertiary);
   padding: 5px;
   border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .avatar {
-  height: 23vh;
+  height: 17vh;
   border-radius: 50%;
 }
 .page-description {
@@ -203,8 +208,8 @@ main {
 @media (max-width: 720px) {
   .page-header {
     column-gap: 0;
-    row-gap: 5vh;
-    grid-template-rows: 28vh 17vh;
+    row-gap: 4vh;
+    grid-template-rows: 24vh 28vh;
     grid-template-areas:
       "avatar ."
       "content ."
@@ -241,6 +246,7 @@ main {
   background: var(--entry);
   transition: transform 0.1s;
   border: .1px solid var(--border);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .post-entry:active {
   transform: scale(0.96);

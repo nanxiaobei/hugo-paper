@@ -16,6 +16,8 @@ languages:
           url: /tags/music
           weight: 10
 
+paginate: 20
+
 params:
   env: production
 
@@ -32,6 +34,7 @@ params:
     title: Ollie Fox
     description: Welcome to my blog!
     author: Ollie Fox
+    pronouns: they/them
     avatar: memoji.png
 
     # Look in docs/icons.md for a full list of available social icons

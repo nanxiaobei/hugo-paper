@@ -1,6 +1,11 @@
 <nav id="navbar" class="sticky">
   <div class="nav-container">
-    <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
+    <div class="title">
+      <h2><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h2>
+      {{- if .Site.Params.HomePage.Pronouns }}
+      <p class="pronouns">({{ .Site.Params.HomePage.Pronouns }})</p>
+      {{- end }}
+    </div>
     {{- if .Site.Menus.main }}
     <ul class="menu">
       {{- range .Site.Menus.main }}
