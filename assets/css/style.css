@@ -119,6 +119,8 @@ img {
 /* --- Header --- */
 nav {
   width: 100%;
+  background-color: var(--entry);
+  border-bottom: .1px solid var(--border);
 }
 nav a {
   display: block;
@@ -146,6 +148,11 @@ nav a {
 .pronouns {
   font-size: 16px;
   color: var(--tertiary);
+}
+#post-progress {
+  height: 6px;
+  background: var(--tertiary);
+  border-radius: 0;
 }
 .menu {
   display: flex;
@@ -512,6 +519,4 @@ footer span {
 	position: sticky;
 	top: 0;
   z-index: 99;
-  background-color: var(--entry);
-  border-bottom: .1px solid var(--border);
 }

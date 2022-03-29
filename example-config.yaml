@@ -30,6 +30,8 @@ params:
   # Plausible.io is an open-source alternative to Google Analytics
   plausible: true
 
+  postProgress: true
+
   homePage:
     title: Ollie Fox
     description: Welcome to my blog!
