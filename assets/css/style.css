@@ -153,6 +153,7 @@ nav a {
   height: 6px;
   background: var(--tertiary);
   border-radius: 0;
+  transition: width .3s;
 }
 .menu {
   display: flex;
