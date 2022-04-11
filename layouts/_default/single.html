@@ -41,7 +41,8 @@
 
 {{- if .Site.Params.PostProgress }}
 {{ $progressSrc := resources.Get "js/progress.js"  }}
-<script src="{{ $progressSrc.Permalink }}"></script>
+{{ $src := $progressSrc | resources.Minify }}
+<script src="{{ $src.Permalink }}"></script>
 {{- end }}
 
 {{- partial "footer.html" . }}
