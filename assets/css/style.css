@@ -173,6 +173,18 @@ nav a {
   color: var(--tertiary-tint);
 }
 
+/* --- Shapes --- */
+.shape {
+  position: fixed;
+  left: -20vh;
+  top: -20vh;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  opacity: 0.2;
+  border: 15px solid var(--tertiary);
+}
+
 /* --- Main --- */
 main {
   position: relative;
@@ -183,14 +195,17 @@ main {
   padding: var(--gap);
 }
 .page-header {
+  background-color: var(--entry);
+  border-radius: 0 125px 125px 0;
+  padding: 22px;
   margin-top: 4vh;
   margin-bottom: 10vh;
   display: grid;
   column-gap: 42px;
   grid-template-columns: auto-fit 70% 30%;
-  grid-template-areas:
-    "content avatar"
-    ". ."
+  grid-template-areas: "content avatar" ". .";
+  border: 2px solid var(--border);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .page-header-content {
   grid-area: content;
@@ -198,16 +213,17 @@ main {
 .page-header-avatar {
   margin: auto;
   grid-area: avatar;
+  padding-right: 8px;
 }
 .avatar-border {
-  border: 4px solid var(--tertiary);
+  border: 5px solid var(--tertiary);
   padding: 5px;
-  border-radius: 50%;
+  border-radius: 100px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .avatar {
-  height: 17vh;
-  border-radius: 50%;
+  height: 220px;
+  border-radius: 100px;
 }
 .page-description {
   padding: 12px 0;
@@ -215,12 +231,22 @@ main {
 
 @media (max-width: 720px) {
   .page-header {
+    background-color: var(--theme);
+    border: none;
+    box-shadow: none;
     column-gap: 0;
-    row-gap: 4vh;
-    grid-template-rows: 24vh 28vh;
+    row-gap: 6vh;
+    padding: 0;
     grid-template-areas:
       "avatar ."
       "content ."
+  }
+  .page-header-content {
+    grid-area: content;
+    background-color: var(--entry);
+    padding: 50px 25px;
+    border: 2px solid var(--border);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 }
 
