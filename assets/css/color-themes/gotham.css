@@ -11,7 +11,7 @@
   --tertiary:       hsl(var(--tertiary-color), var(--tertiary-l)); /* #d26937 */
   --tertiary-tint:  hsl(var(--tertiary-color), calc(var(--tertiary-l) - 15%));
 
-  --quarternary: hsl(165, 60%, 41%); /* #2aa889 */
-  --content:     hsl(191, 33%, 51%); /* #599cab */
+  --quarternary:       var(--primary); /* #2aa889 */
+  --content:         var(--secondary); /* #599cab */
   --border:      hsl(230,  6%, 38%); /* #5b5d67 */
 }

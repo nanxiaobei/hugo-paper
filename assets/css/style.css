@@ -195,8 +195,7 @@ main {
   padding: var(--gap);
 }
 .page-header {
-  background-color: var(--entry);
-  border-radius: 0 125px 125px 0;
+  border-radius: 5px 125px 125px 5px;
   padding: 22px;
   margin-top: 4vh;
   margin-bottom: 10vh;
@@ -205,7 +204,6 @@ main {
   grid-template-columns: auto-fit 70% 30%;
   grid-template-areas: "content avatar" ". .";
   border: 2px solid var(--border);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .page-header-content {
   grid-area: content;
@@ -243,10 +241,9 @@ main {
   }
   .page-header-content {
     grid-area: content;
-    background-color: var(--entry);
     padding: 50px 25px;
     border: 2px solid var(--border);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
   }
 }
 
