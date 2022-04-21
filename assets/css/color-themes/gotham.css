@@ -13,5 +13,5 @@
 
   --quarternary:       var(--primary); /* #2aa889 */
   --content:         var(--secondary); /* #599cab */
-  --border:      hsl(230,  6%, 38%); /* #5b5d67 */
+  --border:      hsl(230,  6%, 30%); /* #5b5d67 */
 }
