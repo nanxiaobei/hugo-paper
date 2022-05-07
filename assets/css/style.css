@@ -21,15 +21,20 @@
   display: flex;
   gap: 8px;
 }
-
 #icon {
-  height: 32px;
-  width: 32px;
-  color: var(--tertiary);
+  height: 48px;
+  width: 48px;
+  padding: 5px;
+  border: 3px solid black;
+  background: var(--tertiary);
+  color: var(--entry);
+  -webkit-box-shadow: -4px 5px 0px 0px black;
+  -moz-box-shadow: -4px 5px 0px 0px black;
+  box-shadow: -4px 5px 0px 0px black;
 }
 
 #icon:hover {
-  color: var(--tertiary-tint);
+  background: var(--tertiary-tint);
 }
 
 /* --- Reset --- */
@@ -58,7 +63,6 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0;
-  color: var(--primary);
   line-height: 1.2;
 }
 h1 {
@@ -196,7 +200,8 @@ main {
 }
 .page-header {
   border-radius: 0px 125px 125px 0px;
-  background: var(--entry);
+  color: var(--entry);
+  background: var(--primary);
   padding: 22px;
   margin-top: 4vh;
   margin-bottom: 10vh;
@@ -204,10 +209,10 @@ main {
   column-gap: 42px;
   grid-template-columns: auto-fit 70% 30%;
   grid-template-areas: "content avatar" ". .";
-  border: 5px solid black;
-  -webkit-box-shadow: -10px 15px 0px 0px black;
-  -moz-box-shadow: -10px 15px 0px 0px black;
-  box-shadow: -10px 15px 0px 0px black;
+  border: 2px solid black;
+  -webkit-box-shadow: -8px 12px 0px 0px black;
+  -moz-box-shadow: -8px 12px 0px 0px black;
+  box-shadow: -8px 12px 0px 0px black;
 }
 .page-header-content {
   grid-area: content;
@@ -218,10 +223,8 @@ main {
   padding-right: 8px;
 }
 .avatar-border {
-  border: 5px solid var(--tertiary);
-  padding: 5px;
+  border: 4px solid black;
   border-radius: 100px;
-  /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
 }
 .avatar {
   height: 220px;
@@ -598,7 +601,7 @@ footer span {
   flex-direction: column;
   background: var(--entry);
   padding: 8px 8px 32px 8px;
-  margin: 28px 0;
+  margin: 0 auto 42px auto;
   max-width: fit-content;
   border: 5px solid black;
   -webkit-box-shadow: -10px 15px 0px 0px black;
