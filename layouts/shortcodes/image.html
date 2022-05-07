@@ -1,7 +1,9 @@
-<img 
-  class="oso-image"
-  src="{{ .Get "src" }}" 
-  alt="{{ .Get "alt" }}"
-  height="{{ .Get "height" }}"
-  width="{{ .Get "width" }}" 
->
+<div class="oso-image">
+  <img 
+    src="{{ .Get "src" }}" 
+    alt="{{ .Get "alt" }}"
+    height="{{ .Get "height" }}"
+    width="{{ .Get "width" }}" 
+  >
+  <i class="oso-caption">{{ .Get "caption" }}</i>
+</div>
