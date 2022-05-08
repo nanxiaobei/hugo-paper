@@ -249,6 +249,7 @@ main {
   .page-header-content {
     grid-area: content;
     padding: 50px 25px;
+    background: var(--primary);
     border: 5px solid black;
     -webkit-box-shadow: -10px 15px 0px 0px black;
     -moz-box-shadow: -10px 15px 0px 0px black;
