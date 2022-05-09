@@ -5,12 +5,13 @@
 
 
 <article class="post-single">
-  <header class="post-header">
+  <header class="post-header box-shadow-md border-blk-sm">
     <h1 class="post-title">{{ .Title }}</h1>
     <div class="post-meta">
       {{- if or .Params.Author .Site.Author.name }}
-      {{- .Params.Author | default .Site.Author.name }} · {{ end }}
-      {{- .Date.Format "January 2, 2006" -}}
+      <span class="post-author box-shadow-sm border-blk-sm">{{- .Params.Author | default .Site.Author.name }}</span>
+      {{ end }}
+      <span class="post-date box-shadow-sm border-blk-sm">{{- .Date.Format "January 2, 2006" -}}</span>
     </div>
   </header>
   <div class="post-content">{{ .Content }}</div>

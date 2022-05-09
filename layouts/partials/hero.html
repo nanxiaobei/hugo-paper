@@ -1,15 +1,17 @@
 {{- if .Title }}
-<section class="page-header">
+<section class="page-header box-shadow-md border-blk-sm">
   <div class="page-header-content">
-    <h1>{{ .Site.Params.HomePage.Title }}</h1>
+    <h1 class="page-title">{{ .Site.Params.HomePage.Title }}</h1>
     {{- if (and .Site.Params.HomePage.description .IsHome) }}
     <div class="page-description">
       {{ .Site.Params.HomePage.description }}
     </div>
     <div class="social-icons">
       {{- range .Site.Params.HomePage.socialIcons }}
-      <a href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
+      <a class="social-icon" href="{{ trim .url " " }}" target="_blank" rel="noopener noreferrer me" title="{{ .name | humanize }}">
+        <svg id="icon" class="box-shadow-sm border-blk-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" >
           {{ partial "icons.html" . }}
+        </svg>
       </a>
       {{- end }}
     </div>
@@ -17,10 +19,16 @@
   {{- end }}
   {{- if .Site.Params.HomePage.avatar }}
   <div class="page-header-avatar">
-    <div class="avatar-border">
+    <div class="avatar-border box-shadow-sm border-blk-md">
       <img class="avatar" src="{{ .Site.Params.HomePage.avatar | absURL }}" alt="avatar" />
     </div>
   </div>
   {{- end }}
 </section>
+{{- if .Site.Params.HomePage.newsletterNetlify }}
+<form name="newsletter" method="POST" data-netlify="true" class="newsletter">
+  <input type="email" name="email" class="box-shadow-sm border-blk-sm" placeholder="Enter your email if you want to know when I post" />
+  <button type="submit" class="box-shadow-sm border-blk-sm">Subscribe</button>
+</form>
+{{- end}}
 {{ end }}
