@@ -242,9 +242,6 @@ main {
       "avatar ."
       "content .";
   }
-  .avatar-border {
-    max-width: 80%;
-  }
 }
 
 .newsletter {
