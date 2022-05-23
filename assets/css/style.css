@@ -5,7 +5,7 @@
  */
 
 :root {
-  --gap: 24px;
+  --gap: 28px;
   --content-gap: 40px;
   --nav-width: 1024px;
   --main-width: 640px;
@@ -31,8 +31,8 @@
   border: 5px solid black;;
 }
 
-.list {
-  background: var(--theme);
+.pattern {
+  fill: var(--tertiary);
 }
 
 .social-icons {
@@ -67,7 +67,8 @@ body {
   font-size: 18px;
   line-height: 1.8;
   word-break: break-word;
-  background: var(--theme);
+  background: var(--content);
+  background-color: var(--theme);
 }
 h1,
 h2,
@@ -138,11 +139,19 @@ img {
 nav {
   width: 100%;
   background-color: var(--entry);
-  border-bottom: .1px solid var(--border);
 }
 nav a {
   display: block;
   line-height: var(--header-height);
+}
+#header {
+  padding: 0 8px;
+}
+.content-hider {
+  width: 100%;
+  height: 8px;
+  background-color: var(--entry);
+  top: 0;
 }
 .nav-container {
   display: flex;
@@ -204,12 +213,16 @@ nav a {
 }
 
 /* --- Main --- */
-main {
+.content {
   position: relative;
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   max-width: calc(var(--main-width) + var(--gap) * 2);
   margin-left: auto;
   margin-right: auto;
+  padding: 0 8px;
+  background: var(--entry);
+}
+main {
   padding: var(--gap);
 }
 .page-header {

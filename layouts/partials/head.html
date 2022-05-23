@@ -57,3 +57,12 @@
     {{- end }}
   </head>
   <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
+    {{ $pattern := resources.Get "css/background-patterns/graph-paper.svg"}}
+    <style>
+      body {
+        background-image: url("{{ $pattern.Permalink }}");
+        background-repeat: repeat, repeat;
+      }
+    </style>
+    <!-- Background shapes -->
+    {{- partial "shapes.html" . }}

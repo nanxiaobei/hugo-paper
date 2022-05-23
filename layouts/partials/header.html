@@ -1,22 +1,24 @@
-<div id="header" class="sticky">
-  <nav>
-    <div class="nav-container">
-      <div class="title">
-        <h2><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h2>
-        {{- if .Site.Params.HomePage.Pronouns }}
-        <p class="pronouns">({{ .Site.Params.HomePage.Pronouns }})</p>
+<div class="content">
+  <div id="header" class="sticky">
+    <div class="content-hider"></div>
+    <nav class="border-blk-sm box-shadow-sm">
+      <div class="nav-container">
+        <div class="title">
+          <h2><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h2>
+          {{- if .Site.Params.HomePage.Pronouns }}
+          <p class="pronouns">({{ .Site.Params.HomePage.Pronouns }})</p>
+          {{- end }}
+        </div>
+        {{- if .Site.Menus.main }}
+        <ul class="menu">
+          {{- range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+          </li>
+          {{- end }}
+        </ul>
         {{- end }}
       </div>
-      {{- if .Site.Menus.main }}
-      <ul class="menu">
-        {{- range .Site.Menus.main }}
-        <li>
-          <a href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{- end }}
-      </ul>
-      {{- end }}
-    </div>
-  </nav>
-</div>
-<main id="main">
+    </nav>
+  </div>
+  <main id="main">
