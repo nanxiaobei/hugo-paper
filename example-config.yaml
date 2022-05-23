@@ -21,15 +21,17 @@ paginate: 20
 params:
   env: production
 
-  # Available themes: gotham, toothpaste, dracula, gandalf, red-graphite
+  # Available themes: gotham, toothpaste, dracula, gandalf, red-graphite, duotone-snow
   colorTheme: gotham
 
   # Font family: IBM Plex, available styles: serif, sans
   fontStyle: sans 
 
   # Plausible.io is an open-source alternative to Google Analytics
+  # Adds JS
   plausible: true
 
+  # Adds JS
   postProgress: true
 
   homePage:

@@ -12,6 +12,6 @@
   --tertiary-tint:  hsl(var(--tertiary-color), calc(var(--tertiary-l) - 15%));
 
   --quarternary:   hsl(229, 18%, 82%); /* #c8cbd9 */
-  --content:       hsl(213, 13%, 33%); /* #48525e */
+  --content:       black;
   --border:        hsl(229, 18%, 70%); /* #c8cbd9 */
 }
