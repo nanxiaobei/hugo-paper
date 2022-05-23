@@ -25,7 +25,12 @@ params:
   colorTheme: gotham
 
   # Font family: IBM Plex, available styles: serif, sans
-  fontStyle: sans 
+  fontStyle: sans
+
+
+  # Background patterns: graph-paper, polka-dots, rain, texture, wiggle
+  # Patterns available via heropatterns.com
+  backgroundPattern: rain
 
   # Plausible.io is an open-source alternative to Google Analytics
   # Adds JS

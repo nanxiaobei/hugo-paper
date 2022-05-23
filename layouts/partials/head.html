@@ -57,12 +57,13 @@
     {{- end }}
   </head>
   <body class="{{ if eq .Kind `page` }}single{{ else }}list{{ if .IsHome }} home{{ end }}{{ end }}">
-    {{ $pattern := resources.Get "css/background-patterns/graph-paper.svg"}}
+    {{- with .Site.Params.BackgroundPatterns | default "polka-dots" }}
+    {{ $patternName := printf "css/background-patterns/%s.svg" . | safeHTMLAttr }}
+    {{ $pattern     := resources.Get $patternName }}
     <style>
       body {
         background-image: url("{{ $pattern.Permalink }}");
         background-repeat: repeat, repeat;
       }
     </style>
-    <!-- Background shapes -->
-    {{- partial "shapes.html" . }}
+    {{- end }}

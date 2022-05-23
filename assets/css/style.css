@@ -139,6 +139,7 @@ img {
 nav {
   width: 100%;
   background-color: var(--entry);
+  border: 1px solid black;
 }
 nav a {
   display: block;
@@ -220,7 +221,7 @@ nav a {
   margin-left: auto;
   margin-right: auto;
   padding: 0 8px;
-  background: var(--entry);
+  background: var(--theme);
 }
 main {
   padding: var(--gap);
