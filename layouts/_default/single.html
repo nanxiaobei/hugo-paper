@@ -3,7 +3,9 @@
 <article class="post-single">
   <header class="post-title">
     <p>
+      {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
+      {{ end }}
       {{ if or .Params.Author site.Author.name }}
       <span>{{ .Params.Author | default site.Author.name }}</span>
       {{ end }}
