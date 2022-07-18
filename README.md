@@ -7,7 +7,7 @@ Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
 A simple, clean, flexible Hugo theme.
 
-⚡️ Fast | 🦋 Fluent | 🪀 Smooth
+⚡️ Fast | 📸 Fluent | 🫙 Smooth
 
 </div>
 
@@ -54,8 +54,8 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
     github = 'YOUR_GITHUB_ID'                  # github.com/YOUR_GITHUB_ID
     instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
 
-    # Display profile on home page
-    avatar = 'IMAGE_URL'      # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
+    # display profile on home page
+    avatar = 'GRAVATAR_EMAIL'      # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
     name = 'YOUR_NAME'
     bio = 'YOUR_BIO'
 ```
