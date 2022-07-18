@@ -33,7 +33,11 @@
   {{ end }}
 
   <!-- Preload -->
-  <link rel="preload" as="image" href="{{ `theme.svg` | absURL }}" />
+  <link
+    rel="preload"
+    as="image"
+    href="{{ `theme.{{ if site.Params.monoDarkIcon }}svg{{ else }}png{{ end }}` | absURL }}"
+  />
 
   {{ $avatar_url := $.Scratch.Get "avatar_url" }}
   <!---->

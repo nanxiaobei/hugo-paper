@@ -4,7 +4,7 @@
       >{{ site.Title }}</a
     >
     <a
-      class="btn-dark ml-7 h-[1.4rem] w-[1.4rem] shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]{{ else }}[background:url(./theme.png)_left_/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]{{ end }}"
     ></a>
   </div>
 
@@ -53,7 +53,7 @@
   >
     {{ $url := .RelPermalink }}<!---->
     {{ with site.Menus.main }}
-    <nav class="lg:ml-14 lg:flex lg:flex-row lg:items-center lg:space-x-7">
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
       {{ range . }}
       <a
         class="block font-medium lg:font-normal text-center leading-[5rem] text-3xl lg:text-base {{ if eq .URL $url }}active{{ end }}"
@@ -66,7 +66,7 @@
 
     {{ with $.Scratch.Get "social_list" }}
     <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-14 lg:items-center lg:space-x-7"
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
     >
       {{ range . }}<!---->
       <a
