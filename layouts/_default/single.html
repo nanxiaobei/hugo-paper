@@ -1,24 +1,33 @@
 {{ define "main" }}
 
-<article class="post-single">
-  <header class="post-title">
-    <p>
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2">{{ .Title }}</h1>
+
+    {{ if ne .Type "page" }}
+    <div class="text-[0.9em] text-zinc-500">
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
-      {{ end }}
+      {{ end }}<!---->
       {{ if or .Params.Author site.Author.name }}
+      <span class="mx-1">&middot;</span>
       <span>{{ .Params.Author | default site.Author.name }}</span>
       {{ end }}
-    </p>
-    <h1>{{ .Title }}</h1>
+    </div>
+    {{ end }}
   </header>
-  <section class="post-content">{{ .Content }}</section>
+
+  <section>{{ .Content }}</section>
 
   <!-- Post Tags -->
   {{ if .Params.tags }}
-  <footer class="post-tags">
+  <footer class="mt-12 flex flex-wrap">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
-    <a href="{{ $href }}">{{ . }}</a>
+    <a
+      class="mr-1.5 mb-1.5 rounded-lg bg-zinc-100 px-4 py-2 no-underline dark:bg-zinc-800"
+      href="{{ $href }}"
+      >{{ . }}</a
+    >
     {{ end }}
   </footer>
   {{ end }}
@@ -26,21 +35,28 @@
   <!-- Post Nav -->
   {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
   {{ if and (gt (len $pages) 1) (in $pages . ) }}
-  <nav class="post-nav">
+  <nav class="mt-16 flex rounded-lg bg-zinc-100 text-lg dark:bg-zinc-800">
     {{ with $pages.Next . }}
-    <a class="prev" href="{{ .Permalink }}"><span>←</span><span>{{ .Name }}</span></a>
-    {{ end }} {{ with $pages.Prev . }}
-    <a class="next" href="{{ .Permalink }}"><span>{{ .Name }}</span><span>→</span></a>
+    <a class="flex w-1/2 items-center p-6 pr-3 font-bold no-underline" href="{{ .Permalink }}"
+      ><span class="mr-1.5">←</span><span>{{ .Name }}</span></a
+    >
+    {{ end }}<!---->
+    {{ with $pages.Prev . }}
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end p-6 pl-3 font-bold no-underline"
+      href="{{ .Permalink }}"
+      ><span>{{ .Name }}</span><span class="ml-1.5">→</span></a
+    >
     {{ end }}
   </nav>
   {{ end }}
 
   <!-- Disqus -->
   {{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
-  <div id="disqus_thread" class="post-comments"></div>
+  <div id="disqus_thread"></div>
   <script>
-    var disqusShortname = '{{ site.DisqusShortname }}';
-    var script = document.createElement('script');
+    const disqusShortname = '{{ site.DisqusShortname }}';
+    const script = document.createElement('script');
     script.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
     script.setAttribute('data-timestamp', +new Date());
     document.head.appendChild(script);

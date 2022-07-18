@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Paper <sup><sup><sub>5.1</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
@@ -49,10 +49,15 @@ Available options to `config.toml`:
 disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
-  disableHLJS = true                         # don't use highlight.js
-  twitter = 'YOUR_TWITTER_ID'                # twitter.com/YOUR_TWITTER_ID
-  github = 'YOUR_GITHUB_ID'                  # github.com/YOUR_GITHUB_ID
-  instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
+    disableHLJS = true                         # disable loading highlight.js
+    twitter = 'YOUR_TWITTER_ID'                # twitter.com/YOUR_TWITTER_ID
+    github = 'YOUR_GITHUB_ID'                  # github.com/YOUR_GITHUB_ID
+    instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
+
+    # Display profile on home page
+    avatar = 'IMAGE_URL'      # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
+    name = 'YOUR_NAME'
+    bio = 'YOUR_BIO'
 ```
 
 ## License

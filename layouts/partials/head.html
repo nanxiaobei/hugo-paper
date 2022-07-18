@@ -7,6 +7,7 @@
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
 
   <!-- Meta -->
+  <meta name="theme-color" />
   {{ if eq .Kind "page" }}
   <meta name="description" content="{{ .Summary }}" />
   <meta name="author" content="{{ .Params.Author | default site.Author.name }}" />
@@ -16,15 +17,14 @@
   {{ end }}
 
   <!-- Styles & Scripts -->
-  {{ $app_css := resources.Get "app.css" }}
+  {{ $main_css := resources.Get "main.css" }}
   <!---->
   {{ $custom_css := resources.Get "custom.css" }}
   <!---->
-  {{ $css := slice $app_css $custom_css | resources.Concat "app.css" | minify }}
+  {{ $css := slice $main_css $custom_css | resources.Concat "main.css" | minify }}
   <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
 
   {{ if and .IsPage (not site.Params.disableHLJS) }}
-  <link rel="preload stylesheet" as="style" href="{{ `an-old-hope.min.css` | absURL }}" />
   <script
     defer
     src="{{ `highlight.min.js` | absURL }}"
@@ -33,9 +33,16 @@
   {{ end }}
 
   <!-- Preload -->
-  <link rel="preload" as="image" href="{{ `theme.png` | absURL }}" />
+  <link rel="preload" as="image" href="{{ `theme.svg` | absURL }}" />
 
-  {{ range $.Scratch.Get "social-list" }}
+  {{ $avatar_url := $.Scratch.Get "avatar_url" }}
+  <!---->
+  {{ if $avatar_url }}
+  <link rel="preload" as="image" href="{{ $avatar_url }}" />
+  {{ end }}
+  <!---->
+
+  {{ range $.Scratch.Get "social_list" }}
   <link rel="preload" as="image" href="{{ printf `%s.svg` . | absURL }}" />
   {{ end }}
 

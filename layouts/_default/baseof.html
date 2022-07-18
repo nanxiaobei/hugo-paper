@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 
-{{ $.Scratch.Delete "social-list" }}<!---->
-{{ $social := slice "twitter" "github" "instagram" }}<!---->
-{{ range $social }}<!---->
+{{ $.Scratch.Delete "social_list" }}<!---->
+{{ $.Scratch.Delete "avatar_url" }}<!---->
+
+<!-- social_list -->
+{{ $socialParams := slice "twitter" "github" "instagram" "rss" }}<!---->
+{{ range $socialParams }}<!---->
 {{ if isset site.Params . }}<!---->
-{{ $.Scratch.Add "social-list" (slice .) }}<!---->
+{{ $.Scratch.Add "social_list" (slice .) }}<!---->
 {{ end }}<!---->
 {{ end }}<!---->
 
-<html lang="{{ site.LanguageCode }}">
+<!-- avatar_url -->
+{{ if site.Params.avatar }}<!---->
+{{ if in site.Params.avatar "http" }}<!---->
+{{ $.Scratch.Set "avatar_url" site.Params.avatar }}<!---->
+{{ else }}<!---->
+{{ $md5 := (md5 site.Params.avatar) }}<!---->
+{{ $url := print "https://www.gravatar.com/avatar/" $md5 "?s=160&d=identicon" }}<!---->
+{{ $.Scratch.Set "avatar_url" $url }}<!---->
+{{ end }}<!---->
+{{ end }}<!---->
+
+<html class="not-ready text-sm lg:text-base" lang="{{ site.LanguageCode }}">
   {{ partial "head.html" . }}
-
-  <body class="not-ready" data-menu="{{ isset site.Menus `main` }}">
+  <body class="text-black duration-200 ease-out dark:text-white">
     {{ partial "header.html" . }}
 
-    <main class="main">{{ block "main" . }}{{ end }}</main>
+    <main
+      class="prose prose-zinc relative mx-auto min-h-[calc(100%-10rem)] max-w-3xl px-8 pt-16 pb-40 dark:prose-invert"
+    >
+      {{ block "main" . }}{{ end }}
+    </main>
 
     {{ partial "footer.html" . }}
   </body>

@@ -1,51 +1,82 @@
-<header class="header">
-  {{ if .IsHome }}
-  <h1 class="logo">
-    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-dark"></a>
-  </h1>
-  {{ else }}
-  <p class="logo">
-    <a class="site-name" href="{{ `` | absURL }}">{{ site.Title }}</a><a class="btn-dark"></a>
-  </p>
-  {{ end }}
+<header class="mx-auto flex h-[5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a class="-translate-x-[1px] -translate-y-0.5 text-3xl font-bold" href="{{ `` | absURL }}"
+      >{{ site.Title }}</a
+    >
+    <a
+      class="btn-dark ml-7 h-[1.4rem] w-[1.4rem] shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+    ></a>
+  </div>
+
+  <a
+    class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+  ></a>
 
   <script>
-    let bodyClx = document.body.classList;
-    let btnDark = document.querySelector('.btn-dark');
-    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
-    let darkVal = localStorage.getItem('dark');
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const htmlClass = document.documentElement.classList;
+    requestAnimationFrame(() => {
+      htmlClass.remove('not-ready');
+    });
 
-    let setDark = (isDark) => {
-      bodyClx[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    const setDark = (newDark) => {
+      metaTheme.setAttribute('content', newDark ? '#000' : '#FCFAF9');
+      htmlClass[newDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', newDark);
     };
 
-    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
-    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+    // init
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    const darkVal = localStorage.getItem('dark');
+    setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
 
-    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
-    sysDark.addEventListener('change', (event) => setDark(event.matches));
+    // listen system
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    // manual switch
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+
+    // mobile menu
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
   </script>
 
-  {{ $url := .RelPermalink }}<!---->
-  {{ with site.Menus.main }}
-  <nav class="menu">
-    {{ range . }}
-    <a class="{{ if eq .URL $url }}active{{ end }}" href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-  </nav>
-  {{ end }}<!---->
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    {{ $url := .RelPermalink }}<!---->
+    {{ with site.Menus.main }}
+    <nav class="lg:ml-14 lg:flex lg:flex-row lg:items-center lg:space-x-7">
+      {{ range . }}
+      <a
+        class="block font-medium lg:font-normal text-center leading-[5rem] text-3xl lg:text-base {{ if eq .URL $url }}active{{ end }}"
+        href="{{ .URL }}"
+        >{{ .Name }}</a
+      >
+      {{ end }}
+    </nav>
+    {{ end }}<!---->
 
-  {{ with $.Scratch.Get "social-list" }}
-  <nav class="social">
-    {{ range . }}
-    <a
-      class="{{ . }}"
-      style="--url: url(./{{ . }}.svg)"
-      href="https://{{ . }}.com/{{ site.Params.Get . }}"
-      target="_blank"
-    ></a>
-    {{ end }}
-  </nav>
-  {{ end }}
+    {{ with $.Scratch.Get "social_list" }}
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-14 lg:items-center lg:space-x-7"
+    >
+      {{ range . }}<!---->
+      <a
+        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./{{ . }}.svg)"
+        href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else }} https://{{ . }}.com/{{ site.Params.Get . }} {{ end }}"
+        target="_blank"
+      ></a>
+      {{ end }}<!---->
+    </nav>
+    {{ end }}<!---->
+  </div>
 </header>

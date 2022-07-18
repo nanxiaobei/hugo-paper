@@ -2,31 +2,57 @@
 
 <!-- Main Title -->
 {{ if .Title }}
-<h1 class="main-title">{{ .Title }}</h1>
+<h1 class="mb-20">{{ .Title }}</h1>
 {{ end }}
 
 <!-- $pages -->
-{{ $pages := union .RegularPages .Sections }}
-<!---->{{ if .IsHome }} {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $pages := union .RegularPages .Sections }}<!---->
+{{ if .IsHome }}<!---->
+{{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
 {{ end }}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
-<article class="post-entry">
-  <h2>{{ .Title }}</h2>
-  <time>{{ .Date | time.Format ":date_medium" }}</time>
-  <a href="{{ .Permalink }}"></a>
+{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}<!---->
+
+<!-- avatar -->
+{{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}<!---->
+
+{{ $avatar_url := $.Scratch.Get `avatar_url` }}<!---->
+{{ if or $avatar_url site.Params.name }}
+<div class="mb-20 flex">
+  {{ if $avatar_url }}
+  <img
+    class="my-0 mr-5 !h-20 !w-20 rounded-full bg-zinc-100 dark:border dark:border-zinc-700"
+    src="{{ $avatar_url }}"
+    alt="avatar"
+  />
+  {{ end }}<!---->
+  {{ if site.Params.name }}
+  <div>
+    <h1 class="mt-1 mb-2.5 text-3xl font-bold">{{ site.Params.name }}</h1>
+    <div>{{ site.Params.bio | default (print "Personal blog by " site.Params.name) }}</div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}<!---->
+
+{{ end }}
+
+<article class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+  <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
+  <time class="text-sm text-zinc-500">{{ .Date | time.Format ":date_medium" }}</time>
+  <a class="absolute inset-0" href="{{ .Permalink }}"></a>
 </article>
 {{ end }}
 
 <!-- Main Nav -->
 {{ if gt $paginator.TotalPages 1 }}
-<nav class="main-nav">
+<nav class="mt-20 flex">
   {{ if $paginator.HasPrev }}
-  <a class="prev" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+  <a class="btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
   {{ end }}<!---->
   {{ if $paginator.HasNext }}
-  <a class="next" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+  <a class="btn ml-auto" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
   {{ end }}
 </nav>
 {{ end }}<!---->

@@ -18,6 +18,12 @@ title = "Paper"
   twitter = 'nanxiaobei'
   github = 'nanxiaobei'
   instagram = 'nan.xiaobei'
+  rss = true
+
+  avatar = 'nanxiaobei@gmail.com'
+  name = 'Lee'
+  bio = 'Discover fresh context'
+
 # ------------------------------
 
 # needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
@@ -32,6 +38,11 @@ title = "Paper"
     identifier = "about"
     name = "About"
     url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
     weight = 10
 
 [taxonomies]
