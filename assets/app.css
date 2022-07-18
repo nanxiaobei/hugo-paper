@@ -15,12 +15,12 @@ body {
   height: 100%;
 }
 
-html {
+body {
   -webkit-tap-highlight-color: transparent;
   background: #fffefc;
 }
 
-html.dark {
+.dark body {
   background: #000;
 }
 
