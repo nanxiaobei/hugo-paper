@@ -1,20 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@tailwindcss/typography': ^0.5.2
+  '@tailwindcss/typography': ^0.5.4
   prettier: ^2.7.1
-  prettier-plugin-tailwindcss: ^0.1.11
+  prettier-plugin-tailwindcss: ^0.1.12
   stylelint: ^14.9.1
   stylelint-config-one: ^2.2.0
-  tailwindcss: ^3.1.4
+  tailwindcss: ^3.1.6
 
 dependencies:
-  '@tailwindcss/typography': 0.5.2_tailwindcss@3.1.4
+  '@tailwindcss/typography': 0.5.4_tailwindcss@3.1.6
   prettier: 2.7.1
-  prettier-plugin-tailwindcss: 0.1.11_prettier@2.7.1
+  prettier-plugin-tailwindcss: 0.1.12_prettier@2.7.1
   stylelint: 14.9.1
   stylelint-config-one: 2.2.0_stylelint@14.9.1
-  tailwindcss: 3.1.4
+  tailwindcss: 3.1.6
 
 packages:
 
@@ -39,11 +39,11 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /@csstools/selector-specificity/2.0.1_444rcjjorr3kpoqtvoodsr46pu:
-    resolution: {integrity: sha512-aG20vknL4/YjQF9BSV7ts4EWm/yrjagAN7OWBNmlbEOUiu0llj4OGrFoOKK3g2vey4/p2omKCoHrWtPxSwV3HA==}
+  /@csstools/selector-specificity/2.0.2_444rcjjorr3kpoqtvoodsr46pu:
+    resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
     engines: {node: ^12 || ^14 || >=16}
     peerDependencies:
-      postcss: ^8.3
+      postcss: ^8.2
       postcss-selector-parser: ^6.0.10
     dependencies:
       postcss: 8.4.14
@@ -71,15 +71,15 @@ packages:
       fastq: 1.13.0
     dev: false
 
-  /@tailwindcss/typography/0.5.2_tailwindcss@3.1.4:
-    resolution: {integrity: sha512-coq8DBABRPFcVhVIk6IbKyyHUt7YTEC/C992tatFB+yEx5WGBQrCgsSFjxHUr8AWXphWckadVJbominEduYBqw==}
+  /@tailwindcss/typography/0.5.4_tailwindcss@3.1.6:
+    resolution: {integrity: sha512-QEdg40EmGvE7kKoDei8zr5sf4D1pIayHj4R31bH3lX8x2BtTiR+jNejYPOkhbmy3DXgkMF9jC8xqNiGFAuL9Sg==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || insiders'
+      tailwindcss: '>=3.0.0 || insiders'
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.1.4
+      tailwindcss: 3.1.6
     dev: false
 
   /@types/minimist/1.2.2:
@@ -674,8 +674,8 @@ packages:
     resolution: {integrity: sha512-b0/9J1O9Jcyik1GC6KC42hJ41jKwdO/Mq8Mdo5sYN+IuRTXs2YFHZC3kZSx6ueusqa95x3wLYe/ytKjbAfGixA==}
     dev: false
 
-  /lilconfig/2.0.5:
-    resolution: {integrity: sha512-xaYmXZtTHPAw5m+xLN8ab9C+3a8YmV3asNSPOATITbtwrfbwaLJj8h66H1WMIpALCkqsIzK3h7oQ+PdX+LQ9Eg==}
+  /lilconfig/2.0.6:
+    resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==}
     engines: {node: '>=10'}
     dev: false
 
@@ -934,7 +934,7 @@ packages:
       ts-node:
         optional: true
     dependencies:
-      lilconfig: 2.0.5
+      lilconfig: 2.0.6
       postcss: 8.4.14
       yaml: 1.10.2
     dev: false
@@ -1002,8 +1002,8 @@ packages:
       source-map-js: 1.0.2
     dev: false
 
-  /prettier-plugin-tailwindcss/0.1.11_prettier@2.7.1:
-    resolution: {integrity: sha512-a28+1jvpIZQdZ/W97wOXb6VqI762MKE/TxMMuibMEHhyYsSxQA8Ek30KObd5kJI2HF1ldtSYprFayXJXi3pz8Q==}
+  /prettier-plugin-tailwindcss/0.1.12_prettier@2.7.1:
+    resolution: {integrity: sha512-pEZ6tppwknCeq3ObR9g8t61AhWtVRRR3I0EQNeiRrrJ3D42FJGeUDxiFc/LJRYEeAx5JOxagsF0MICwuWOJa+w==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       prettier: '>=2.2.0'
@@ -1210,7 +1210,7 @@ packages:
     dependencies:
       stylelint: 14.9.1
     optionalDependencies:
-      stylelint-scss: 4.2.0_stylelint@14.9.1
+      stylelint-scss: 4.3.0_stylelint@14.9.1
     dev: false
 
   /stylelint-config-one/2.2.0_stylelint@14.9.1:
@@ -1255,7 +1255,7 @@ packages:
       postcss-scss: 4.0.4
       stylelint: 14.9.1
       stylelint-config-recommended: 6.0.0_stylelint@14.9.1
-      stylelint-scss: 4.2.0_stylelint@14.9.1
+      stylelint-scss: 4.3.0_stylelint@14.9.1
     transitivePeerDependencies:
       - postcss
     dev: false
@@ -1316,8 +1316,8 @@ packages:
       stylelint: 14.9.1
     dev: false
 
-  /stylelint-scss/4.2.0_stylelint@14.9.1:
-    resolution: {integrity: sha512-HHHMVKJJ5RM9pPIbgJ/XA67h9H0407G68Rm69H4fzFbFkyDMcTV1Byep3qdze5+fJ3c0U7mJrbj6S0Fg072uZA==}
+  /stylelint-scss/4.3.0_stylelint@14.9.1:
+    resolution: {integrity: sha512-GvSaKCA3tipzZHoz+nNO7S02ZqOsdBzMiCx9poSmLlb3tdJlGddEX/8QzCOD8O7GQan9bjsvLMsO5xiw6IhhIQ==}
     peerDependencies:
       stylelint: ^14.5.1
     dependencies:
@@ -1334,7 +1334,7 @@ packages:
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@csstools/selector-specificity': 2.0.1_444rcjjorr3kpoqtvoodsr46pu
+      '@csstools/selector-specificity': 2.0.2_444rcjjorr3kpoqtvoodsr46pu
       balanced-match: 2.0.0
       colord: 2.9.2
       cosmiconfig: 7.0.1
@@ -1420,8 +1420,8 @@ packages:
       strip-ansi: 6.0.1
     dev: false
 
-  /tailwindcss/3.1.4:
-    resolution: {integrity: sha512-NrxbFV4tYsga/hpWbRyUfIaBrNMXDxx5BsHgBS4v5tlyjf+sDsgBg5m9OxjrXIqAS/uR9kicxLKP+bEHI7BSeQ==}
+  /tailwindcss/3.1.6:
+    resolution: {integrity: sha512-7skAOY56erZAFQssT1xkpk+kWt2NrO45kORlxFPXUt3CiGsVPhH1smuH5XoDH6sGPXLyBv+zgCKA2HWBsgCytg==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
@@ -1434,7 +1434,7 @@ packages:
       fast-glob: 3.2.11
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      lilconfig: 2.0.5
+      lilconfig: 2.0.6
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
