@@ -49,15 +49,19 @@ Available options to `config.toml`:
 disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
-    disableHLJS = true                         # disable loading highlight.js
-    twitter = 'YOUR_TWITTER_ID'                # twitter.com/YOUR_TWITTER_ID
-    github = 'YOUR_GITHUB_ID'                  # github.com/YOUR_GITHUB_ID
-    instagram = 'YOUR_INSTAGRAM_ID'            # instagram.com/YOUR_INSTAGRAM_ID
+    # show header social icons
+    twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
+    github = 'YOUR_GITHUB_ID'       # github.com/YOUR_GITHUB_ID
+    instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
 
-    # display profile on home page
-    avatar = 'GRAVATAR_EMAIL'      # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
+    # show home page profile
+    avatar = 'GRAVATAR_EMAIL'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
     name = 'YOUR_NAME'
     bio = 'YOUR_BIO'
+
+    # misc
+    disableHLJS = true              # disable requesting highlight.js
+    monoDarkIcon = true             # show monochrome dark mode icon
 ```
 
 ## License
