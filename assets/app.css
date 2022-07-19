@@ -10,72 +10,68 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  height: 100%;
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+
+  body {
+    -webkit-tap-highlight-color: transparent;
+    background: #fbfbfb;
+
+    @apply dark:bg-black;
+  }
 }
 
-:root {
-  --light-bg: #fbfbfb;
-  --dark-bg: #000;
+@layer components {
+  .btn {
+    @apply rounded-full bg-black py-4 px-6 text-sm text-white no-underline shadow-lg duration-100 active:scale-95 dark:bg-white dark:text-black;
+  }
+
+  .link {
+    @apply duration-200 hover:text-black dark:hover:text-white;
+  }
 }
 
-body {
-  -webkit-tap-highlight-color: transparent;
-  background: var(--light-bg);
-}
+@layer utilities {
+  .not-ready * {
+    @apply !transition-none;
+  }
 
-.dark body {
-  background: var(--dark-bg);
-}
+  .btn-menu::before,
+  .btn-menu::after {
+    @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
+  }
 
-.not-ready,
-.not-ready * {
-  transition: none !important;
-}
+  .nav-wrapper {
+    background: #fbfbfb;
+  }
 
-.btn {
-  @apply rounded-full bg-black py-4 px-6 text-sm text-white no-underline shadow-lg duration-100 active:scale-95 dark:bg-white dark:text-black;
-}
+  .open {
+    @apply overflow-hidden;
+  }
 
-.link {
-  @apply duration-200 hover:text-black dark:hover:text-white;
-}
+  .open .btn-menu::before {
+    @apply w-6 translate-y-[5.5px] rotate-45;
+  }
 
-.btn-menu::before,
-.btn-menu::after {
-  @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
-}
+  .open .btn-menu::after {
+    @apply w-6 -translate-y-[5.5px] -rotate-45;
+  }
 
-.nav-wrapper {
-  background: var(--light-bg);
-}
+  .open .nav-wrapper {
+    @apply top-0;
+  }
 
-.open {
-  @apply overflow-hidden;
-}
+  article pre {
+    @apply -mx-8 !p-8 shadow-lg;
+  }
 
-.open .btn-menu::before {
-  @apply w-6 translate-y-[5.5px] rotate-45;
-}
+  article blockquote {
+    padding-left: calc(theme('space.8') - 3px) !important;
+    margin-left: calc(theme('space.8') * -1) !important;
 
-.open .btn-menu::after {
-  @apply w-6 -translate-y-[5.5px] -rotate-45;
-}
-
-.open .nav-wrapper {
-  @apply top-0;
-}
-
-article pre {
-  @apply shadow-lg;
-
-  padding: theme('space.8') !important;
-  margin-inline: calc(theme('space.8') * -1);
-}
-
-article blockquote {
-  padding: 0 0 0 calc(theme('space.8') - 3px) !important;
-  margin: 0 0 0 calc(theme('space.8') * -1) !important;
-  border-color: theme('colors.zinc.800') !important;
+    @apply !border-black;
+  }
 }

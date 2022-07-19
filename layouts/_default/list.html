@@ -21,11 +21,9 @@
 {{ if or $avatar_url site.Params.name }}
 <div class="-mt-4 mb-20 flex">
   {{ if $avatar_url }}
-  <img
-    class="my-0 mr-5 !h-20 !w-20 rounded-full border border-black/10 bg-white/80 p-3 shadow-xl"
-    src="{{ $avatar_url }}"
-    alt="avatar"
-  />
+  <div class="mr-5 h-20 w-20 rounded-full border border-black/10 bg-white/80 p-3 shadow-xl">
+    <img class="my-0 rounded-full hover:animate-spin" src="{{ $avatar_url }}" alt="avatar" />
+  </div>
   {{ end }}<!---->
   {{ if site.Params.name }}
   <div>

@@ -54,7 +54,7 @@
     <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
       {{ range . }}
       <a
-        class="block font-medium lg:font-normal text-center leading-[5rem] text-3xl lg:text-base {{ if eq .URL $url }}active{{ end }}"
+        class="block text-center text-3xl leading-[5rem] lg:text-base lg:font-normal"
         href="{{ .URL }}"
         >{{ .Name }}</a
       >
