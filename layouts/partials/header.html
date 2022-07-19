@@ -18,7 +18,7 @@
     setTimeout(() => htmlClass.remove('not-ready'), 10);
 
     const setDark = (newDark) => {
-      metaTheme.setAttribute('content', newDark ? 'var(--dark-bg)' : 'var(--light-bg)');
+      metaTheme.setAttribute('content', newDark ? '#000' : '#fbfbfb');
       htmlClass[newDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', newDark);
     };
