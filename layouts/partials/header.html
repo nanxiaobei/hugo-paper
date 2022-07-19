@@ -4,7 +4,7 @@
       >{{ site.Title }}</a
     >
     <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]{{ else }}[background:url(./theme.png)_left_/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]{{ end }}"
+      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
     ></a>
   </div>
 
@@ -15,12 +15,10 @@
   <script>
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const htmlClass = document.documentElement.classList;
-    requestAnimationFrame(() => {
-      htmlClass.remove('not-ready');
-    });
+    setTimeout(() => htmlClass.remove('not-ready'), 10);
 
     const setDark = (newDark) => {
-      metaTheme.setAttribute('content', newDark ? '#000' : '#FCFAF9');
+      metaTheme.setAttribute('content', newDark ? 'var(--dark-bg)' : 'var(--light-bg)');
       htmlClass[newDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', newDark);
     };

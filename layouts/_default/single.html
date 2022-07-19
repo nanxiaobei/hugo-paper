@@ -1,11 +1,11 @@
 {{ define "main" }}
 
 <article>
-  <header class="mb-16">
+  <header class="mb-20">
     <h1 class="!my-0 pb-2">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
-    <div class="text-[0.9em] text-zinc-500">
+    <div class="text-[0.9em] opacity-70">
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
@@ -24,7 +24,7 @@
   <footer class="mt-12 flex flex-wrap">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a
-      class="mr-1.5 mb-1.5 rounded-lg bg-zinc-100 px-4 py-2 no-underline dark:bg-zinc-800"
+      class="mr-1.5 mb-1.5 rounded-lg bg-black/[3%] px-4 py-2 no-underline dark:bg-white/[8%]"
       href="{{ $href }}"
       >{{ . }}</a
     >
@@ -35,7 +35,7 @@
   <!-- Post Nav -->
   {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
   {{ if and (gt (len $pages) 1) (in $pages . ) }}
-  <nav class="mt-16 flex rounded-lg bg-zinc-100 text-lg dark:bg-zinc-800">
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     {{ with $pages.Next . }}
     <a class="flex w-1/2 items-center p-6 pr-3 font-bold no-underline" href="{{ .Permalink }}"
       ><span class="mr-1.5">←</span><span>{{ .Name }}</span></a
