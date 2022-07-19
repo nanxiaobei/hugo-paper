@@ -53,6 +53,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
     twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
     github = 'YOUR_GITHUB_ID'       # github.com/YOUR_GITHUB_ID
     instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
+    rss = true                      # show rss icon with link
 
     # show home page profile
     avatar = 'GRAVATAR_EMAIL'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
