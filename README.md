@@ -15,7 +15,7 @@ A simple, clean, flexible Hugo theme.
 
 ## Links
 
-Product Hunt: [producthunt.com/posts/hugo-paper](https://www.producthunt.com/posts/hugo-paper)
+Product Hunt: [producthunt.com/posts/hugo-paper-6](https://www.producthunt.com/posts/hugo-paper-6)
 
 Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 
