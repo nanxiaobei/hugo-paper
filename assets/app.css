@@ -64,6 +64,10 @@
     @apply top-0;
   }
 
+  article {
+    @apply text-lg leading-[1.9] text-black dark:text-white;
+  }
+
   article pre {
     @apply -mx-8 !p-8 shadow-lg;
   }

@@ -1,7 +1,7 @@
 {{ define "main" }}
 
-<!-- Main Title -->
-{{ if .Title }}
+<!-- Tag Title -->
+{{ if and .Title (eq .Type "tags") }}
 <h1 class="mb-24">{{ .Title }}</h1>
 {{ end }}
 
@@ -19,16 +19,21 @@
 
 {{ $avatar_url := $.Scratch.Get `avatar_url` }}<!---->
 {{ if or $avatar_url site.Params.name }}
-<div class="-mt-4 mb-20 flex">
+<div class="-mt-4 mb-20 flex items-start">
   {{ if $avatar_url }}
-  <div class="mr-5 h-20 w-20 rounded-full border border-black/10 bg-white/80 p-3 shadow-xl">
-    <img class="my-0 rounded-full hover:animate-spin" src="{{ $avatar_url }}" alt="avatar" />
+  <div class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/80 p-3 shadow-xl">
+    <img
+      class="my-0 h-14 w-14 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
+      src="{{ $avatar_url }}"
+    />
   </div>
   {{ end }}<!---->
   {{ if site.Params.name }}
   <div>
-    <h1 class="mt-1 mb-3 text-3xl font-bold">{{ site.Params.name }}</h1>
-    <div class="">{{ site.Params.bio | default (print "Personal blog by " site.Params.name) }}</div>
+    <h1 class="mt-1.5 mb-3 text-3xl font-bold">{{ site.Params.name }}</h1>
+    <div class="break-words">
+      {{ site.Params.bio | default (print "Personal blog by " site.Params.name) }}
+    </div>
   </div>
   {{ end }}
 </div>
@@ -36,11 +41,11 @@
 
 {{ end }}
 
-<article class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
+<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
-  <time class="text-sm opacity-70">{{ .Date | time.Format ":date_medium" }}</time>
+  <time class="text-sm opacity-60">{{ .Date | time.Format ":date_medium" }}</time>
   <a class="absolute inset-0" href="{{ .Permalink }}"></a>
-</article>
+</section>
 {{ end }}
 
 <!-- Main Nav -->
