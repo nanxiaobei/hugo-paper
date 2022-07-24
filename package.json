@@ -11,7 +11,7 @@
     "css": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
     "go": "cp exampleSite/go.default.mod exampleSite/go.mod",
     "site": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
-    "dev": "pnpm css & pnpm start & pnpm open",
+    "dev": "killall hugo & pnpm css & pnpm start & pnpm open",
     "build": "pnpm go & pnpm site"
   },
   "dependencies": {
