@@ -5,7 +5,7 @@ specifiers:
   prettier: ^2.7.1
   prettier-plugin-tailwindcss: ^0.1.13
   stylelint: ^14.10.0
-  stylelint-config-one: ^2.3.0
+  stylelint-config-one: ^2.3.1
   tailwindcss: ^3.1.8
 
 dependencies:
@@ -13,7 +13,7 @@ dependencies:
   prettier: 2.7.1
   prettier-plugin-tailwindcss: 0.1.13_prettier@2.7.1
   stylelint: 14.10.0
-  stylelint-config-one: 2.3.0_stylelint@14.10.0
+  stylelint-config-one: 2.3.1_stylelint@14.10.0
   tailwindcss: 3.1.8
 
 packages:
@@ -1190,8 +1190,8 @@ packages:
       stylelint-scss: 4.3.0_stylelint@14.10.0
     dev: false
 
-  /stylelint-config-one/2.3.0_stylelint@14.10.0:
-    resolution: {integrity: sha512-ccn/zmIr11XxWEgS9pIq3RuMinr+85dWy3/VimgYh9XZdIUk8pKNuTrR+W8/jP+g1JxoXIlBHTHjfvtWIMROVg==}
+  /stylelint-config-one/2.3.1_stylelint@14.10.0:
+    resolution: {integrity: sha512-WoiqtkUQcurt8ngTsercypc3nyUpj3lJncVEYAPRbeOpRpVDYICgk0rJUFdA7j0X9nHHDambtQOdWFArMj6Xmg==}
     peerDependencies:
       stylelint: '>=14.0.0'
     dependencies:
