@@ -50,7 +50,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
   # color theme
-  theme = 'linen'                 # linen, gray, light
+  theme = 'gray'                 # gray, light, linen, wheat
 
   # header social icons
   twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
