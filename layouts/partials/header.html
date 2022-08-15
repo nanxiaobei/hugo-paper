@@ -12,15 +12,27 @@
     class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
   ></a>
 
+  {{ $theme_color := $.Scratch.Get "theme_color" }}
   <script>
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    // base
     const htmlClass = document.documentElement.classList;
-    setTimeout(() => htmlClass.remove('not-ready'), 10);
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-    const setDark = (newDark) => {
-      metaTheme.setAttribute('content', newDark ? '#000' : '#fbfbfb');
-      htmlClass[newDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', newDark);
+    // mobile menu
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    // dark theme
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = `{{ $.Scratch.Get "theme_color" }}`.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
     };
 
     // init
@@ -37,12 +49,6 @@
     const btnDark = document.querySelector('.btn-dark');
     btnDark.addEventListener('click', () => {
       setDark(localStorage.getItem('dark') !== 'true');
-    });
-
-    // mobile menu
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
     });
   </script>
 

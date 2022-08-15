@@ -17,11 +17,13 @@
 <!-- avatar -->
 {{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}<!---->
 
-{{ $avatar_url := $.Scratch.Get `avatar_url` }}<!---->
+{{ $avatar_url := $.Scratch.Get "avatar_url" }}<!---->
 {{ if or $avatar_url site.Params.name }}
 <div class="-mt-4 mb-20 flex items-start">
   {{ if $avatar_url }}
-  <div class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/80 p-3 shadow-xl">
+  <div
+    class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow-xl dark:bg-white/80"
+  >
     <img
       class="my-0 h-14 w-14 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
       src="{{ $avatar_url }}"

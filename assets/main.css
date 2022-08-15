@@ -3,11 +3,11 @@
  * A simple, clean, flexible Hugo theme
  * https://github.com/nanxiaobei/hugo-paper
  * Designed by 南小北 (https://lee.so/)
- * Updated in 2022.7.20
+ * Updated in 2022.8.16
  */
 
 /*
- ! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -363,13 +363,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -430,9 +423,13 @@ html,
   height: 100%;
 }
 
+html {
+  --bg: transparent;
+}
+
 body {
   -webkit-tap-highlight-color: transparent;
-  background: #fbfbfb;
+  background: var(--bg);
 }
 
 .dark body {
@@ -1503,7 +1500,6 @@ body {
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -1565,8 +1561,8 @@ body {
   border-color: rgb(0 0 0 / 0.1);
 }
 
-.bg-white\/80 {
-  background-color: rgb(255 255 255 / 0.8);
+.bg-white\/50 {
+  background-color: rgb(255 255 255 / 0.5);
 }
 
 .\!bg-black\/5 {
@@ -1697,12 +1693,6 @@ body {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .duration-200 {
   transition-duration: 200ms;
 }
@@ -1734,7 +1724,7 @@ body {
 }
 
 .nav-wrapper {
-  background: #fbfbfb;
+  background: var(--bg);
 }
 
 .open {
@@ -1846,6 +1836,10 @@ article blockquote {
   --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
   --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
+}
+
+.dark .dark\:bg-white\/80 {
+  background-color: rgb(255 255 255 / 0.8);
 }
 
 .dark .dark\:\!bg-black\/80 {
