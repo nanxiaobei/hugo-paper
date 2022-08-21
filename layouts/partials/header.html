@@ -12,7 +12,7 @@
     class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
   ></a>
 
-  {{ $theme_color := $.Scratch.Get "theme_color" }}
+  {{ $bg_color := $.Scratch.Get "bg_color" }}
   <script>
     // base
     const htmlClass = document.documentElement.classList;
@@ -28,7 +28,7 @@
 
     // dark theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `{{ $.Scratch.Get "theme_color" }}`.replace(/"/g, '');
+    const lightBg = `{{ $.Scratch.Get "bg_color" }}`.replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');

@@ -49,8 +49,8 @@ Available options to `config.toml`:
 disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
-  # color theme
-  theme = 'gray'                 # gray, light, linen, wheat
+  # color style
+  color = 'linen'                 # linen, wheat, gray, light
 
   # header social icons
   twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID

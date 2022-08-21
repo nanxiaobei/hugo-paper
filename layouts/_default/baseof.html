@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-{{ $.Scratch.Delete "theme_color" }}<!---->
+{{ $.Scratch.Delete "bg_color" }}<!---->
 {{ $.Scratch.Delete "social_list" }}<!---->
 {{ $.Scratch.Delete "avatar_url" }}<!---->
 
-<!-- theme_color -->
-{{ $theme_map := dict "gray" "#fbfbfb" "light" "#fff" "linen" "#faf6f1" "wheat" "#f1efe1" }}<!---->
-{{ $.Scratch.Set "theme_color" (index $theme_map (site.Params.theme | default (print "gray"))) }}<!---->
+<!-- bg_color -->
+{{ $color_map := dict "linen" "#faf6f1" "wheat" "#f1efe1" "gray" "#fbfbfb" "light" "#fff" }}<!---->
+{{ $.Scratch.Set "bg_color" (index $color_map (site.Params.color | default (print "linen"))) }}<!---->
 
 <!-- social_list -->
 {{ $social_params := slice "twitter" "github" "instagram" "rss" }}<!---->
@@ -29,7 +29,7 @@
 
 <html
   class="not-ready text-sm lg:text-base"
-  style="--bg: {{ $.Scratch.Get `theme_color` }}"
+  style="--bg: {{ $.Scratch.Get `bg_color` }}"
   lang="{{ site.LanguageCode }}"
 >
   {{ partial "head.html" . }}

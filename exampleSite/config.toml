@@ -15,7 +15,7 @@ theme = "hugo-paper"
 title = "Paper"
 
 [params]
-  theme = 'linen'
+  color = 'linen'
 
   twitter = 'nanxiaobei'
   github = 'nanxiaobei'
