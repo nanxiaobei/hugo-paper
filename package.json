@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --bind=0.0.0.0 --baseURL=192.168.0.102 --port=1313",
+    "start": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --bind=0.0.0.0 --baseURL=192.168.0.122 --port=1313",
     "open": "open http://0.0.0.0:1313/",
     "css": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
     "go": "cp exampleSite/go.default.mod exampleSite/go.mod",
@@ -15,11 +15,11 @@
     "build": "pnpm go & pnpm site"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.7",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "stylelint": "^14.10.0",
+    "stylelint": "^14.14.0",
     "stylelint-config-one": "^2.3.1",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.1"
   }
 }

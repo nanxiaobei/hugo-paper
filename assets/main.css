@@ -7,7 +7,7 @@
  */
 
 /*
- ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -418,7 +418,13 @@ video {
   height: auto;
 }
 
-html, 
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+html,
   body {
   height: 100%;
 }
@@ -1228,8 +1234,7 @@ body {
   line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1679,8 +1684,7 @@ body {
 }
 
 .no-underline {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .opacity-60 {
@@ -1705,7 +1709,7 @@ body {
   transition-property: none !important;
 }
 
-.btn-menu::before, 
+.btn-menu::before,
   .btn-menu::after {
   display: block;
   height: 2px;
@@ -1717,7 +1721,7 @@ body {
   content: var(--tw-content);
 }
 
-.dark .btn-menu::before, .dark 
+.dark .btn-menu::before,.dark 
   .btn-menu::after {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -1819,6 +1823,23 @@ article blockquote {
           animation: spin 1s linear infinite;
 }
 
+.dark .dark\:bg-white\/80 {
+  background-color: rgb(255 255 255 / 0.8);
+}
+
+.dark .dark\:\!bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8) !important;
+}
+
+.dark .dark\:bg-white\/\[8\%\] {
+  background-color: rgb(255 255 255 / 8%);
+}
+
+.dark .dark\:bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:prose-invert {
   --tw-prose-body: var(--tw-prose-invert-body);
   --tw-prose-headings: var(--tw-prose-invert-headings);
@@ -1836,23 +1857,6 @@ article blockquote {
   --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
   --tw-prose-th-borders: var(--tw-prose-invert-th-borders);
   --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
-}
-
-.dark .dark\:bg-white\/80 {
-  background-color: rgb(255 255 255 / 0.8);
-}
-
-.dark .dark\:\!bg-black\/80 {
-  background-color: rgb(0 0 0 / 0.8) !important;
-}
-
-.dark .dark\:bg-white\/\[8\%\] {
-  background-color: rgb(255 255 255 / 8%);
-}
-
-.dark .dark\:bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-white {
