@@ -37,8 +37,12 @@
 
     // init
     const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const darkVal = localStorage.getItem('dark');
-    setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
 
     // listen system
     darkScheme.addEventListener('change', (event) => {
