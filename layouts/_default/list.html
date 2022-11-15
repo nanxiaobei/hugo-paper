@@ -12,7 +12,8 @@
 {{ end }}
 
 <!-- Articles -->
-{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}<!---->
+{{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages
+}}<!---->
 
 <!-- avatar -->
 {{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}<!---->
@@ -34,7 +35,8 @@
   <div>
     <h1 class="mt-1.5 mb-3 text-3xl font-bold">{{ site.Params.name }}</h1>
     <div class="break-words">
-      {{ site.Params.bio | default (print "Personal blog by " site.Params.name) }}
+      {{ site.Params.bio | default (print "Personal blog by " site.Params.name)
+      }}
     </div>
   </div>
   {{ end }}
@@ -45,7 +47,9 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
-  <time class="text-sm opacity-60">{{ .Date | time.Format ":date_medium" }}</time>
+  <time class="text-sm opacity-60"
+    >{{ .Date | time.Format ":date_medium" }}</time
+  >
   <a class="absolute inset-0" href="{{ .Permalink }}"></a>
 </section>
 {{ end }}
@@ -57,7 +61,9 @@
   <a class="btn" href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
   {{ end }}<!---->
   {{ if $paginator.HasNext }}
-  <a class="btn ml-auto" href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+  <a class="btn ml-auto" href="{{ $paginator.Next.URL }}"
+    >{{ i18n "next_page" }} →</a
+  >
   {{ end }}
 </nav>
 {{ end }}<!---->

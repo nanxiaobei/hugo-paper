@@ -1,7 +1,10 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
 
   <!-- Title -->
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
@@ -10,7 +13,10 @@
   <meta name="theme-color" />
   {{ if eq .Kind "page" }}
   <meta name="description" content="{{ .Summary }}" />
-  <meta name="author" content="{{ .Params.Author | default site.Author.name }}" />
+  <meta
+    name="author"
+    content="{{ .Params.Author | default site.Author.name }}"
+  />
   {{ else }}
   <meta name="description" content="{{ site.Params.description }}" />
   <meta name="author" content="{{ site.Author.name }}" />
@@ -21,7 +27,8 @@
   <!---->
   {{ $custom_css := resources.Get "custom.css" }}
   <!---->
-  {{ $css := slice $main_css $custom_css | resources.Concat "main.css" | minify }}
+  {{ $css := slice $main_css $custom_css | resources.Concat "main.css" | minify
+  }}
   <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
 
   {{ if and .IsPage (not site.Params.disableHLJS) }}
@@ -33,15 +40,9 @@
   {{ end }}
 
   <!-- Preload -->
-  {{ $dark_icon := "theme.png" }}
-  {{ if site.Params.monoDarkIcon }}
-    {{ $dark_icon := "theme.svg" }}
-  {{ end }}
-  <link
-    rel="preload"
-    as="image"
-    href="{{ $dark_icon | absURL }}"
-  />
+  {{ $dark_icon := "theme.png" }} {{ if site.Params.monoDarkIcon }} {{
+  $dark_icon := "theme.svg" }} {{ end }}
+  <link rel="preload" as="image" href="{{ $dark_icon | absURL }}" />
 
   {{ $avatar_url := $.Scratch.Get "avatar_url" }}
   <!---->
