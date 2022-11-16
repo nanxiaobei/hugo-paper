@@ -3,7 +3,7 @@
  * A simple, clean, flexible Hugo theme
  * https://github.com/nanxiaobei/hugo-paper
  * Designed by 南小北 (https://lee.so/)
- * Updated in 2022.8.16
+ * Updated in 2022.11.16
  */
 
 @tailwind base;
@@ -80,6 +80,6 @@
     padding-left: calc(theme('space.8') - 3px) !important;
     margin-left: calc(theme('space.8') * -1) !important;
 
-    @apply !border-black;
+    @apply !border-black dark:!border-white;
   }
 }
