@@ -57,7 +57,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
   github = 'YOUR_GITHUB_ID'       # github.com/YOUR_GITHUB_ID
   instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
   mastodon = 'YOUR_MASTODON_LINK' # mastodon.instance/@xxx
-  rss = true                      # show rss icon with link
+  rss = true                      # show rss icon
 
   # home page profile
   avatar = 'GRAVATAR_EMAIL'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
