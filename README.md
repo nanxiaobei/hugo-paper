@@ -56,7 +56,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
   twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
   github = 'YOUR_GITHUB_ID'       # github.com/YOUR_GITHUB_ID
   instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
-  mastodon = 'YOUR_MASTODON_LINK' # mastodon.instance/@xxx
+  mastodon = 'YOUR_MASTODON_LINK' # https://mastodon.instance/@xxx
   rss = true                      # show rss icon
 
   # home page profile

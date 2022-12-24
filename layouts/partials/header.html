@@ -82,7 +82,7 @@
       <a
         class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./{{ . }}.svg)"
-        href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else if eq . `mastodon` }} https://{{ site.Params.Get . }} {{ else }} https://{{ . }}.com/{{ site.Params.Get . }} {{ end }}"
+        href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else if eq . `mastodon` }} {{ site.Params.Get . }} {{ else }} https://{{ . }}.com/{{ site.Params.Get . }} {{ end }}"
         target="_blank"
       ></a>
       {{ end }}<!---->
