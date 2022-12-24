@@ -11,7 +11,7 @@
 (print "linen"))) }}<!---->
 
 <!-- social_list -->
-{{ $social_params := slice "twitter" "github" "instagram" "rss" }}<!---->
+{{ $social_params := slice "twitter" "github" "instagram" "mastodon" "rss" }}<!---->
 {{ range $social_params }}<!---->
 {{ if isset site.Params . }}<!---->
 {{ $.Scratch.Add "social_list" (slice .) }}<!---->
