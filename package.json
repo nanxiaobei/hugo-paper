@@ -1,12 +1,11 @@
 {
   "name": "hugo-paper",
-  "version": "6.4.0",
+  "version": "6.5.0",
   "repository": "https://github.com/nanxiaobei/hugo-paper.git",
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
-    "__FOR_DEV__": "please change 192.168.0.122 to your local IP",
+    "__FOR_DEV__": "please change all `192.168.0.122` to your local IP",
     "dev:tailwind": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
     "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.122 --bind=192.168.0.122 --port=1313",
     "dev:open": "open http://192.168.0.122:1313/",
