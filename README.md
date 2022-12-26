@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Paper <sup><sup><sub>6.5</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6.6</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
@@ -50,23 +50,24 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
 
 [params]
   # color style
-  color = 'linen'                 # linen, wheat, gray, light
+  color = 'linen'                   # linen, wheat, gray, light
 
   # header social icons
-  twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
-  github = 'YOUR_GITHUB_ID'       # github.com/YOUR_GITHUB_ID
-  instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
-  mastodon = 'YOUR_MASTODON_LINK' # https://mastodon.instance/@xxx
-  rss = true                      # show rss icon
+  twitter = 'YOUR_TWITTER_ID'       # twitter.com/YOUR_TWITTER_ID
+  github = 'YOUR_GITHUB_ID'         # github.com/YOUR_GITHUB_ID
+  instagram = 'YOUR_INSTAGRAM_ID'   # instagram.com/YOUR_INSTAGRAM_ID
+  mastodon = 'YOUR_MASTODON_LINK'   # e.g. 'https://mastodon.instance/@xxx'
+  rss = true                        # show rss icon
 
   # home page profile
-  avatar = 'GRAVATAR_EMAIL'       # Gravatar email or image url(e.g. "https://deno.land/logo.svg")
+  avatar = 'GRAVATAR_EMAIL'         # Gravatar email or image url
   name = 'YOUR_NAME'
   bio = 'YOUR_BIO'
 
   # misc
-  disableHLJS = true              # disable requesting highlight.js
-  monoDarkIcon = true             # show monochrome dark mode icon
+  disableHLJS = true                # disable requesting highlight.js
+  monoDarkIcon = true               # show monochrome dark mode icon
+  gravatarCdn = 'GRAVATAR_CDN_LINK' # e.g. 'https://cdn.v2ex.com/gravatar/'
 ```
 
 ## License
