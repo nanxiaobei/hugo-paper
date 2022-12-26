@@ -1369,6 +1369,10 @@ body {
   border-radius: 0.5rem;
 }
 
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
 .border-\[0\.5px\] {
   border-width: 0.5px;
 }
@@ -1395,6 +1399,14 @@ body {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-1\.5 {
+  padding: 0.375rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .px-8 {
@@ -1630,6 +1642,10 @@ article blockquote {
 
 .hover\:animate-spin:hover {
   animation: spin 1s linear infinite;
+}
+
+.hover\:bg-black\/\[2\%\]:hover {
+  background-color: rgb(0 0 0 / 2%);
 }
 
 .dark .dark\:bg-white\/80 {
