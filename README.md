@@ -64,6 +64,8 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
   name = 'YOUR_NAME'
   bio = 'YOUR_BIO'
 
+  graphcommentId = "graph id"       # add graph comments id (disqus alternative)
+
   # misc
   disableHLJS = true                # disable requesting highlight.js
   monoDarkIcon = true               # show monochrome dark mode icon
