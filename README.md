@@ -46,30 +46,30 @@ For more information, please read the [official guide](https://gohugo.io/getting
 Available options to `config.toml`:
 
 ```toml
-disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # add disqus comments
+disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
 
 [params]
   # color style
-  color = 'linen'                   # linen, wheat, gray, light
+  color = 'linen'                           # linen, wheat, gray, light
 
   # header social icons
-  twitter = 'YOUR_TWITTER_ID'       # twitter.com/YOUR_TWITTER_ID
-  github = 'YOUR_GITHUB_ID'         # github.com/YOUR_GITHUB_ID
-  instagram = 'YOUR_INSTAGRAM_ID'   # instagram.com/YOUR_INSTAGRAM_ID
-  mastodon = 'YOUR_MASTODON_LINK'   # e.g. 'https://mastodon.instance/@xxx'
-  rss = true                        # show rss icon
+  twitter = 'YOUR_TWITTER_ID'               # twitter.com/YOUR_TWITTER_ID
+  github = 'YOUR_GITHUB_ID'                 # github.com/YOUR_GITHUB_ID
+  instagram = 'YOUR_INSTAGRAM_ID'           # instagram.com/YOUR_INSTAGRAM_ID
+  mastodon = 'YOUR_MASTODON_LINK'           # e.g. 'https://mastodon.instance/@xxx'
+  rss = true                                # show rss icon
 
   # home page profile
-  avatar = 'GRAVATAR_EMAIL'         # Gravatar email or image url
+  avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
   name = 'YOUR_NAME'
   bio = 'YOUR_BIO'
 
-  graphcommentId = "graph id"       # add graph comments id (disqus alternative)
 
   # misc
-  disableHLJS = true                # disable requesting highlight.js
-  monoDarkIcon = true               # show monochrome dark mode icon
-  gravatarCdn = 'GRAVATAR_CDN_LINK' # e.g. 'https://cdn.v2ex.com/gravatar/'
+  disableHLJS = true                        # disable highlight.js
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
 ```
 
 ## License
