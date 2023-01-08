@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",
-    "stylelint": "^14.16.0",
+    "stylelint": "^14.16.1",
     "stylelint-config-one": "^2.3.1",
     "tailwindcss": "^3.2.4"
   }
