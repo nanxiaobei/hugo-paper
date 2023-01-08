@@ -24,8 +24,6 @@ title = "Paper"
   avatar = 'nanxiaobei@gmail.com'
   name = 'Lee'
   bio = 'Discover fresh context'
-
-  graphcommentId = "your graph id"
 # ------------------------------
 
 # needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)

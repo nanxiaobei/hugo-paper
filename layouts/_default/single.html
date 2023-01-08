@@ -67,30 +67,34 @@
   </script>
   {{ end }}
 
-  <!-- GraphComments -->
-  {{ if and site.Params.graphcommentId (not (eq .Params.comments false)) }}
+  <!-- GraphComment -->
+  {{ if and site.Params.graphCommentId (not (eq .Params.comments false)) }}
   <div class="mt-24" id="graphcomment"></div>
   <script type="text/javascript">
     var __semio__params = {
-      graphcommentId: "{{ .Site.Params.graphcommentId  }}", 
-
+      graphcommentId: '{{ site.Params.graphCommentId  }}',
       behaviour: {
-        //  uid: "...", 
+        //  uid: "...",
       },
-
       // configure your variables here
-
-    }
+    };
 
     function __semio__onload() {
-      __semio__gc_graphlogin(__semio__params)
+      __semio__gc_graphlogin(__semio__params);
     }
 
-
-    (function() {
-      var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
-      gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
     })();
   </script>
   {{ end }}
