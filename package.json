@@ -15,7 +15,7 @@
     "build": "pnpm build:go & pnpm build:generate"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.8",
+    "@tailwindcss/typography": "^0.5.9",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "stylelint": "^14.16.1",
