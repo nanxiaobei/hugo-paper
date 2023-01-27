@@ -72,6 +72,12 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
 ```
 
+Available options to front matter:
+
+```toml
+comments = false                            # disable comments for a specific page
+```
+
 ## License
 
 [MIT License](https://github.com/nanxiaobei/hugo-paper/blob/main/LICENSE) (c) [nanxiaobei](https://lee.so/)
