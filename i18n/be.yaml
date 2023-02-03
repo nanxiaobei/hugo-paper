@@ -1,0 +1,5 @@
+- id: prev_page
+  translation: 'Папярэдняя'
+
+- id: next_page
+  translation: 'Наступная'
