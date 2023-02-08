@@ -84,6 +84,7 @@
         style="--url: url(./{{ . }}.svg)"
         href="{{ if eq . `rss` }} {{ `index.xml` | absURL }} {{ else if eq . `mastodon` }} {{ site.Params.Get . }} {{ else }} https://{{ . }}.com/{{ site.Params.Get . }} {{ end }}"
         target="_blank"
+        {{ if ne . `rss` }}rel="me"{{ end }}
       ></a>
       {{ end }}<!---->
     </nav>
