@@ -43,6 +43,10 @@
     @apply !transition-none;
   }
 
+  .highlight tr {
+    border-bottom-width: 0;
+  }
+
   .btn-menu::before,
   .btn-menu::after {
     @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;

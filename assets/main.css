@@ -1530,6 +1530,10 @@ body {
   transition-property: none !important;
 }
 
+.highlight tr {
+  border-bottom-width: 0;
+}
+
 .btn-menu::before,
   .btn-menu::after {
   display: block;
