@@ -9,9 +9,11 @@
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
-      {{ if or .Params.Author site.Author.name }}
+      {{ $single_author := or .Params.Author site.Author.name }}
+      <!---->
+      {{ if $single_author }}
       <span class="mx-1">&middot;</span>
-      <span>{{ .Params.Author | default site.Author.name }}</span>
+      <span>{{ $single_author }}</span>
       {{ end }}
     </div>
     {{ end }}

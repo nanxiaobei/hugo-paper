@@ -28,7 +28,7 @@
     <img
       class="my-0 h-14 w-14 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
       src="{{ $avatar_url }}"
-      alt="{{ or site.Params.name site.Title }}"
+      alt="{{ site.Params.name | default site.Title }}"
     />
   </div>
   {{ end }}<!---->
@@ -36,8 +36,8 @@
   <div>
     <h1 class="mt-1.5 mb-3 text-3xl font-bold">{{ site.Params.name }}</h1>
     <div class="break-words">
-      {{ site.Params.bio | default (print "Personal blog by " site.Params.name)
-      }}
+      {{ site.Params.bio | default (print `A personal blog by `
+      site.Params.name) }}
     </div>
   </div>
   {{ end }}

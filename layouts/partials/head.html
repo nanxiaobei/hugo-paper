@@ -11,15 +11,19 @@
 
   <!-- Meta -->
   <meta name="theme-color" />
+
+  {{ $site_author := or site.Author.name site.Params.name site.Title }}
+  <!---->
   {{ if eq .Kind "page" }}
   <meta name="description" content="{{ .Summary }}" />
-  <meta
-    name="author"
-    content="{{ .Params.Author | default site.Author.name }}"
-  />
+  <meta name="author" content="{{ or .Params.author $site_author }}" />
   {{ else }}
-  <meta name="description" content="{{ site.Params.description }}" />
-  <meta name="author" content="{{ site.Author.name }}" />
+  <!---->
+  <meta
+    name="description"
+    content="{{ site.Params.description | default (print `A personal blog`) }}"
+  />
+  <meta name="author" content="{{ $site_author }}" />
   {{ end }}
 
   <!-- Styles & Scripts -->

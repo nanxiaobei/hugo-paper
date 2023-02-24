@@ -5,16 +5,14 @@
       href="{{ `/` | absURL }}"
       >{{ site.Title }}</a
     >
-    <a
+    <div
       class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
-      >Dark</a
-    >
+    ></div>
   </div>
 
-  <a
+  <div
     class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-    ><span class="hidden">Menu</span></a
-  >
+  ></div>
 
   {{ $bg_color := $.Scratch.Get "bg_color" }}
   <script>
