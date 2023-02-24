@@ -39,29 +39,29 @@ packages:
       js-tokens: 4.0.0
     dev: false
 
-  /@csstools/css-parser-algorithms/2.0.1_xu4ijqbgbw3jz65fprqzqcck3y:
+  /@csstools/css-parser-algorithms/2.0.1_5vzy4lghjvuzkedkkk4tqwjftm:
     resolution: {integrity: sha512-B9/8PmOtU6nBiibJg0glnNktQDZ3rZnGn/7UmDfrm2vMtrdlXO3p7ErE95N0up80IRk9YEtB5jyj/TmQ1WH3dw==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       '@csstools/css-tokenizer': ^2.0.0
     dependencies:
-      '@csstools/css-tokenizer': 2.0.2
+      '@csstools/css-tokenizer': 2.1.0
     dev: false
 
-  /@csstools/css-tokenizer/2.0.2:
-    resolution: {integrity: sha512-prUTipz0NZH7Lc5wyBUy93NFy3QYDMVEQgSeZzNdpMbKRd6V2bgRFyJ+O0S0Dw0MXWuE/H9WXlJk3kzMZRHZ/g==}
+  /@csstools/css-tokenizer/2.1.0:
+    resolution: {integrity: sha512-dtqFyoJBHUxGi9zPZdpCKP1xk8tq6KPHJ/NY4qWXiYo6IcSGwzk3L8x2XzZbbyOyBs9xQARoGveU2AsgLj6D2A==}
     engines: {node: ^14 || ^16 || >=18}
     dev: false
 
-  /@csstools/media-query-list-parser/2.0.1_3cwabixgovb7jwtbsdb6ktsak4:
+  /@csstools/media-query-list-parser/2.0.1_ppok7cytzjc65mcyxmtit3wdyi:
     resolution: {integrity: sha512-X2/OuzEbjaxhzm97UJ+95GrMeT29d1Ib+Pu+paGLuRWZnWRK9sI9r3ikmKXPWGA1C4y4JEdBEFpp9jEqCvLeRA==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       '@csstools/css-parser-algorithms': ^2.0.0
       '@csstools/css-tokenizer': ^2.0.0
     dependencies:
-      '@csstools/css-parser-algorithms': 2.0.1_xu4ijqbgbw3jz65fprqzqcck3y
-      '@csstools/css-tokenizer': 2.0.2
+      '@csstools/css-parser-algorithms': 2.0.1_5vzy4lghjvuzkedkkk4tqwjftm
+      '@csstools/css-tokenizer': 2.1.0
     dev: false
 
   /@csstools/selector-specificity/2.1.1_wajs5nedgkikc5pcuwett7legi:
@@ -1409,9 +1409,9 @@ packages:
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
-      '@csstools/css-parser-algorithms': 2.0.1_xu4ijqbgbw3jz65fprqzqcck3y
-      '@csstools/css-tokenizer': 2.0.2
-      '@csstools/media-query-list-parser': 2.0.1_3cwabixgovb7jwtbsdb6ktsak4
+      '@csstools/css-parser-algorithms': 2.0.1_5vzy4lghjvuzkedkkk4tqwjftm
+      '@csstools/css-tokenizer': 2.1.0
+      '@csstools/media-query-list-parser': 2.0.1_ppok7cytzjc65mcyxmtit3wdyi
       '@csstools/selector-specificity': 2.1.1_wajs5nedgkikc5pcuwett7legi
       balanced-match: 2.0.0
       colord: 2.9.3
