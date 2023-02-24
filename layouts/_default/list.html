@@ -28,6 +28,7 @@
     <img
       class="my-0 h-14 w-14 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
       src="{{ $avatar_url }}"
+      alt="{{ or site.Params.name site.Title }}"
     />
   </div>
   {{ end }}<!---->
@@ -50,7 +51,7 @@
   <time class="text-sm opacity-60"
     >{{ .Date | time.Format ":date_medium" }}</time
   >
-  <a class="absolute inset-0" href="{{ .Permalink }}"></a>
+  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
 </section>
 {{ end }}
 

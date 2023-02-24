@@ -6,13 +6,15 @@
       >{{ site.Title }}</a
     >
     <a
-      class="btn-dark ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
-    ></a>
+      class="btn-dark text-[0] ml-6 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
+      >Dark</a
+    >
   </div>
 
   <a
     class="btn-menu relative z-50 -mr-8 flex h-[5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
-  ></a>
+    ><span class="hidden">Menu</span></a
+  >
 
   {{ $bg_color := $.Scratch.Get "bg_color" }}
   <script>
@@ -80,12 +82,14 @@
     >
       {{ range . }}<!---->
       <a
-        class="h-8 w-8 [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./{{ . }}.svg)"
         href="{{ if eq . `rss` }}{{ `index.xml` | absURL }}{{ else if eq . `mastodon` }}{{ site.Params.Get . }}{{ else }}https://{{ . }}.com/{{ site.Params.Get . }}{{ end }}"
         target="_blank"
-        {{ if ne . `rss` }}rel="me"{{ end }}
-      ></a>
+        rel="{{ if eq . `rss` }}alternate{{ else }}me{{ end }}"
+      >
+        {{ . }}
+      </a>
       {{ end }}<!---->
     </nav>
     {{ end }}<!---->
