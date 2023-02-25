@@ -2,8 +2,7 @@
  * Paper
  * A simple, clean, flexible Hugo theme
  * https://github.com/nanxiaobei/hugo-paper
- * Designed by 南小北 (https://lee.so/)
- * Updated in 2022.11.16
+ * Designed by 南小北 https://lee.so/
  */
 
 /*
@@ -442,8 +441,7 @@ body {
 }
 
 .dark body {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(0 0 0 / 0.9);
 }
 
 *, ::before, ::after {
@@ -1158,12 +1156,22 @@ body {
   margin-bottom: 2.5rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.my-2\.5 {
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
 .-mr-8 {
   margin-right: -2rem;
 }
 
-.-mt-4 {
-  margin-top: -1rem;
+.-mt-2 {
+  margin-top: -0.5rem;
 }
 
 .mb-1 {
@@ -1180,10 +1188,6 @@ body {
 
 .mb-24 {
   margin-bottom: 6rem;
-}
-
-.mb-3 {
-  margin-bottom: 0.75rem;
 }
 
 .ml-1 {
@@ -1218,14 +1222,6 @@ body {
   margin-right: auto;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
-.mt-1\.5 {
-  margin-top: 0.375rem;
-}
-
 .mt-12 {
   margin-top: 3rem;
 }
@@ -1242,12 +1238,8 @@ body {
   display: flex;
 }
 
-.hidden {
-  display: none;
-}
-
-.h-14 {
-  height: 3.5rem;
+.aspect-square {
+  aspect-ratio: 1 / 1;
 }
 
 .h-6 {
@@ -1274,8 +1266,8 @@ body {
   width: 50%;
 }
 
-.w-14 {
-  width: 3.5rem;
+.w-16 {
+  width: 4rem;
 }
 
 .w-6 {
@@ -1329,10 +1321,6 @@ body {
 
 .flex-wrap {
   flex-wrap: wrap;
-}
-
-.items-start {
-  align-items: flex-start;
 }
 
 .items-center {
@@ -1442,8 +1430,8 @@ body {
   padding-bottom: 0.625rem;
 }
 
-.pb-32 {
-  padding-bottom: 8rem;
+.pb-24 {
+  padding-bottom: 6rem;
 }
 
 .pl-3 {
@@ -1454,8 +1442,8 @@ body {
   padding-right: 0.75rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-16 {
+  padding-top: 4rem;
 }
 
 .text-center {
@@ -1516,8 +1504,8 @@ body {
   text-decoration-line: none;
 }
 
-.opacity-60 {
-  opacity: 0.6;
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .shadow-xl {
@@ -1706,6 +1694,10 @@ article blockquote {
 
 .dark .dark\:\[background-position\:right\] {
   background-position: right;
+}
+
+.dark .dark\:hover\:bg-white\/\[3\%\]:hover {
+  background-color: rgb(255 255 255 / 3%);
 }
 
 @media (min-width: 1024px) {

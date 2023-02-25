@@ -5,7 +5,7 @@
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
-    <div class="text-sm opacity-60">
+    <div class="text-sm opacity-50">
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
@@ -40,14 +40,14 @@
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
     {{ with $pages.Next . }}
     <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%]"
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
       href="{{ .Permalink }}"
       ><span class="mr-1.5">←</span><span>{{ .Name }}</span></a
     >
     {{ end }}<!---->
     {{ with $pages.Prev . }}
     <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%]"
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
       href="{{ .Permalink }}"
       ><span>{{ .Name }}</span><span class="ml-1.5">→</span></a
     >

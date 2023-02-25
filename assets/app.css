@@ -2,8 +2,7 @@
  * Paper
  * A simple, clean, flexible Hugo theme
  * https://github.com/nanxiaobei/hugo-paper
- * Designed by 南小北 (https://lee.so/)
- * Updated in 2022.11.16
+ * Designed by 南小北 https://lee.so/
  */
 
 @tailwind base;
@@ -24,7 +23,7 @@
     -webkit-tap-highlight-color: transparent;
     background: var(--bg);
 
-    @apply dark:bg-black;
+    @apply dark:bg-black/90;
   }
 }
 

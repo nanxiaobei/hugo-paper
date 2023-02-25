@@ -20,13 +20,13 @@
 
 {{ $avatar_url := $.Scratch.Get "avatar_url" }}<!---->
 {{ if or $avatar_url site.Params.name }}
-<div class="-mt-4 mb-20 flex items-start">
+<div class="-mt-2 mb-20 flex items-center">
   {{ if $avatar_url }}
   <div
     class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow-xl dark:bg-white/80"
   >
     <img
-      class="my-0 h-14 w-14 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
+      class="my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
       src="{{ $avatar_url }}"
       alt="{{ site.Params.name | default site.Title }}"
     />
@@ -34,7 +34,7 @@
   {{ end }}<!---->
   {{ if site.Params.name }}
   <div>
-    <h1 class="mt-1.5 mb-3 text-3xl font-bold">{{ site.Params.name }}</h1>
+    <h1 class="my-2.5 text-3xl font-bold">{{ site.Params.name }}</h1>
     <div class="break-words">
       {{ site.Params.bio | default (print `A personal blog by `
       site.Params.name) }}
@@ -48,7 +48,7 @@
 
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
-  <time class="text-sm opacity-60"
+  <time class="text-sm opacity-50"
     >{{ .Date | time.Format ":date_medium" }}</time
   >
   <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
