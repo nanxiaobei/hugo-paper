@@ -79,6 +79,12 @@ Available options to front matter:
 comments = false                            # disable comments for a specific page
 ```
 
+## Forms
+
+
+
+[Add a contact form and publish to github pages](https://fabform.io/a/create-a-static-website-with-contact-form-on-github-pages)
+
 ## License
 
 [MIT License](https://github.com/nanxiaobei/hugo-paper/blob/main/LICENSE) (c) [nanxiaobei](https://lee.so/)
