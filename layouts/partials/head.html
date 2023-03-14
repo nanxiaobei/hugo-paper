@@ -27,12 +27,11 @@
   {{ end }}
 
   <!-- Styles & Scripts -->
-  {{ $main_css := resources.Get "main.css" }}
+  {{ $main := resources.Get "main.css" }}
   <!---->
-  {{ $custom_css := resources.Get "custom.css" }}
+  {{ $custom := resources.Get "custom.css" }}
   <!---->
-  {{ $css := slice $main_css $custom_css | resources.Concat "main.css" | minify
-  }}
+  {{ $css := slice $main $custom | resources.Concat "main.css" | minify }}
   <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
 
   {{ if and .IsPage (not site.Params.disableHLJS) }}
