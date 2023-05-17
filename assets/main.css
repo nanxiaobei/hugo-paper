@@ -6,7 +6,7 @@
  */
 
 /*
- ! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -38,6 +38,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -54,6 +55,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -440,7 +443,7 @@ body {
   background: var(--bg);
 }
 
-.dark body {
+:is(.dark body) {
   background-color: rgb(0 0 0 / 0.9);
 }
 
@@ -458,6 +461,9 @@ body {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -505,6 +511,9 @@ body {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1056,7 +1065,7 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.dark .btn {
+:is(.dark .btn) {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -1072,7 +1081,7 @@ body {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .link:hover {
+:is(.dark .link:hover) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1090,10 +1099,7 @@ body {
 }
 
 .inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  inset: 0px;
 }
 
 .inset-x-0 {
@@ -1542,8 +1548,8 @@ body {
   content: var(--tw-content);
 }
 
-.dark .btn-menu::before,.dark 
-  .btn-menu::after {
+:is(.dark .btn-menu)::before,:is(.dark 
+  .btn-menu)::after {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -1582,7 +1588,7 @@ article {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark article {
+:is(.dark article) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1603,7 +1609,7 @@ article blockquote {
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
-.dark article blockquote {
+:is(.dark article blockquote) {
   --tw-border-opacity: 1 !important;
   border-color: rgb(255 255 255 / var(--tw-border-opacity)) !important;
 }
@@ -1624,7 +1630,7 @@ article blockquote {
   transition: background-position 0.4s steps(5);
 }
 
-.dark .dark\:prose-invert {
+:is(.dark .dark\:prose-invert) {
   --tw-prose-body: var(--tw-prose-invert-body);
   --tw-prose-headings: var(--tw-prose-invert-headings);
   --tw-prose-lead: var(--tw-prose-invert-lead);
@@ -1665,38 +1671,38 @@ article blockquote {
   background-color: rgb(0 0 0 / 2%);
 }
 
-.dark .dark\:\!bg-black\/80 {
+:is(.dark .dark\:\!bg-black\/80) {
   background-color: rgb(0 0 0 / 0.8) !important;
 }
 
-.dark .dark\:bg-black {
+:is(.dark .dark\:bg-black) {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-white\/80 {
+:is(.dark .dark\:bg-white\/80) {
   background-color: rgb(255 255 255 / 0.8);
 }
 
-.dark .dark\:bg-white\/\[8\%\] {
+:is(.dark .dark\:bg-white\/\[8\%\]) {
   background-color: rgb(255 255 255 / 8%);
 }
 
-.dark .dark\:text-white {
+:is(.dark .dark\:text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.dark .dark\:invert {
+:is(.dark .dark\:invert) {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.dark .dark\:\[background-position\:right\] {
+:is(.dark .dark\:\[background-position\:right\]) {
   background-position: right;
 }
 
-.dark .dark\:hover\:bg-white\/\[3\%\]:hover {
+:is(.dark .dark\:hover\:bg-white\/\[3\%\]:hover) {
   background-color: rgb(255 255 255 / 3%);
 }
 
