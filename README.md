@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Paper <sup><sup><sub>6.10</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6.11</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
@@ -71,12 +71,14 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   monoDarkIcon = true                       # show monochrome dark mode icon
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+  math = true                               # enable KaTex math typesetting globally
 ```
 
 Available options to front matter:
 
 ```toml
 comments = false                            # disable comments for a specific page
+math = true                                 # enable KaTex math typesetting for a specific page
 ```
 
 ## License

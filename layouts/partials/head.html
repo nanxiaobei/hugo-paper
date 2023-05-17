@@ -57,6 +57,14 @@
   {{ range $.Scratch.Get "social_list" }}
   <link rel="preload" as="image" href="{{ printf `%s.svg` . | absURL }}" />
   {{ end }}
+  <!---->
+
+  {{ if or .Params.math .Site.Params.math }}
+  <!---->
+  {{ partial "math.html" . }}
+  <!---->
+  {{ end }}
+  <!---->
 
   <!-- Favicon -->
   <link rel="icon" href="{{ `favicon.ico` | absURL }}" />
