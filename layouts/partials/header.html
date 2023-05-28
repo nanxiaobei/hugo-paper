@@ -80,13 +80,13 @@
 
     {{ with $.Scratch.Get "social_list" }}
     <nav
-      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:ml-12 lg:items-center lg:space-x-6"
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
     >
       {{ range . }}<!---->
       <a
         class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
         style="--url: url(./{{ . }}.svg)"
-        href="{{ if eq . `rss` }}{{ `index.xml` | absURL }}{{ else if eq . `mastodon` }}{{ site.Params.Get . }}{{ else }}https://{{ . }}.com/{{ site.Params.Get . }}{{ end }}"
+        href="{{ if eq . `rss` }}{{ `index.xml` | absURL }}{{ else if eq . `mastodon` }}{{ index site.Params . }}{{ else }}https://{{ . }}.com/{{ index site.Params . }}{{ end }}"
         target="_blank"
         rel="{{ if eq . `rss` }}alternate{{ else }}me{{ end }}"
       >
