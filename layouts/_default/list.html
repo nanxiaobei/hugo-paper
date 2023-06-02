@@ -23,7 +23,7 @@
 <div class="-mt-2 mb-20 flex items-center">
   {{ if $avatar_url }}
   <div
-    class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow-xl dark:bg-white/80"
+    class="mr-5 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 shadow-sm dark:bg-white/80"
   >
     <img
       class="my-0 aspect-square w-16 rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
@@ -34,7 +34,7 @@
   {{ end }}<!---->
   {{ if site.Params.name }}
   <div>
-    <h1 class="my-2.5 text-3xl font-bold">{{ site.Params.name }}</h1>
+    <h1 class="mb-2 mt-3 text-[1.6rem] font-bold">{{ site.Params.name }}</h1>
     <div class="break-words">
       {{ site.Params.bio | default (print `A personal blog by `
       site.Params.name) }}
@@ -49,11 +49,11 @@
 <section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0">
   {{ if gt .Weight 0 }}
   <span
-    class="mb-2.5 inline-block text-xs font-semibold uppercase tracking-wide opacity-70"
+    class="mb-2 inline-block text-[0.8rem] font-medium uppercase tracking-wider text-[#ff3b2d] opacity-70"
     >Featured</span
   >
   {{ end }}
-  <h2 class="!my-0 pb-1 !leading-none">{{ .Title }}</h2>
+  <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
   <time class="text-sm opacity-60"
     >{{ .Date | time.Format ":date_medium" }}</time
   >

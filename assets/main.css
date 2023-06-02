@@ -1162,16 +1162,6 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.my-2\.5 {
-  margin-top: 0.625rem;
-  margin-bottom: 0.625rem;
-}
-
 .-mr-8 {
   margin-right: -2rem;
 }
@@ -1192,10 +1182,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.mb-2\.5 {
-  margin-bottom: 0.625rem;
-}
-
 .mb-20 {
   margin-bottom: 5rem;
 }
@@ -1212,8 +1198,8 @@ body {
   margin-left: 0.375rem;
 }
 
-.ml-6 {
-  margin-left: 1.5rem;
+.ml-4 {
+  margin-left: 1rem;
 }
 
 .ml-auto {
@@ -1242,6 +1228,10 @@ body {
 
 .mt-24 {
   margin-top: 6rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .block {
@@ -1473,14 +1463,13 @@ body {
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
+}
+
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
 }
 
 .text-\[0\.9em\] {
@@ -1489,6 +1478,10 @@ body {
 
 .text-\[0\] {
   font-size: 0;
+}
+
+.text-\[1\.6rem\] {
+  font-size: 1.6rem;
 }
 
 .text-lg {
@@ -1501,13 +1494,12 @@ body {
   line-height: 1.25rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .font-semibold {
@@ -1526,8 +1518,13 @@ body {
   line-height: 5rem;
 }
 
-.tracking-wide {
-  letter-spacing: 0.025em;
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.text-\[\#ff3b2d\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 59 45 / var(--tw-text-opacity));
 }
 
 .text-black {
@@ -1547,9 +1544,9 @@ body {
   opacity: 0.7;
 }
 
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -1581,7 +1578,7 @@ body {
   content: var(--tw-content);
 }
 
-:is(.dark .btn-menu)::before,:is(.dark
+:is(.dark .btn-menu)::before,:is(.dark 
   .btn-menu)::after {
   --tw-invert: invert(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
