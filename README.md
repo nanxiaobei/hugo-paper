@@ -34,7 +34,7 @@ Inside the folder of your Hugo project, run:
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
-Open `config.toml`, change `theme` to `"paper"`:
+Open `config.toml` or `hugo.toml`, change `theme` to `"paper"`:
 
 ```toml
 theme = "paper"
@@ -44,7 +44,7 @@ For more information, please read the [official guide](https://gohugo.io/getting
 
 ## Options
 
-Available options to `config.toml`:
+Available options to `config.toml` or `hugo.toml`:
 
 ```toml
 disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
