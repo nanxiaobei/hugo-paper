@@ -1710,8 +1710,8 @@ article blockquote {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-white\/80) {
-  background-color: rgb(255 255 255 / 0.8);
+:is(.dark .dark\:bg-white\/\[15\%\]) {
+  background-color: rgb(255 255 255 / 15%);
 }
 
 :is(.dark .dark\:bg-white\/\[8\%\]) {
