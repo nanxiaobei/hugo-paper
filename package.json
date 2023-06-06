@@ -5,10 +5,10 @@
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "__FOR_DEV__": "please change all `192.168.0.102` to your local IP",
+    "__FOR_DEV__": "please change all `192.168.0.101` to your local IP",
     "dev:tailwind": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
-    "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.102 --bind=192.168.0.102 --port=1313",
-    "dev:open": "open http://192.168.0.102:1313/",
+    "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.101 --bind=192.168.0.101 --port=1313",
+    "dev:open": "open http://192.168.0.101:1313/",
     "build:go": "cp exampleSite/go.default.mod exampleSite/go.mod",
     "build:generate": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
     "dev": "killall hugo & pnpm dev:tailwind & pnpm dev:server & pnpm dev:open",
