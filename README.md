@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Paper <sup><sup><sub>6.14</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6.15</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
