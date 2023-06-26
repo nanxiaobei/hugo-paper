@@ -34,7 +34,7 @@
 
     // dark theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
-    const lightBg = `{{ $.Scratch.Get "bg_color" }}`.replace(/"/g, '');
+    const lightBg = "{{ $.Scratch.Get `bg_color` }}".replace(/"/g, '');
     const setDark = (isDark) => {
       metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
