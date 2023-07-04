@@ -76,7 +76,7 @@
   }
 
   article pre {
-    @apply -mx-8 !p-8 shadow-lg;
+    @apply -mx-8 !p-8 shadow-sm;
   }
 
   article blockquote {
