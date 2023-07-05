@@ -72,7 +72,7 @@
   }
 
   article {
-    @apply text-lg leading-[1.9] text-black dark:text-white;
+    @apply text-lg leading-[1.8] text-black dark:text-white;
   }
 
   article pre {
