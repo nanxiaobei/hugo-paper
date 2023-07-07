@@ -5,9 +5,9 @@ Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
 <hr />
 
-A simple, clean, flexible Hugo theme.
+A simple, clean, customizable Hugo theme.
 
-⚡️ Fast | 📸 Fluent | 🫙 Smooth
+⚡️ Fast | 👒 Customizable (`linen` ░ `wheat` ░ `gray` ░ `light`) | 🫙 Smooth
 
 </div>
 
@@ -25,22 +25,6 @@ Hugo themes: [themes.gohugo.io/hugo-paper](https://themes.gohugo.io/hugo-paper/)
 ![](./images/screenshot_dark.png)
 ![](./images/screenshot_mobile.png)
 ![](./images/pagespeed.png)
-
-## Install
-
-Inside the folder of your Hugo project, run:
-
-```bash
-git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
-```
-
-Open `config.toml` or `hugo.toml`, change `theme` to `"paper"`:
-
-```toml
-theme = "paper"
-```
-
-For more information, please read the [official guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
 
 ## Options
 
@@ -81,6 +65,22 @@ Available options to front matter:
 comments = false                            # disable comments for a specific page
 math = true                                 # enable KaTex math typesetting for a specific page
 ```
+
+## Install
+
+Inside the folder of your Hugo project, run:
+
+```bash
+git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
+```
+
+Open `config.toml` or `hugo.toml`, change `theme` to `"paper"`:
+
+```toml
+theme = "paper"
+```
+
+For more information, please read the [official guide](https://gohugo.io/getting-started/quick-start/#step-3-add-a-theme) of Hugo.
 
 ## License
 
