@@ -1226,6 +1226,10 @@ body {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -1258,16 +1262,16 @@ body {
   height: 2rem;
 }
 
-.h-\[5rem\] {
-  height: 5rem;
+.h-\[4\.5rem\] {
+  height: 4.5rem;
 }
 
 .h-full {
   height: 100%;
 }
 
-.min-h-\[calc\(100\%-10rem\)\] {
-  min-height: calc(100% - 10rem);
+.min-h-\[calc\(100\%-9rem\)\] {
+  min-height: calc(100% - 9rem);
 }
 
 .w-1\/2 {
