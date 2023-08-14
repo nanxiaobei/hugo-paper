@@ -35,6 +35,7 @@
   {{ end }}
 
   <!-- Post Nav -->
+  {{ if not site.Params.disablePostNavigation }}<!---->
   {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
   {{ if and (gt (len $pages) 1) (in $pages . ) }}
   <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
@@ -53,6 +54,7 @@
     >
     {{ end }}
   </nav>
+  {{ end }}<!---->
   {{ end }}
 
   <!-- Disqus -->

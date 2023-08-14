@@ -53,6 +53,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
 
   # misc
   disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = true              # disable post navigation
   monoDarkIcon = true                       # show monochrome dark mode icon
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
