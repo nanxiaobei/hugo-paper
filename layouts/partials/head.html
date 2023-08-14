@@ -86,8 +86,6 @@
   <!-- Misc -->
   {{ if or hugo.IsProduction (eq site.Params.env "production") }}
   <!---->
-  {{ template "_internal/google_analytics_async.html" . }}
-  <!---->
   {{ template "_internal/google_analytics.html" . }}
   <!---->
   {{ template "_internal/opengraph.html" . }}
