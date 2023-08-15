@@ -35,7 +35,7 @@
 <html
   class="not-ready lg:text-base"
   style="--bg: {{ $.Scratch.Get `bg_color` }}"
-  lang="{{ site.LanguageCode }}"
+  lang="{{ or site.LanguageCode site.Language.Lang }}"
 >
   {{ partial "head.html" . }}
   <body class="text-black duration-200 ease-out dark:text-white">
