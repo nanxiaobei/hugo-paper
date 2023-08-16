@@ -59,7 +59,7 @@
   {{ end }}
   <!---->
 
-  {{ if or .Params.math .Site.Params.math }}
+  {{ if or .Params.math site.Params.math }}
   <!---->
   {{ partial "math.html" . }}
   <!---->
