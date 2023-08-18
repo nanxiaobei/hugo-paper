@@ -1640,7 +1640,7 @@ article {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-article pre {
+article pre:not(blockquote pre) {
   margin-left: -2rem;
   margin-right: -2rem;
   padding: 2rem !important;

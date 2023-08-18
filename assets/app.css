@@ -75,7 +75,7 @@
     @apply text-lg leading-[1.8] text-black dark:text-white;
   }
 
-  article pre {
+  article pre:not(blockquote pre) {
     @apply -mx-8 !p-8 shadow;
   }
 
