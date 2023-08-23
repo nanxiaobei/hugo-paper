@@ -1,26 +1,22 @@
 <div align="center">
-<h1>Paper <sup><sup><sub>6.21</sub></sup></sup></h1>
-
-Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
-
-<hr />
-
-A simple, clean, customizable Hugo theme.
-
-⚡️ Fast | 👒 Customizable (`linen` ░ `wheat` ░ `gray` ░ `light`) | 🫙 Smooth
-
-</div>
-
----
-
-<div align="center">
-<a href="https://kee.so/" target="_blank"><img src="https://i.imgur.com/x5SRUoo.png" alt="kee.so" /></a>
+<p><a href="https://kee.so/" target="_blank"><img src="https://i.imgur.com/x5SRUoo.png" alt="kee.so" /></a></p>
 
 Create now ➫ [🔗 kee.so](https://kee.so/)
 
 </div>
 
 ---
+
+<div align="center">
+<h1>Paper <sup><sup><sub>6.21</sub></sup></sup></h1>
+
+Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
+
+A simple, clean, customizable Hugo theme.
+
+⚡️ Fast | 👒 Customizable | 🫙 Smooth
+
+</div>
 
 ## Links
 
