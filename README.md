@@ -13,6 +13,15 @@ A simple, clean, customizable Hugo theme.
 
 ---
 
+<div align="center">
+<a href="https://kee.so/" target="_blank"><img src="https://i.imgur.com/x5SRUoo.png" alt="kee.so" /></a>
+
+Create now ➫ [🔗 kee.so](https://kee.so/)
+
+</div>
+
+---
+
 ## Links
 
 Product Hunt: [producthunt.com/posts/hugo-paper-6](https://www.producthunt.com/posts/hugo-paper-6)
@@ -112,9 +121,3 @@ For more information, please read the [official guide](https://gohugo.io/getting
 ## License
 
 [MIT License](https://github.com/nanxiaobei/hugo-paper/blob/main/LICENSE) (c) [nanxiaobei](https://lee.so/)
-
-## FUTAKE
-
-Try [**FUTAKE**](https://sotake.com/futake) in WeChat. A mini app for your inspiration moments. 🌈
-
-![](https://s3.bmp.ovh/imgs/2022/07/21/452dd47aeb790abd.png)
