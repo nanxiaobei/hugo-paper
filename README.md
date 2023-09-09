@@ -71,6 +71,8 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   clientSecret = 'gitalk client secret'
   repo = 'your gitalk repo'
   owner = 'owner github username'
+  language = 'en' # en, zh-CN, zh-TW, es-ES, fr, ru, de, pl, ko, fa, ja
+  distractionFreeMode = false # Facebook-like distraction free mode.
 ```
 
 Available options to front matter:
