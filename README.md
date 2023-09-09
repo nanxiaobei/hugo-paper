@@ -64,7 +64,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTeX math typesetting globally
 
-  # your git talk config
+# use gitalk (alternative)
 [params.gitalk]
   enable = true
   clientID = 'gitalk client id'
