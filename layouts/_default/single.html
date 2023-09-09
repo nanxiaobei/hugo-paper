@@ -115,7 +115,7 @@
       owner: '{{ .Site.Params.Gitalk.owner }}',
       admin: ['{{ .Site.Params.Gitalk.owner }}'],
       id: md5(location.pathname),
-      distractionFreeMode: Boolean('{{ .Site.Params.Gitalk.distractionFreeMode }}'), // Facebook-like distraction free mode\
+      distractionFreeMode: Boolean('{{ .Site.Params.Gitalk.distractionFreeMode }}'),
       language: '{{ .Site.Params.Gitalk.language }}'
     });
     (function() {
