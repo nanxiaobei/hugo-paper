@@ -63,6 +63,14 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTeX math typesetting globally
+
+  # your git talk config
+[params.gitalk]
+  enable = true
+  clientID = 'gitalk client id'
+  clientSecret = 'gitalk client secret'
+  repo = 'your gitalk repo'
+  owner = 'owner github username'
 ```
 
 Available options to front matter:
