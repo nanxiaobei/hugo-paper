@@ -63,6 +63,16 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTeX math typesetting globally
+
+  # giscus 
+[params.giscus]
+  repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
+  repoId = 'YOUR_GISCUS_REPO_ID'
+  category = 'YOUR__GISCUS_CATEGORY'
+  categoryId = 'YOUR_GISCUS_CATEGORY_ID'
+  mapping = 'pathname'
+  theme = 'light'
+  lang = 'zh-CN'
 ```
 
 Available options to front matter:
