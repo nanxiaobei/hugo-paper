@@ -8,7 +8,7 @@ Create now ➫ [🔗 kee.so](https://kee.so/)
 ---
 
 <div align="center">
-<h1>Paper <sup><sup><sub>6.21</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6.22</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
@@ -64,7 +64,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTeX math typesetting globally
 
-  # giscus 
+  # giscus
 [params.giscus]
   repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details
   repoId = 'YOUR_GISCUS_REPO_ID'
