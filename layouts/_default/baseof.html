@@ -9,6 +9,7 @@
 "light" "#fff" }}<!---->
 {{ $.Scratch.Set "bg_color" (index $color_map (site.Params.color | default
 (print "linen"))) }}<!---->
+{{ $bg_color := $.Scratch.Get "bg_color" }}<!---->
 
 <!-- social_list -->
 {{ $social_params := slice "twitter" "github" "instagram" "linkedin" "mastodon"
@@ -34,7 +35,7 @@
 
 <html
   class="not-ready lg:text-base"
-  style="--bg: {{ $.Scratch.Get `bg_color` }}"
+  style="--bg: {{ $bg_color }}"
   lang="{{ or site.LanguageCode site.Language.Lang }}"
 >
   {{ partial "head.html" . }}
