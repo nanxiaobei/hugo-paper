@@ -1627,10 +1627,6 @@ body {
   transition-property: none !important;
 }
 
-.highlight tr {
-  border-bottom-width: 0;
-}
-
 .btn-menu::before,
   .btn-menu::after {
   display: block;
@@ -1688,18 +1684,8 @@ article {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-article pre:not(blockquote pre) {
-  margin-left: -2rem;
-  margin-right: -2rem;
-  padding: 2rem !important;
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 article blockquote {
-  padding-left: calc(2rem - 3px) !important;
-  margin-left: calc(2rem * -1) !important;
+  border-left-width: 3px !important;
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
@@ -1707,6 +1693,31 @@ article blockquote {
 :is(.dark article blockquote) {
   --tw-border-opacity: 1 !important;
   border-color: rgb(255 255 255 / var(--tw-border-opacity)) !important;
+}
+
+article code {
+  display: inline-block;
+  font-size: 0.875rem !important;
+  line-height: 1.5rem !important;
+}
+
+article .highlight {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+article .highlight pre {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+article .highlight > div {
+  overflow: auto;
+  border-radius: 0.375rem;
+}
+
+article .highlight > div table tr td:first-of-type > pre {
+  padding-right: 0px;
 }
 
 .\[background\:url\(\.\/theme\.png\)_left_center\/_auto_theme\(\'spacing\.6\'\)_no-repeat\] {
