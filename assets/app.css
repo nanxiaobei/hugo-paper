@@ -88,10 +88,34 @@
   }
 
   article .highlight > div {
-    @apply overflow-auto rounded-md;
+    @apply rounded-md bg-[--tw-prose-pre-bg];
   }
 
-  article .highlight > div table tr td:first-of-type > pre {
-    @apply pr-0;
+  article .highlight > div table {
+    @apply my-0 table-fixed;
+  }
+
+  article .highlight > div table tr {
+    @apply flex;
+  }
+
+  article .highlight > div table tr td {
+    @apply p-0;
+  }
+
+  article .highlight > div table tr td pre {
+    @apply !bg-transparent;
+  }
+
+  article .highlight > div table tr td:first-of-type pre {
+    @apply pr-[4px];
+  }
+
+  article .highlight > div table tr td:first-of-type pre code span {
+    @apply !mr-0 block min-w-[18px] !p-0 text-right text-white/40;
+  }
+
+  article .highlight > div table tr td:last-of-type {
+    @apply overflow-auto;
   }
 }

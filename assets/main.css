@@ -6,7 +6,7 @@
  */
 
 /*
- ! tailwindcss v3.3.3 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -1712,12 +1712,43 @@ article .highlight pre {
 }
 
 article .highlight > div {
-  overflow: auto;
   border-radius: 0.375rem;
+  background-color: var(--tw-prose-pre-bg);
 }
 
-article .highlight > div table tr td:first-of-type > pre {
-  padding-right: 0px;
+article .highlight > div table {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  table-layout: fixed;
+}
+
+article .highlight > div table tr {
+  display: flex;
+}
+
+article .highlight > div table tr td {
+  padding: 0px;
+}
+
+article .highlight > div table tr td pre {
+  background-color: transparent !important;
+}
+
+article .highlight > div table tr td:first-of-type pre {
+  padding-right: 4px;
+}
+
+article .highlight > div table tr td:first-of-type pre code span {
+  margin-right: 0px !important;
+  display: block;
+  min-width: 18px;
+  padding: 0px !important;
+  text-align: right;
+  color: rgb(255 255 255 / 0.4);
+}
+
+article .highlight > div table tr td:last-of-type {
+  overflow: auto;
 }
 
 .\[background\:url\(\.\/theme\.png\)_left_center\/_auto_theme\(\'spacing\.6\'\)_no-repeat\] {
@@ -1886,3 +1917,4 @@ article .highlight > div table tr td:first-of-type > pre {
     transition-property: none;
   }
 }
+
