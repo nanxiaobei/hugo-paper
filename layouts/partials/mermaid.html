@@ -1,0 +1,20 @@
+<!-- mermaid.html -->
+{{ if .Params.mermaid }}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+<script>
+  Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+    (el) => {
+      el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+    }
+  );  
+</script>
+<style>
+  .mermaid svg {
+    display: block;
+    margin: auto;
+  }
+</style>
+{{ end }}

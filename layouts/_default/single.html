@@ -101,6 +101,9 @@
   </script>
   {{ end }}
 
+  <!-- mermaid -->
+  {{- partial "mermaid.html" . -}}
+
   <!-- giscus comment -->
   {{ if and site.Params.giscus.repo (not (eq .Params.comments false)) }}
     <div class="giscus mt-24"></div>
