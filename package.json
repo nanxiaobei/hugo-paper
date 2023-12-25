@@ -1,6 +1,6 @@
 {
   "name": "hugo-paper",
-  "version": "6.24.0",
+  "version": "6.25.0",
   "repository": "https://github.com/nanxiaobei/hugo-paper.git",
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
   "license": "MIT",
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.5.9",
+    "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "stylelint": "^16.1.0",
     "stylelint-config-one": "^3.0.1",
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.1"
   }
 }
