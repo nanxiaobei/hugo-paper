@@ -42,6 +42,10 @@
     @apply !transition-none;
   }
 
+  .prose {
+    @apply break-words;
+  }
+
   .btn-menu::before,
   .btn-menu::after {
     @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
