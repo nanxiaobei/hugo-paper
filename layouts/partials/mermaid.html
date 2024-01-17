@@ -5,11 +5,11 @@
   mermaid.initialize({ startOnLoad: true });
 </script>
 <script>
-  Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+  Array.from(document.getElementsByClassName('language-mermaid')).forEach(
     (el) => {
       el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
-    }
-  );  
+    },
+  );
 </script>
 <style>
   .mermaid svg {

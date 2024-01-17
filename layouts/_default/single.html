@@ -106,23 +106,24 @@
 
   <!-- giscus comment -->
   {{ if and site.Params.giscus.repo (not (eq .Params.comments false)) }}
-    <div class="giscus mt-24"></div>
-    <script src="https://giscus.app/client.js"
-          data-repo="{{ site.Params.giscus.repo }}"
-          data-repo-id="{{ site.Params.giscus.repoId }}"
-          data-category="{{ site.Params.giscus.category }}"
-          data-category-id="{{ site.Params.giscus.categoryId }}"
-          data-mapping="{{ site.Params.giscus.mapping | default (print `pathname`) }}"
-          data-strict="{{ site.Params.giscus.strict | default (print `1`) }}"
-          data-reactions-enabled="{{ site.Params.giscus.reactionsEnabled | default (print `0`) }}"
-          data-emit-metadata="{{ site.Params.giscus.emitMetadata | default (print `0`) }}"
-          data-input-position="{{ site.Params.giscus.inputPosition | default (print `top`) }}"
-          data-theme="{{ site.Params.giscus.theme | default (print `light`) }}"
-          data-lang="{{ site.Params.giscus.lang | default (print `en`) }}"
-          data-loading="{{ site.Params.giscus.loading | default (print `lazy`) }}"
-          crossorigin="anonymous"
-          async>
-    </script>
+  <div class="giscus mt-24"></div>
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ site.Params.giscus.repo }}"
+    data-repo-id="{{ site.Params.giscus.repoId }}"
+    data-category="{{ site.Params.giscus.category }}"
+    data-category-id="{{ site.Params.giscus.categoryId }}"
+    data-mapping="{{ site.Params.giscus.mapping | default (print `pathname`) }}"
+    data-strict="{{ site.Params.giscus.strict | default (print `1`) }}"
+    data-reactions-enabled="{{ site.Params.giscus.reactionsEnabled | default (print `0`) }}"
+    data-emit-metadata="{{ site.Params.giscus.emitMetadata | default (print `0`) }}"
+    data-input-position="{{ site.Params.giscus.inputPosition | default (print `top`) }}"
+    data-theme="{{ site.Params.giscus.theme | default (print `light`) }}"
+    data-lang="{{ site.Params.giscus.lang | default (print `en`) }}"
+    data-loading="{{ site.Params.giscus.loading | default (print `lazy`) }}"
+    crossorigin="anonymous"
+    async
+  ></script>
   {{ end }}
 </article>
 
