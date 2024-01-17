@@ -61,8 +61,8 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   disablePostNavigation = true              # disable post navigation
   monoDarkIcon = true                       # show monochrome dark mode icon
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
-  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
   math = true                               # enable KaTeX math typesetting globally
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
 
   # giscus
 [params.giscus]
@@ -84,30 +84,6 @@ math = true                                 # enable KaTeX math typesetting for 
 
 ## Install
 
-### As hugo module
-
-Inside the folder of your Hugo project, run:
-
-```bash
-hugo mod init github.com/<USERNAME>/<REPONAME>
-```
-
-Add paper theme ad dependency of your site:
-
-```bash
-hugo mod init github.com/<USERNAME>/<REPONAME>
-```
-
-Open `config.toml` or `hugo.toml`, remove the `theme` line (if present) and add module section at the bottom of the file:
-
-```toml
-[module]
-  [[module.imports]]
-    path = "github.com/nanxiaobei/hugo-paper"
-```
-
-For more information, please read the [official guide](https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme) of Hugo.
-
 ### As git submodule
 
 Inside the folder of your Hugo project, run:
@@ -116,13 +92,31 @@ Inside the folder of your Hugo project, run:
 git submodule add https://github.com/nanxiaobei/hugo-paper themes/paper
 ```
 
-Open `config.toml` or `hugo.toml`, change `theme` to `"paper"`:
+Open `config.toml`(or `hugo.toml`), change `theme` to `"paper"`:
 
 ```toml
 theme = "paper"
 ```
 
 For more information, please read the [official guide](https://gohugo.io/getting-started/quick-start/#configure-the-site) of Hugo.
+
+### As hugo module
+
+Add paper theme ad dependency of your site:
+
+```bash
+hugo mod init github.com/nanxiaobei/hugo-paper
+```
+
+Open `config.toml`(or `hugo.toml`), remove the `theme` line (if present), add `module` section to the bottom of the file:
+
+```toml
+[module]
+  [[module.imports]]
+    path = "github.com/nanxiaobei/hugo-paper"
+```
+
+For more information, please read the [official guide](https://gohugo.io/hugo-modules/use-modules/#use-a-module-for-a-theme) of Hugo.
 
 ## License
 
