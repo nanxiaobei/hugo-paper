@@ -105,7 +105,7 @@ For more information, please read the [official guide](https://gohugo.io/getting
 Add paper theme ad dependency of your site:
 
 ```bash
-hugo mod init github.com/nanxiaobei/hugo-paper
+hugo mod init github.com/<your_user>/<your_project>
 ```
 
 Open `config.toml`(or `hugo.toml`), remove the `theme` line (if present), add `module` section to the bottom of the file:
