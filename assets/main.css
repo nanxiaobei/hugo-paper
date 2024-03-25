@@ -73,6 +73,8 @@ body {
   /* 1 */
   line-height: inherit;
   /* 2 */
+  padding-left: calc(100vw - 100%);
+  /* 3 */
 }
 
 /*
@@ -1690,6 +1692,7 @@ article {
   line-height: 1.75rem;
   line-height: 1.8;
   --tw-text-opacity: 1;
+  --search-border: rgba(194, 194, 194);
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
@@ -1916,6 +1919,7 @@ article .highlight > div table tr td:last-of-type {
 
 :is(:where(.dark) .dark\:text-white) {
   --tw-text-opacity: 1;
+  --search-border: rgb(65, 66, 68);
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
@@ -1930,4 +1934,44 @@ article .highlight > div table tr td:last-of-type {
 
 :is(:where(.dark) .dark\:hover\:bg-white\/\[3\%\]:hover) {
   background-color: rgb(255 255 255 / 3%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--search-border);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: 0 0;
+}
+
+article .highlight pre::-webkit-scrollbar {
+  height: 6px;
+}
+
+#elbi-input {
+  background-color: transparent;
+  outline: unset !important;
+  border-radius: 8px;
+  width: 100% !important;
+  padding: 4px 10px;
+  border: 2px solid var(--search-border);
+  font-weight: 700;
+  display: flex;
+  gap: 20px;
+}
+
+#elbi-results {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#elbi-results .tags {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
 }

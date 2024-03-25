@@ -1,0 +1,83 @@
+{{ define "main" }}
+
+<article>
+    <header class="mb-16">
+        <h1 class="!my-0 pb-1.5">{{ .Title }}</h1>
+    </header>
+
+    <div>
+        <input type="search" class="is-size-4" id="elbi-input" placeholder="Search ..." />
+        <div id="elbi-results"></div>
+    </div>
+
+</article>
+
+<script>
+    const input = document.getElementById("elbi-input");
+    const results = document.getElementById("elbi-results");
+    const request = new Request("/index.json");
+
+    fetch(request)
+        .then(response => response.json())
+        .then(data => {
+            let pages = data;
+
+            input.addEventListener("input", function () {
+                let filteredPages = pages;
+                results.innerHTML = "";
+                if (input.value != "") {
+                    filteredPages.forEach((page) => page.score = 0);
+                    let searchterms = input.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().split(" ");
+
+                    searchterms.forEach(function (term) {
+                        if (term != "") {
+                            filteredPages = filteredPages.filter(function (page) {
+                                let description = JSON.stringify(page);
+                                return description.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().indexOf(term) !== -1;
+                            });
+                        }
+                    });
+                    searchterms.forEach(function (term) {
+                        if (term != "") {
+                            filteredPages.forEach(function (page) {
+                                if (page.title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(term)) {
+                                    page.score += 3
+                                };
+                                if (JSON.stringify(page.tags).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(term)) {
+                                    page.score += 2
+                                };
+                                if (page.summary.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(term)) {
+                                    page.score += 1
+                                };
+                                if (JSON.stringify(page.categories).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().includes(term)) {
+                                    page.score += 1
+                                };
+                            })
+                        };
+                    });
+                    filteredPages = filteredPages.filter(function (page) {
+                        return page.score > 0;
+                    })
+                    filteredPages.sort(function (a, b) {
+                        const titleA = a.title.toUpperCase();
+                        const titleB = b.title.toUpperCase();
+                        if (titleA < titleB) return -1;
+                        if (titleA > titleB) return 1;
+                        return 0;
+                    });
+                    filteredPages.sort(function (a, b) {
+                        return b.score - a.score;
+                    });
+                    filteredPages.forEach(function (page) {
+                        let tags = "";
+                        page.tags.forEach(function (tag) {
+                            tags += `<div class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]">${tag}</div>`;
+                        });
+                        results.insertAdjacentHTML("beforeend", `<section class="relative my-10 first-of-type:mt-0 last-of-type:mb-0"><h2 class="!my-0 pb-1 font-bold !leading-none">${page.title}</h2><div class="text-sm antialiased opacity-60 tags">${tags}</div><a class="absolute inset-0 text-[0]" href="${page.permalink}"></a></section>`)
+                    });
+                };
+            });
+        });
+</script>
+
+{{ end }}
