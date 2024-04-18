@@ -13,7 +13,7 @@
 
 <!-- social_list -->
 {{ $social_params := slice "twitter" "github" "instagram" "linkedin" "mastodon"
-"rss" }}<!---->
+"threads" "rss" }}<!---->
 {{ range $social_params }}<!---->
 {{ if isset site.Params . }}<!---->
 {{ $.Scratch.Add "social_list" (slice .) }}<!---->

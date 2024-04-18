@@ -48,6 +48,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   instagram = 'YOUR_INSTAGRAM_ID'           # instagram.com/YOUR_INSTAGRAM_ID
   linkedin = 'YOUR_LINKEDIN_ID'             # linkedin.com/in/YOUR_LINKEDIN_ID
   mastodon = 'YOUR_MASTODON_LINK'           # e.g. 'https://mastodon.instance/@xxx'
+  threads = '@YOUR_THREADS_ID'              # threads.net/@YOUR_THREADS_ID
   rss = true                                # show rss icon
 
   # home page profile
