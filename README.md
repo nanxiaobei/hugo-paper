@@ -63,6 +63,7 @@ disqusShortname = 'YOUR_DISQUS_SHORTNAME'   # use disqus comments
   monoDarkIcon = true                       # show monochrome dark mode icon
   gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
   math = true                               # enable KaTeX math typesetting globally
+  local_katex = false                       # use local KaTeX js/css instead of CDN
   graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
 
   # giscus
