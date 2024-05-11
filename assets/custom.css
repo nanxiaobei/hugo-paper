@@ -1,1 +1,11 @@
 /* Place custom css here. */
+.italic {
+    font-style: italic;
+}
+
+li p:nth-child(1) {
+    font-weight: bold; 
+}
+li p:not(:nth-child(1)) {
+    text-indent: 0.5rem; 
+}

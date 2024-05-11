@@ -35,9 +35,10 @@
   {{ if site.Params.name }}
   <div>
     <h1 class="mb-2 mt-3 text-[1.6rem] font-bold">{{ site.Params.name }}</h1>
-    <div class="break-words">
-      {{ site.Params.bio | default (print `A personal blog by `
-      site.Params.name) }}
+    <h5 class=" italic">{{ site.Params.short_text }}</h1>
+    <br>
+    <div class="">
+      {{ site.Params.bio | $.Page.RenderString }}
     </div>
   </div>
   {{ end }}
