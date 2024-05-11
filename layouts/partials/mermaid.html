@@ -2,7 +2,10 @@
 {{ if .Params.mermaid }}
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'dark',
+  });
 </script>
 <script>
   Array.from(document.getElementsByClassName('language-mermaid')).forEach(
@@ -15,6 +18,11 @@
   .mermaid svg {
     display: block;
     margin: auto;
+  }
+  .mermaid {
+    background-color: #191919;
+    padding: 5px;
+    box-shadow: 0 0 5px 10px #191919;
   }
 </style>
 {{ end }}
