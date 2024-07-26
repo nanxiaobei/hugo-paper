@@ -34,9 +34,7 @@
   {{ end }}<!---->
   {{ if site.Params.name }}
   <div>
-    <div class="mb-1 mt-3 text-3xl font-medium text-black">
-      {{ site.Params.name }}
-    </div>
+    <h1 class="mb-1 mt-3 text-3xl font-medium">{{ site.Params.name }}</h1>
     <div class="break-words">
       {{ site.Params.bio | default (print `A personal blog by `
       site.Params.name) }}
