@@ -5,7 +5,7 @@
     <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
 
     {{ if ne .Type "page" }}
-    <div class="text-sm antialiased opacity-60">
+    <div class="text-xs antialiased opacity-60">
       {{ if .Date }}
       <time>{{ .Date | time.Format ":date_medium" }}</time>
       {{ end }}<!---->
@@ -26,7 +26,7 @@
   <footer class="mt-12 flex flex-wrap">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a
-      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1.5 no-underline dark:bg-white/[8%]"
+      class="mb-1.5 mr-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline dark:bg-white/[8%]"
       href="{{ $href }}"
       >{{ . }}</a
     >
@@ -38,17 +38,19 @@
   {{ if not site.Params.disablePostNavigation }}<!---->
   {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
   {{ if and (gt (len $pages) 1) (in $pages . ) }}
-  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+  <nav
+    class="mt-24 flex rounded-lg bg-black/[3%] text-lg !leading-[1.2] dark:bg-white/[8%]"
+  >
     {{ with $pages.Next . }}
     <a
-      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-medium no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
       href="{{ .Permalink }}"
       ><span class="mr-1.5">←</span><span>{{ .Name }}</span></a
     >
     {{ end }}<!---->
     {{ with $pages.Prev . }}
     <a
-      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-medium no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
       href="{{ .Permalink }}"
       ><span>{{ .Name }}</span><span class="ml-1.5">→</span></a
     >

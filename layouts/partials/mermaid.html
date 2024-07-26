@@ -7,14 +7,8 @@
 <script>
   Array.from(document.getElementsByClassName('language-mermaid')).forEach(
     (el) => {
-      el.parentElement.outerHTML = `<div class="mermaid">${el.innerHTML}</div>`;
+      el.parentElement.outerHTML = `<div class="mermaid [&_svg]:block [&_svg]:m-auto">${el.innerHTML}</div>`;
     },
   );
 </script>
-<style>
-  .mermaid svg {
-    display: block;
-    margin: auto;
-  }
-</style>
 {{ end }}

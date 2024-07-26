@@ -20,16 +20,19 @@
   }
 
   body {
-    -webkit-tap-highlight-color: transparent;
-    background: var(--bg);
+    @apply bg-[--bg] antialiased [-webkit-tap-highlight-color:transparent] dark:bg-black/90;
+  }
 
-    @apply dark:bg-black/90;
+  h1,
+  h2,
+  h3 {
+    @apply !font-medium;
   }
 }
 
 @layer components {
   .btn {
-    @apply rounded-full bg-black px-7 py-4 text-sm text-white no-underline shadow duration-100 active:scale-95 dark:bg-white dark:text-black;
+    @apply rounded-xl bg-black px-6 py-3 text-white no-underline duration-100 active:scale-95 dark:bg-white dark:text-black;
   }
 
   .link {
@@ -44,6 +47,10 @@
 
   .prose {
     @apply break-words;
+  }
+
+  .prose kbd:has(kbd) {
+    @apply shadow-none;
   }
 
   .btn-menu::before,
@@ -73,10 +80,6 @@
 
   article {
     @apply text-lg leading-[1.8] text-black dark:text-white;
-  }
-
-  article blockquote {
-    @apply !border-l-[3px] !border-black dark:!border-white;
   }
 
   article code {
