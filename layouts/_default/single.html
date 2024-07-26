@@ -60,10 +60,11 @@
   {{ end }}
 
   <!-- Disqus -->
-  {{ if and site.DisqusShortname (not (eq .Params.comments false)) }}
+  {{ if and site.Config.Services.Disqus.Shortname (not (eq .Params.comments
+  false)) }}
   <div class="mt-24" id="disqus_thread"></div>
   <script>
-    const disqusShortname = '{{ site.DisqusShortname }}';
+    const disqusShortname = '{{ site.Config.Services.Disqus.Shortname }}';
     const script = document.createElement('script');
     script.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
     script.setAttribute('data-timestamp', +new Date());
