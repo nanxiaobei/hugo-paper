@@ -1,7 +1,7 @@
 <div align="center">
 
 Link in bio to **widgets**,
-your online **home screen**. ➫ [🔗 kee.so](https://kee.so/)
+your online **home screen**. ➫ [kee.so](https://kee.so/)
 
 </div>
 
