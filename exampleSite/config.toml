@@ -3,8 +3,8 @@ baseURL = "https://hugo-paper.vercel.app/"
 author = "Steve Francia"
 copyright = "© 2024, lee.so"
 paginate = 3
-languageCode = "fa"
-DefaultContentLanguage = "fa"
+languageCode = "en"
+DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
 # See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
@@ -15,8 +15,6 @@ theme = "hugo-paper"
 title = "Paper"
 
 [params]
-  direction = "rtl"
-
   color = 'linen'
 
   twitter = 'nanxiaobei'
