@@ -1929,6 +1929,24 @@ article .highlight {
   margin-right: auto;
 }
 
+.ltr\:space-x-10:where([dir="ltr"], [dir="ltr"] *) > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+@media (min-width: 1024px) {
+  .ltr\:lg\:ml-14:where([dir="ltr"], [dir="ltr"] *) {
+    margin-left: 3.5rem;
+  }
+
+  .ltr\:lg\:space-x-10:where([dir="ltr"], [dir="ltr"] *) > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+}
+
 .rtl\:-ml-8:where([dir="rtl"], [dir="rtl"] *) {
   margin-left: -2rem;
 }
@@ -1939,6 +1957,16 @@ article .highlight {
 
 .rtl\:mr-4:where([dir="rtl"], [dir="rtl"] *) {
   margin-right: 1rem;
+}
+
+.rtl\:space-x-reverse:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+@media (min-width: 1024px) {
+  .rtl\:lg\:ml-14:where([dir="rtl"], [dir="rtl"] *) {
+    margin-left: 3.5rem;
+  }
 }
 
 .\[\&\>\*\:hover\]\:bg-black\/\[2\%\]>*:hover {
