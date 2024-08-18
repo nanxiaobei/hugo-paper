@@ -6,7 +6,7 @@
  */
 
 /*
- ! tailwindcss v3.4.9 | MIT License | https://tailwindcss.com
+ ! tailwindcss v3.4.10 | MIT License | https://tailwindcss.com
  */
 
 /*
@@ -1252,10 +1252,6 @@ h1,
   margin-left: -0.25rem;
 }
 
-.-mr-8 {
-  margin-right: -2rem;
-}
-
 .-mt-2 {
   margin-top: -0.5rem;
 }
@@ -1278,10 +1274,6 @@ h1,
 
 .ml-1\.5 {
   margin-left: 0.375rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
 }
 
 .ml-auto {
@@ -1923,6 +1915,30 @@ article .highlight {
   .lg\:transition-none {
     transition-property: none;
   }
+}
+
+.ltr\:-mr-8:where([dir="ltr"], [dir="ltr"] *) {
+  margin-right: -2rem;
+}
+
+.ltr\:ml-4:where([dir="ltr"], [dir="ltr"] *) {
+  margin-left: 1rem;
+}
+
+.ltr\:mr-auto:where([dir="ltr"], [dir="ltr"] *) {
+  margin-right: auto;
+}
+
+.rtl\:-ml-8:where([dir="rtl"], [dir="rtl"] *) {
+  margin-left: -2rem;
+}
+
+.rtl\:ml-auto:where([dir="rtl"], [dir="rtl"] *) {
+  margin-left: auto;
+}
+
+.rtl\:mr-4:where([dir="rtl"], [dir="rtl"] *) {
+  margin-right: 1rem;
 }
 
 .\[\&\>\*\:hover\]\:bg-black\/\[2\%\]>*:hover {

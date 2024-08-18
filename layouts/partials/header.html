@@ -1,17 +1,17 @@
 <header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
-  <div class="relative z-50 mr-auto flex items-center">
+  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
     <a class="-translate-y-[1px] text-2xl font-medium" href="{{ `` | absURL }}"
       >{{ site.Title }}</a
     >
     <div
-      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
+      class="btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer {{ if site.Params.monoDarkIcon }}[background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert{{ else }}[background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)]{{ end }} dark:[background-position:right]"
       role="button"
       aria-label="Dark"
     ></div>
   </div>
 
   <div
-    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
     role="button"
     aria-label="Menu"
   ></div>
