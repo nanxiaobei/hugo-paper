@@ -1991,6 +1991,10 @@ article .highlight {
   .rtl\:lg\:mr-12:where([dir="rtl"], [dir="rtl"] *) {
     margin-right: 3rem;
   }
+
+  .rtl\:lg\:mr-14:where([dir="rtl"], [dir="rtl"] *) {
+    margin-right: 3.5rem;
+  }
 }
 
 .\[\&\>\*\:hover\]\:bg-black\/\[2\%\]>*:hover {
