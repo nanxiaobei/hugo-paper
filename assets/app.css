@@ -25,6 +25,10 @@
   h3 {
     @apply !font-semibold;
   }
+
+  pre {
+    direction: ltr;
+  }
 }
 
 @layer components {
