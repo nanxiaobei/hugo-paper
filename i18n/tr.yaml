@@ -1,0 +1,5 @@
+- id: prev_page
+  translation: 'Öneceki'
+
+- id: next_page
+  translation: 'Sonrakı'
