@@ -18,48 +18,79 @@
 
   {{ $bg_color := $.Scratch.Get "bg_color" }}<!---->
 
-  <script>
+<script>
     // base
     const htmlClass = document.documentElement.classList;
     setTimeout(() => {
-      htmlClass.remove('not-ready');
+        htmlClass.remove('not-ready');
     }, 10);
 
     // mobile menu
     const btnMenu = document.querySelector('.btn-menu');
     btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
+        htmlClass.toggle('open');
     });
 
     // dark theme
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const lightBg = '{{ $bg_color }}'.replace(/"/g, '');
-    const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
-      htmlClass[isDark ? 'add' : 'remove']('dark');
-      localStorage.setItem('dark', isDark);
+
+    // update Giscus theme
+    const updateGiscusTheme = () => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            const isDark = htmlClass.contains('dark');
+            iframe.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: isDark ? 'dark' : 'light',
+                        },
+                    },
+                },
+                'https://giscus.app'
+            );
+        }
     };
 
-    // init
-    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    if (htmlClass.contains('dark')) {
-      setDark(true);
+    // set theme
+    const setDark = (isDark) => {
+        // update meta theme color
+        metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+
+        // toggle dark class
+        htmlClass[isDark ? 'add' : 'remove']('dark');
+
+        // save to localStorage
+        localStorage.setItem('dark', isDark);
+
+        // update Giscus theme in real-time, without reloading iframe
+        updateGiscusTheme();
+    };
+
+    // get theme setting from localStorage
+    const darkVal = localStorage.getItem('dark');
+    if (darkVal === null) {
+        // if not found, determine based on system settings or default
+        setDark(false); // set to default light theme
     } else {
-      const darkVal = localStorage.getItem('dark');
-      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+        // apply the saved theme
+        setDark(darkVal === 'true');
     }
 
-    // listen system
-    darkScheme.addEventListener('change', (event) => {
-      setDark(event.matches);
+    // ensure Giscus theme syncs after page loads
+    window.addEventListener('load', () => {
+        // after page load, make sure giscus theme is synced
+        updateGiscusTheme();
     });
 
     // manual switch
     const btnDark = document.querySelector('.btn-dark');
     btnDark.addEventListener('click', () => {
-      setDark(localStorage.getItem('dark') !== 'true');
+        const currentTheme = localStorage.getItem('dark') === 'true';
+        setDark(!currentTheme);  // switch theme
     });
-  </script>
+</script>
 
   <div
     class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
