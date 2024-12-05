@@ -70,6 +70,9 @@ Available options to `config.toml` or `hugo.toml`:
   favicon = "favicon.ico"                   # customize the default favicon
   appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon
 
+  # RTL supprot
+  direction = "rtl"                         # RTL support for Right-to-left languages
+
   # giscus
 [params.giscus]
   repo = 'YOUR_GISCUS_REPO'                 # see https://giscus.app for more details

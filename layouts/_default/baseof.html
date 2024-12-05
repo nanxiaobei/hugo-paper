@@ -37,6 +37,7 @@
   class="not-ready lg:text-base"
   style="--bg: {{ $bg_color }}"
   lang="{{ or site.LanguageCode site.Language.Lang }}"
+  dir="{{ if site.Params.direction }}{{ site.Params.direction }}{{ else }}ltr{{ end }}"
 >
   {{ partial "head.html" . }}
   <body class="text-black duration-200 ease-out dark:text-white">
