@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply min-h-screen bg-[--bg] antialiased [-webkit-tap-highlight-color:transparent];
+    @apply bg-[--bg] antialiased [-webkit-tap-highlight-color:transparent];
 
     @apply dark:before:fixed dark:before:inset-0 dark:before:bg-black/85;
   }

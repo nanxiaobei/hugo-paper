@@ -13,7 +13,7 @@
 
 <!-- social_list -->
 {{ $social_params := slice "twitter" "github" "instagram" "linkedin" "mastodon"
-"threads" "rss" }}<!---->
+"threads" "bluesky" "rss" }}<!---->
 {{ range $social_params }}<!---->
 {{ if isset site.Params . }}<!---->
 {{ $.Scratch.Add "social_list" (slice .) }}<!---->
@@ -43,7 +43,7 @@
     {{ partial "header.html" . }}
 
     <main
-      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
+      class="prose prose-neutral relative mx-auto min-h-[calc(100vh-9rem)] max-w-[--w] px-8 pb-16 pt-14 dark:prose-invert"
     >
       {{ block "main" . }}{{ end }}
     </main>
