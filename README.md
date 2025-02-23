@@ -8,7 +8,7 @@ your online **home screen**. ➫ [kee.so](https://kee.so/)
 ---
 
 <div align="center">
-<h1>Paper <sup><sup><sub>6.28</sub></sup></sup></h1>
+<h1>Paper <sup><sup><sub>6.29</sub></sup></sup></h1>
 
 Demo → [hugo-paper.vercel.app](https://hugo-paper.vercel.app/)
 
