@@ -5,13 +5,11 @@
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "__FOR_DEV__": "To dev on mobile, change all `192.168.0.101` to your local IP",
     "dev:css": "npx @tailwindcss/cli -i ./assets/app.css -o ./assets/main.css --watch",
-    "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.101 --bind=192.168.0.101 --port=1313",
-    "dev:open": "open http://192.168.0.101:1313/",
+    "dev:server": "hugo server --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --buildDrafts --openBrowser",
+    "dev": "killall hugo & pnpm dev:css & pnpm dev:server",
     "build:go": "cp exampleSite/go.default.mod exampleSite/go.mod",
-    "build:generate": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
-    "dev": "killall hugo & pnpm dev:css & pnpm dev:server & pnpm dev:open",
+    "build:generate": "hugo --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --minify",
     "build": "pnpm build:go & pnpm build:generate"
   },
   "dependencies": {

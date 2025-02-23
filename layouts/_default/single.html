@@ -1,79 +1,82 @@
-{{ define "main" }}
+{{- define "main" -}}
 
 <article>
   <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">{{ .Title }}</h1>
+    <h1 class="!my-0 pb-2.5">{{- .Title -}}</h1>
 
-    {{ if ne .Type "page" }}
+    {{- if ne .Type "page" -}}
     <div class="text-xs antialiased opacity-60">
-      {{ if .Date }}
-      <time>{{ .Date | time.Format ":date_medium" }}</time>
-      {{ end }}<!---->
-      {{ $single_author := or .Params.Author site.Author.name }}
+      {{- if .Date -}}
+      <time>{{- .Date | time.Format ":date_medium" -}}</time>
+      {{- end -}}<!---->
+      {{- $single_author := or .Params.Author site.Author.name -}}
       <!---->
-      {{ if $single_author }}
+      {{- if $single_author -}}
       <span class="mx-1">&middot;</span>
-      <span>{{ $single_author }}</span>
-      {{ end }}
+      <span>{{- $single_author -}}</span>
+      {{- end -}}
     </div>
-    {{ end }}
+    {{- end -}}
   </header>
 
-  <section>{{ .Content }}</section>
+  <section>{{- .Content -}}</section>
 
   <!-- Post Tags -->
-  {{ if .Params.tags }}
+  {{- if .Params.tags -}}
   <footer class="mt-12 flex flex-wrap">
-    {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
+    {{- range .Params.tags -}} {{- $href := print (absURL "tags/") (urlize .)
+    -}}
     <a
       class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
-      href="{{ $href }}"
-      >{{ . }}</a
+      href="{{- $href -}}"
+      >{{- . -}}</a
     >
-    {{ end }}
+    {{- end -}}
   </footer>
-  {{ end }}
+  {{- end -}}
 
   <!-- Post Nav -->
-  {{ if not site.Params.disablePostNavigation }}<!---->
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}<!---->
-  {{ if and (gt (len $pages) 1) (in $pages . ) }}
+  {{- if not site.Params.disablePostNavigation -}}<!---->
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}<!---->
+  {{- if and (gt (len $pages) 1) (in $pages . ) -}}
   <nav
     class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
-    {{ with $pages.Next . }}
-    <a class="ltr:pr-3 rtl:pl-3" href="{{ .Permalink }}"
-      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>{{ .Name }}</span></a
+    {{- with $pages.Next . -}}
+    <a class="ltr:pr-3 rtl:pl-3" href="{{- .Permalink -}}"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>{{- .Name -}}</span></a
     >
-    {{ end }}<!---->
-    {{ with $pages.Prev . }}
-    <a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="{{ .Permalink }}"
-      ><span>{{ .Name }}</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    {{- end -}}<!---->
+    {{- with $pages.Prev . -}}
+    <a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="{{- .Permalink -}}"
+      ><span>{{- .Name -}}</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
-    {{ end }}
+    {{- end -}}
   </nav>
-  {{ end }}<!---->
-  {{ end }}
+  {{- end -}}<!---->
+  {{- end -}}
 
   <!-- Disqus -->
-  {{ if and site.Config.Services.Disqus.Shortname (not (eq .Params.comments
-  false)) }}
+  {{- if and site.Config.Services.Disqus.Shortname (not (eq .Params.comments
+  false)) -}}
   <div class="mt-24" id="disqus_thread"></div>
   <script>
-    const disqusShortname = '{{ site.Config.Services.Disqus.Shortname }}';
+    const disqusShortname = '{{- site.Config.Services.Disqus.Shortname -}}';
     const script = document.createElement('script');
     script.src = 'https://' + disqusShortname + '.disqus.com/embed.js';
     script.setAttribute('data-timestamp', +new Date());
     document.head.appendChild(script);
   </script>
-  {{ end }}
+  {{- end -}}
 
   <!-- GraphComment -->
-  {{ if and site.Params.graphCommentId (not (eq .Params.comments false)) }}
+  {{- if and site.Params.graphCommentId (not (eq .Params.comments false)) -}}
   <div class="mt-24" id="graphcomment"></div>
   <script type="text/javascript">
     var __semio__params = {
-      graphcommentId: '{{ site.Params.graphCommentId  }}',
+      graphcommentId: '{{- site.Params.graphCommentId  -}}',
       behaviour: {
         //  uid: "...",
       },
@@ -98,32 +101,32 @@
       ).appendChild(gc);
     })();
   </script>
-  {{ end }}
+  {{- end -}}
 
   <!-- mermaid -->
   {{- partial "mermaid.html" . -}}
 
   <!-- giscus comment -->
-  {{ if and site.Params.giscus.repo (not (eq .Params.comments false)) }}
+  {{- if and site.Params.giscus.repo (not (eq .Params.comments false)) -}}
   <div class="giscus mt-24"></div>
   <script
     src="https://giscus.app/client.js"
-    data-repo="{{ site.Params.giscus.repo }}"
-    data-repo-id="{{ site.Params.giscus.repoId }}"
-    data-category="{{ site.Params.giscus.category }}"
-    data-category-id="{{ site.Params.giscus.categoryId }}"
-    data-mapping="{{ site.Params.giscus.mapping | default (print `pathname`) }}"
-    data-strict="{{ site.Params.giscus.strict | default (print `1`) }}"
-    data-reactions-enabled="{{ site.Params.giscus.reactionsEnabled | default (print `0`) }}"
-    data-emit-metadata="{{ site.Params.giscus.emitMetadata | default (print `0`) }}"
-    data-input-position="{{ site.Params.giscus.inputPosition | default (print `top`) }}"
-    data-theme="{{ site.Params.giscus.theme | default (print `light`) }}"
-    data-lang="{{ site.Params.giscus.lang | default (print `en`) }}"
-    data-loading="{{ site.Params.giscus.loading | default (print `lazy`) }}"
+    data-repo="{{- site.Params.giscus.repo -}}"
+    data-repo-id="{{- site.Params.giscus.repoId -}}"
+    data-category="{{- site.Params.giscus.category -}}"
+    data-category-id="{{- site.Params.giscus.categoryId -}}"
+    data-mapping="{{- site.Params.giscus.mapping | default (print `pathname`) -}}"
+    data-strict="{{- site.Params.giscus.strict | default (print `1`) -}}"
+    data-reactions-enabled="{{- site.Params.giscus.reactionsEnabled | default (print `0`) -}}"
+    data-emit-metadata="{{- site.Params.giscus.emitMetadata | default (print `0`) -}}"
+    data-input-position="{{- site.Params.giscus.inputPosition | default (print `top`) -}}"
+    data-theme="{{- site.Params.giscus.theme | default (print `light`) -}}"
+    data-lang="{{- site.Params.giscus.lang | default (print `en`) -}}"
+    data-loading="{{- site.Params.giscus.loading | default (print `lazy`) -}}"
     crossorigin="anonymous"
     async
   ></script>
-  {{ end }}
+  {{- end -}}
 </article>
 
-{{ end }}
+{{- end -}}

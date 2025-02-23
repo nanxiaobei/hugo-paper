@@ -1,8 +1,8 @@
-{{ if site.Params.localKatex }}
-<link rel="stylesheet" href="{{ "katex.min.css" | relURL }}"/>
-<script defer src="{{ "katex.min.js" | relURL }}"></script>
-<script defer src="{{ "auto-render.min.js" | relURL }}"></script>
-{{ else }}
+{{- if site.Params.localKatex -}}
+<link rel="stylesheet" href="{{- "katex.min.css" | relURL -}}"/>
+<script defer src="{{- "katex.min.js" | relURL -}}"></script>
+<script defer src="{{- "auto-render.min.js" | relURL -}}"></script>
+{{- else -}}
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
@@ -21,7 +21,7 @@
   integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
   crossorigin="anonymous"
 ></script>
-{{ end }}
+{{- end -}}
 
 <script>
   document.addEventListener('DOMContentLoaded', () =>

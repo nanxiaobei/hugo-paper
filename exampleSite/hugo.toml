@@ -1,7 +1,7 @@
 baseURL = "https://hugo-paper.vercel.app/"
-# title = "Hugo Themes"
+title = "Paper"
 author = "Steve Francia"
-copyright = "© 2024, lee.so"
+copyright = "© 2025, lee.so"
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
@@ -13,11 +13,9 @@ ignoreErrors = ["error-remote-getjson"]
 
 # ------------------------------
 theme = "hugo-paper"
-title = "Paper"
 
 [params]
   color = 'linen'
-
   twitter = 'nanxiaobei'
   github = 'nanxiaobei'
   instagram = 'nan.xiaobei'
@@ -59,7 +57,7 @@ series = "series"
     disabled = false
     simple = true
 
-  [privacy.twitter]
+  [privacy.x]
     disabled = false
     enableDNT = true
     simple = true
@@ -77,5 +75,5 @@ series = "series"
   [services.instagram]
     disableInlineCSS = true
 
-  [services.twitter]
+  [services.x]
     disableInlineCSS = true

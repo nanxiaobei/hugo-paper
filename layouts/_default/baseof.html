@@ -1,54 +1,54 @@
 <!doctype html>
 
-{{ $.Scratch.Delete "bg_color" }}<!---->
-{{ $.Scratch.Delete "social_list" }}<!---->
-{{ $.Scratch.Delete "avatar_url" }}<!---->
+{{- $.Scratch.Delete "bg_color" -}}<!---->
+{{- $.Scratch.Delete "social_list" -}}<!---->
+{{- $.Scratch.Delete "avatar_url" -}}<!---->
 
 <!-- bg_color -->
-{{ $color_map := dict "linen" "#faf8f1" "wheat" "#f8f5d7" "gray" "#fbfbfb"
-"light" "#fff" }}<!---->
-{{ $.Scratch.Set "bg_color" (index $color_map (site.Params.color | default
-(print "linen"))) }}<!---->
-{{ $bg_color := $.Scratch.Get "bg_color" }}<!---->
+{{- $color_map := dict "linen" "#faf8f1" "wheat" "#f8f5d7" "gray" "#fbfbfb"
+"light" "#fff" -}}<!---->
+{{- $.Scratch.Set "bg_color" (index $color_map (site.Params.color | default
+(print "linen"))) -}}<!---->
+{{- $bg_color := $.Scratch.Get "bg_color" -}}<!---->
 
 <!-- social_list -->
-{{ $social_params := slice "twitter" "github" "instagram" "linkedin" "mastodon"
-"threads" "bluesky" "rss" }}<!---->
-{{ range $social_params }}<!---->
-{{ if isset site.Params . }}<!---->
-{{ $.Scratch.Add "social_list" (slice .) }}<!---->
-{{ end }}<!---->
-{{ end }}<!---->
+{{- $social_params := slice "twitter" "github" "instagram" "linkedin" "mastodon"
+"threads" "bluesky" "rss" -}}<!---->
+{{- range $social_params -}}<!---->
+{{- if isset site.Params . -}}<!---->
+{{- $.Scratch.Add "social_list" (slice .) -}}<!---->
+{{- end -}}<!---->
+{{- end -}}<!---->
 
 <!-- avatar_url -->
-{{ if site.Params.avatar }}<!---->
-{{ if in site.Params.avatar "http" }}<!---->
-{{ $.Scratch.Set "avatar_url" site.Params.avatar }}<!---->
-{{ else }}<!---->
-{{ $official_cdn := "https://www.gravatar.com/avatar/" }}<!---->
-{{ $cdn := (site.Params.gravatarCdn | default $official_cdn) }}<!---->
-{{ $md5 := (md5 site.Params.avatar) }}<!---->
-{{ $avatar_url := print $cdn $md5 "?s=160&d=identicon" }}<!---->
-{{ $.Scratch.Set "avatar_url" $avatar_url }}<!---->
-{{ end }}<!---->
-{{ end }}<!---->
+{{- if site.Params.avatar -}}<!---->
+{{- if in site.Params.avatar "http" -}}<!---->
+{{- $.Scratch.Set "avatar_url" site.Params.avatar -}}<!---->
+{{- else -}}<!---->
+{{- $official_cdn := "https://www.gravatar.com/avatar/" -}}<!---->
+{{- $cdn := (site.Params.gravatarCdn | default $official_cdn) -}}<!---->
+{{- $md5 := (md5 site.Params.avatar) -}}<!---->
+{{- $avatar_url := print $cdn $md5 "?s=160&d=identicon" -}}<!---->
+{{- $.Scratch.Set "avatar_url" $avatar_url -}}<!---->
+{{- end -}}<!---->
+{{- end -}}<!---->
 
 <html
   class="not-ready lg:text-base"
-  style="--bg: {{ $bg_color }}"
-  lang="{{ or site.LanguageCode site.Language.Lang }}"
-  dir="{{ if site.Params.direction }}{{ site.Params.direction }}{{ else }}ltr{{ end }}"
+  style="--bg: {{- $bg_color -}}"
+  lang="{{- or site.LanguageCode site.Language.Lang -}}"
+  dir="{{- if site.Params.direction -}}{{- site.Params.direction -}}{{- else -}}ltr{{- end -}}"
 >
-  {{ partial "head.html" . }}
+  {{- partial "head.html" . -}}
   <body class="text-black duration-200 ease-out dark:text-white">
-    {{ partial "header.html" . }}
+    {{- partial "header.html" . -}}
 
     <main
       class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
     >
-      {{ block "main" . }}{{ end }}
+      {{- block "main" . -}}{{- end -}}
     </main>
 
-    {{ partial "footer.html" . }}
+    {{- partial "footer.html" . -}}
   </body>
 </html>
