@@ -5,9 +5,8 @@
  * Designed by 南小北 https://lee.so/
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @layer base {
   :root {
@@ -15,7 +14,7 @@
   }
 
   body {
-    @apply bg-[--bg] antialiased [-webkit-tap-highlight-color:transparent];
+    @apply bg-(--bg) antialiased [-webkit-tap-highlight-color:transparent];
 
     @apply dark:before:fixed dark:before:inset-0 dark:before:bg-black/85;
   }
@@ -95,7 +94,7 @@
     }
 
     > div {
-      @apply rounded-md bg-[--tw-prose-pre-bg];
+      @apply rounded-md bg-(--tw-prose-pre-bg);
 
       table {
         @apply my-0 table-fixed;

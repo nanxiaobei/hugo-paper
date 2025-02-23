@@ -26,7 +26,7 @@
   <footer class="mt-12 flex flex-wrap">
     {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
     <a
-      class="mb-1.5 ltr:mr-1.5 rtl:ml-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] dark:bg-white/[8%] dark:hover:bg-white/[12%]"
+      class="mb-1.5 rounded-lg bg-black/[3%] px-5 py-1 no-underline hover:bg-black/[6%] ltr:mr-1.5 rtl:ml-1.5 dark:bg-white/[8%] dark:hover:bg-white/[12%]"
       href="{{ $href }}"
       >{{ . }}</a
     >
@@ -47,7 +47,7 @@
     >
     {{ end }}<!---->
     {{ with $pages.Prev . }}
-    <a class="ltr:ml-auto rtl:mr-auto justify-end pl-3" href="{{ .Permalink }}"
+    <a class="justify-end pl-3 ltr:ml-auto rtl:mr-auto" href="{{ .Permalink }}"
       ><span>{{ .Name }}</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
     >
     {{ end }}
