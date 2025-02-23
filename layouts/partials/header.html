@@ -1,5 +1,7 @@
-<header class="mx-auto flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center">
-  <div class="relative z-50 ltr:mr-auto rtl:ml-auto flex items-center">
+<header
+  class="mx-auto flex h-[4.5rem] max-w-[--w] whitespace-nowrap px-8 lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
     <a class="-translate-y-[1px] text-2xl font-medium" href="{{ `` | absURL }}"
       >{{ site.Title }}</a
     >
@@ -11,7 +13,7 @@
   </div>
 
   <div
-    class="btn-menu relative z-50 ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
     role="button"
     aria-label="Menu"
   ></div>
@@ -66,7 +68,9 @@
   >
     {{ $url := .RelPermalink }}<!---->
     {{ with site.Menus.main }}
-    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse">
+    <nav
+      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
+    >
       {{ range . }}
       <a
         class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
@@ -79,7 +83,7 @@
 
     {{ with $.Scratch.Get "social_list" }}
     <nav
-      class="mt-12 flex justify-center space-x-10 rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center"
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14"
     >
       {{ range . }}<!---->
       <a
