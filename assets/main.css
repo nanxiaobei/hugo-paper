@@ -1335,43 +1335,43 @@
     }
   }
   .dark\:\!bg-black\/80 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: color-mix(in oklab, var(--color-black) 80%, transparent) !important;
     }
   }
   .dark\:\!bg-white\/90 {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: color-mix(in oklab, var(--color-white) 90%, transparent) !important;
     }
   }
   .dark\:bg-black {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-black);
     }
   }
   .dark\:bg-white\/\[8\%\] {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: color-mix(in oklab, var(--color-white) 8%, transparent);
     }
   }
   .dark\:\[background-position\:right\] {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-position: right;
     }
   }
   .dark\:text-white {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-white);
     }
   }
   .dark\:invert {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       --tw-invert: invert(100%);
       filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
     }
   }
   .dark\:prose-invert {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       --tw-prose-body: var(--tw-prose-invert-body);
       --tw-prose-headings: var(--tw-prose-invert-headings);
       --tw-prose-lead: var(--tw-prose-invert-lead);
@@ -1393,7 +1393,7 @@
     }
   }
   .dark\:hover\:bg-white\/\[12\%\] {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: color-mix(in oklab, var(--color-white) 12%, transparent);
@@ -1417,7 +1417,7 @@
     }
   }
   .dark\:\[\&\>\*\:hover\]\:bg-white\/\[3\%\] {
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &>*:hover {
         background-color: color-mix(in oklab, var(--color-white) 3%, transparent);
       }
@@ -1433,19 +1433,19 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &::before {
         content: var(--tw-content);
         position: fixed;
       }
     }
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &::before {
         content: var(--tw-content);
         inset: calc(var(--spacing) * 0);
       }
     }
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &::before {
         content: var(--tw-content);
         background-color: color-mix(in oklab, var(--color-black) 85%, transparent);
@@ -1477,10 +1477,10 @@
       --tw-scale-z: 95%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
     }
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       background-color: var(--color-white);
     }
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-black);
     }
   }
@@ -1492,7 +1492,7 @@
         color: var(--color-black);
       }
     }
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       &:hover {
         @media (hover: hover) {
           color: var(--color-white);
@@ -1521,7 +1521,7 @@
     transition-duration: 200ms;
     --tw-content: '';
     content: var(--tw-content);
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       --tw-invert: invert(100%);
       filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
     }
@@ -1553,7 +1553,7 @@
     --tw-leading: 1.8;
     line-height: 1.8;
     color: var(--color-black);
-    @media (prefers-color-scheme: dark) {
+    &:where(.dark, .dark *) {
       color: var(--color-white);
     }
   }
