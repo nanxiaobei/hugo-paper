@@ -2,7 +2,7 @@
 
 <article>
   <header class="mb-14">
-    <h1 class="!my-0 pb-2.5">{{- .Title -}}</h1>
+    <h1 class="my-0! pb-2.5">{{- .Title -}}</h1>
 
     {{- if ne .Type "page" -}}
     <div class="text-xs antialiased opacity-60">
@@ -40,7 +40,7 @@
   {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}<!---->
   {{- if and (gt (len $pages) 1) (in $pages . ) -}}
   <nav
-    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg !leading-[1.2] *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
   >
     {{- with $pages.Next . -}}
     <a class="ltr:pr-3 rtl:pl-3" href="{{- .Permalink -}}"

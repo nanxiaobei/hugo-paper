@@ -9,85 +9,36 @@
 @plugin '@tailwindcss/typography';
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer base {
-  :root {
-    --w: calc(680px + 32px * 2);
-  }
-
-  body {
-    @apply bg-(--bg) antialiased [-webkit-tap-highlight-color:transparent];
-
-    @apply dark:before:fixed dark:before:inset-0 dark:before:bg-black/85;
-  }
-
-  h1,
-  h2,
-  h3 {
-    @apply !font-semibold;
-  }
-
-  pre {
-    direction: ltr;
-  }
+@theme {
+  --w: calc(680px + 32px * 2);
 }
 
-@layer components {
-  .btn {
-    @apply rounded-xl bg-black px-5 py-3 text-[0.95em] text-white no-underline duration-100 active:scale-95 dark:bg-white dark:text-black;
-  }
-
-  .link {
-    @apply duration-200 hover:text-black dark:hover:text-white;
-  }
+@utility dark-bg {
+  @apply dark:before:fixed dark:before:inset-0 dark:before:z-[-1] dark:before:bg-black/85;
 }
 
-@layer utilities {
-  .not-ready * {
-    @apply !transition-none;
+body {
+  @apply dark-bg;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-semibold;
+}
+
+pre {
+  direction: ltr;
+}
+
+article {
+  @apply text-lg leading-[1.8] text-black dark:text-white;
+
+  code {
+    @apply inline-block text-sm! leading-6!;
   }
 
-  .prose {
-    @apply break-words;
-  }
-
-  .prose kbd:has(kbd) {
-    @apply shadow-none;
-  }
-
-  .btn-menu::before,
-  .btn-menu::after {
-    @apply block h-[2px] w-5 bg-black duration-200 content-[''] dark:invert;
-  }
-
-  .nav-wrapper {
-    background: var(--bg);
-  }
-
-  .open {
-    @apply overflow-hidden;
-  }
-
-  .open .btn-menu::before {
-    @apply w-6 translate-y-[5.5px] rotate-45;
-  }
-
-  .open .btn-menu::after {
-    @apply w-6 -translate-y-[5.5px] -rotate-45;
-  }
-
-  .open .nav-wrapper {
-    @apply top-0;
-  }
-
-  article {
-    @apply text-lg leading-[1.8] text-black dark:text-white;
-  }
-
-  article code {
-    @apply inline-block !text-sm !leading-6;
-  }
-
-  article .highlight {
+  .highlight {
     @apply my-8;
 
     pre {
@@ -107,7 +58,7 @@
             @apply p-0;
 
             pre {
-              @apply !bg-transparent;
+              @apply bg-transparent!;
             }
           }
 
@@ -115,7 +66,7 @@
             @apply pr-[4px];
 
             code span {
-              @apply !mr-0 block min-w-[18px] !p-0 text-right text-white/40;
+              @apply mr-0! block min-w-[18px] p-0! text-right text-white/40;
             }
           }
 
@@ -126,4 +77,55 @@
       }
     }
   }
+}
+
+.btn {
+  @apply rounded-xl bg-black px-5 py-3 text-[0.95em] text-white no-underline duration-100 active:scale-95 dark:bg-white dark:text-black;
+}
+
+.link {
+  @apply duration-200 hover:text-black dark:hover:text-white;
+}
+
+.not-ready * {
+  @apply transition-none!;
+}
+
+.prose {
+  @apply break-words;
+
+  kbd:has(kbd) {
+    @apply shadow-none;
+  }
+}
+
+.btn-menu {
+  &::before,
+  &::after {
+    @apply block h-[2px] w-5 bg-black duration-200 content-[''];
+  }
+
+  @apply dark:before:invert dark:after:invert;
+
+  &:where(.open *) {
+    &::before {
+      @apply w-6 translate-y-[6px] rotate-45;
+    }
+
+    &::after {
+      @apply w-6 -translate-y-[6px] -rotate-45;
+    }
+  }
+}
+
+.nav-wrapper {
+  @apply dark-bg lg:before:hidden dark:before:absolute;
+
+  &:where(.open *) {
+    @apply top-0;
+  }
+}
+
+.open {
+  @apply overflow-hidden;
 }

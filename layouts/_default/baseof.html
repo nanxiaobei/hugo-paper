@@ -40,7 +40,9 @@
   dir="{{- if site.Params.direction -}}{{- site.Params.direction -}}{{- else -}}ltr{{- end -}}"
 >
   {{- partial "head.html" . -}}
-  <body class="text-black duration-200 ease-out dark:text-white">
+  <body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  >
     {{- partial "header.html" . -}}
 
     <main

@@ -23,10 +23,10 @@ $paginator.Pages -}}<!---->
 <div class="-mt-2 mb-12 flex items-center">
   {{- if $avatar_url -}}
   <div
-    class="h-24 w-24 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 ltr:mr-5 ltr:-ml-1 rtl:-mr-1 rtl:ml-5 dark:!bg-white/90"
+    class="h-24 w-24 shrink-0 rounded-full border-[0.5px] border-black/10 bg-white/50 p-3 ltr:mr-5 ltr:-ml-1 rtl:-mr-1 rtl:ml-5 dark:bg-white/90!"
   >
     <img
-      class="not-prose my-0 h-full w-full rounded-full !bg-black/5 hover:animate-spin dark:!bg-black/80"
+      class="not-prose my-0 h-full w-full rounded-full bg-black/5! hover:animate-spin dark:bg-black/80!"
       src="{{- $avatar_url -}}"
       alt="{{- site.Params.name | default site.Title -}}"
     />
@@ -54,7 +54,7 @@ $paginator.Pages -}}<!---->
     >Featured</span
   >
   {{- end -}}
-  <h2 class="!my-0">{{- .Title -}}</h2>
+  <h2 class="my-0!">{{- .Title -}}</h2>
   <time class="text-xs antialiased opacity-60"
     >{{- .Date | time.Format ":date_medium" -}}</time
   >
