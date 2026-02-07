@@ -3,6 +3,12 @@
   <head>
     {{- partial "head.html" . -}}
   </head>
+  {{/* Inline script to set .dark class before first paint to prevent flash */}}
+  <script>
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
   <body>
     {{- partial "header.html" . -}}
     <main>

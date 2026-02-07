@@ -14,6 +14,38 @@
   /* Override or extend Tailwind's default theme here */
 }
 
+/*
+ * Color scheme: automatic dark/light switching via prefers-color-scheme.
+ *
+ * Define all theme colors as CSS custom properties on :root (light) and
+ * :root.dark (dark). Components should reference these properties so
+ * switching happens in one place.
+ *
+ * Tailwind's dark: variant is driven by the .dark class on <html>,
+ * which is toggled via a <script> in baseof.html that reads the OS
+ * preference.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #2563eb;
+  --color-surface: #f9fafb;
+}
+
+:root.dark {
+  --color-bg: #121212;
+  --color-text: #e5e5e5;
+  --color-text-secondary: #9ca3af;
+  --color-border: #2e2e2e;
+  --color-accent: #60a5fa;
+  --color-surface: #1e1e1e;
+}
+
 /* Custom component styles go here */
 
 /* Custom utility styles go here */
