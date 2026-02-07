@@ -1,68 +1,8 @@
-<header
-  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
->
-  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
-    <a
-      class="-translate-y-[1px] text-2xl font-medium"
-      href="{{- `` | absURL -}}"
-      >{{ site.Title }}</a
-    >
-  </div>
-
-  <div
-    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
-    role="button"
-    aria-label="Menu"
-  ></div>
-
-  <script>
-    // base
-    const htmlClass = document.documentElement.classList;
-    setTimeout(() => {
-      htmlClass.remove('not-ready');
-    }, 10);
-
-    // mobile menu
-    const btnMenu = document.querySelector('.btn-menu');
-    btnMenu.addEventListener('click', () => {
-      htmlClass.toggle('open');
-    });
-  </script>
-
-  <div
-    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
-  >
-    {{- $url := .RelPermalink -}}<!---->
-    {{- with site.Menus.main -}}
-    <nav
-      class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse"
-    >
-      {{- range . -}}
-      <a
-        class="block text-center text-xl leading-[5rem] lg:text-base lg:font-normal"
-        href="{{- .URL -}}"
-        >{{- .Name -}}</a
-      >
-      {{- end -}}
-    </nav>
-    {{- end -}}<!---->
-
-    {{- with $.Scratch.Get "social_list" -}}
-    <nav
-      class="mt-12 flex justify-center space-x-10 lg:mt-0 lg:items-center ltr:lg:ml-14 rtl:space-x-reverse rtl:lg:mr-14 dark:invert"
-    >
-      {{- range . -}}<!---->
-      <a
-        class="h-7 w-7 text-[0px] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
-        style="--url: url(./{{- . -}}.svg)"
-        href="{{- if eq . `rss` -}}{{- `index.xml` | absURL -}}{{- else if eq . `mastodon` -}}{{- index site.Params . -}}{{- else -}}{{- if eq . `threads` -}}https://threads.net/{{- else if eq . `bluesky` -}}https://bsky.app/profile/{{- else -}}https://{{- . -}}.com/{{- end -}}{{- if eq . `linkedin` -}}in/{{- end -}}{{- index site.Params . -}}{{- end -}}"
-        target="_blank"
-        rel="{{- if eq . `rss` -}}alternate{{- else -}}me{{- end -}}"
-      >
-        {{- . -}}
-      </a>
-      {{- end -}}<!---->
-    </nav>
-    {{- end -}}<!---->
-  </div>
+<header>
+  <nav>
+    <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.Title }}</a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
 </header>

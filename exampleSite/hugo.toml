@@ -1,79 +1,21 @@
-baseURL = "https://hugo-paper.vercel.app/"
+baseURL = "https://example.org/"
+languageCode = "en-us"
 title = "Paper"
-author = "Steve Francia"
-copyright = "© 2025, lee.so"
-languageCode = "en"
-DefaultContentLanguage = "en"
-enableInlineShortcodes = true
-# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
-# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ["error-remote-getjson"]
-[pagination]
-  pagerSize = 3
 
-# ------------------------------
-theme = "hugo-paper"
+# Theme is resolved via Hugo Modules
+[module]
+  [[module.imports]]
+    path = "github.com/raphi011/hugo-paper"
 
-[params]
-  color = 'linen'
-  twitter = 'nanxiaobei'
-  github = 'nanxiaobei'
-  instagram = 'nan.xiaobei'
-
-avatar = 'nanxiaobei@gmail.com'
-  name = 'Lee'
-  bio = 'Discover fresh context'
-# ------------------------------
-
-# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-#  [markup.highlight]
-#    lineNos = true
-
-[menu]
-
-  [[menu.main]]
-    identifier = "about"
+[menus]
+  [[menus.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menus.main]]
     name = "About"
     url = "/about/"
-    weight = 10
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 10
+    weight = 20
 
-[taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
-
-[privacy]
-
-  [privacy.vimeo]
-    disabled = false
-    simple = true
-
-  [privacy.x]
-    disabled = false
-    enableDNT = true
-    simple = true
-
-  [privacy.instagram]
-    disabled = false
-    simple = true
-
-  [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true
-
-[services]
-
-  [services.instagram]
-    disableInlineCSS = true
-
-  [services.x]
-    disableInlineCSS = true
+[params]
+  description = "A clean, minimal Hugo theme"

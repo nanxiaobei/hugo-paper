@@ -1,122 +1,44 @@
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, shrink-to-fit=no"
-  />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
 
-  <!-- title -->
-  <title>
-    {{- if not .IsHome -}}{{- .Title }} - {{ end -}}{{- site.Title -}}
-  </title>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
-  <!-- meta -->
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#faf8f1" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#262626" media="(prefers-color-scheme: dark)" />
+{{/* CSS: use Hugo Pipes to process the compiled Tailwind output */}}
+{{ $css := resources.Get "css/compiled/main.css" }}
+{{ if $css }}
+  {{ $css = $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
 
-  <!-- author -->
-  {{- $site_author := or site.Author.name site.Params.name site.Title -}}
-  <!---->
-  {{- if eq .Kind "page" -}}
-  <meta name="description" content="{{- .Summary -}}" />
-  <meta name="author" content="{{- or .Params.author $site_author -}}" />
-  {{- else -}}
-  <!---->
-  <meta
-    name="description"
-    content="{{- site.Params.description | default (print `A personal blog`) -}}"
-  />
-  <meta name="author" content="{{- $site_author -}}" />
-  {{- end -}}
+{{/* Custom CSS override hook */}}
+{{ $custom := resources.Get "css/custom.css" }}
+{{ if $custom }}
+  {{ $custom = $custom | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $custom.RelPermalink }}" integrity="{{ $custom.Data.Integrity }}">
+{{ end }}
 
-  <!-- css & js -->
-  {{- $main := resources.Get "main.css" -}}
-  <!---->
-  {{- $custom := resources.Get "custom.css" -}}
-  <!---->
-  {{- $css := slice $main $custom | resources.Concat "main.css" | minify -}}
-  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" />
+{{/* User-provided custom head hook */}}
+{{ if templates.Exists "partials/custom-head.html" }}
+  {{ partial "custom-head.html" . }}
+{{ end }}
 
-  <!-- dark icon -->
-  {{- $dark_icon := "theme.png" -}}
-  <!---->
-  {{- if site.Params.monoDarkIcon -}}{{- $dark_icon = "theme.svg" -}}{{- end -}}
-  <!---->
-  <link rel="preload" as="image" href="{{- $dark_icon | absURL -}}" />
+{{/* Favicons */}}
+{{ with .Site.Params.favicon }}
+  <link rel="icon" href="{{ . }}">
+{{ else }}
+  <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+{{ end }}
 
-  <!-- avatar -->
-  {{- $avatar_url := $.Scratch.Get "avatar_url" -}}
-  <!---->
-  {{- if $avatar_url -}}
-  <link rel="preload" as="image" href="{{- $avatar_url -}}" />
-  {{- end -}}
-  <!---->
+{{/* RSS */}}
+{{ range .AlternativeOutputFormats }}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end }}
 
-  <!-- social list -->
-  {{- range $.Scratch.Get "social_list" -}}
-  <link rel="preload" as="image" href="{{- printf `%s.svg` . | absURL -}}" />
-  {{- end -}}
-  <!---->
+{{/* Canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}">
 
-  <!-- highlight js -->
-  {{- if and .IsPage (not site.Params.disableHLJS) -}}
-  <script
-    defer
-    src="{{- `highlight.min.js` | absURL -}}"
-    onload="hljs.initHighlightingOnLoad();"
-  ></script>
-  {{- end -}}
-
-  <!-- math -->
-  {{- if or .Params.math site.Params.math -}}
-  <!---->
-  {{- partial "math.html" . -}}
-  <!---->
-  {{- end -}}
-  <!---->
-
-  <!-- favicon -->
-  <link
-    rel="icon"
-    href="{{- site.Params.favicon | default `favicon.ico` | absURL -}}"
-  />
-  <link
-    rel="apple-touch-icon"
-    href="{{- site.Params.appleTouchIcon | default `apple-touch-icon.png` | absURL -}}"
-  />
-
-  <!-- generator -->
-  {{- hugo.Generator -}}
-
-  <!-- production -->
-  {{- if or hugo.IsProduction (eq site.Params.env "production") -}}
-  <!---->
-  {{- template "_internal/google_analytics.html" . -}}
-  <!---->
-  {{- template "_internal/schema.html" . -}}
-  <!---->
-  {{- template "_internal/opengraph.html" . -}}
-  <!---->
-  {{- template "_internal/twitter_cards.html" . -}}
-  <!-- RSS -->
-  {{- range .AlternativeOutputFormats -}}
-  <link
-    rel="{{- .Rel -}}"
-    type="{{- .MediaType.Type -}}"
-    href="{{- .Permalink -}}"
-    title="{{- site.Title -}}"
-  />
-  {{- end -}}
-
-  <!-- canonical -->
-  <link rel="canonical" href="{{- .Permalink -}}" />
-  {{- end -}}
-  <!---->
-
-  <!-- custom head -->
-  {{- if templates.Exists "partials/custom-head.html" -}}
-  {{- partial "custom-head.html" . -}}
-  {{- end -}}
-</head>
+{{/* Hugo built-in templates */}}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
+{{ template "_internal/schema.html" . }}

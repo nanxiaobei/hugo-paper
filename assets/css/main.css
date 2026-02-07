@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+ * Theme: Paper
+ *
+ * This is the main CSS entry point. Tailwind CSS v4 uses CSS-first
+ * configuration — customize your theme using @theme below.
+ *
+ * https://tailwindcss.com/docs/theme
+ */
+
+@theme {
+  /* Override or extend Tailwind's default theme here */
+}
+
+/* Custom component styles go here */
+
+/* Custom utility styles go here */

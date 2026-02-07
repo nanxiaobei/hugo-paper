@@ -1,14 +1,12 @@
 {
   "name": "hugo-paper",
-  "version": "1.0.0",
-  "description": "A simple, clean, flexible Hugo theme",
+  "private": true,
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/app.css -o ./assets/main.css --minify",
-    "watch:css": "tailwindcss -i ./assets/app.css -o ./assets/main.css --watch"
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled/main.css --minify",
+    "dev:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled/main.css --watch"
   },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.1.17",
-    "@tailwindcss/typography": "^0.5.15",
-    "tailwindcss": "^4.0.0"
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19"
   }
 }
