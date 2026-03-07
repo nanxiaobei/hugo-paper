@@ -9,7 +9,7 @@
       {{- if .Date -}}
       <time>{{- .Date | time.Format ":date_medium" -}}</time>
       {{- end -}}<!---->
-      {{- $single_author := or .Params.Author site.Author.name -}}
+      {{- $single_author := or .Params.author site.Params.author -}}
       <!---->
       {{- if $single_author -}}
       <span class="mx-1">&middot;</span>
