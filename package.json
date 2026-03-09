@@ -5,6 +5,7 @@
   "repository": "https://github.com/nanxiaobei/hugo-paper.git",
   "license": "MIT",
   "scripts": {
+    "preinstall": "node scripts/preinstall.js",
     "dev:css": "postcss ./assets/app.css -o ./assets/main.css --watch",
     "dev:server": "hugo server --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --buildDrafts --openBrowser",
     "dev": "bun dev:css & bun dev:server",
