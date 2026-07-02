@@ -1,10 +1,10 @@
-<!---->{{ if not (.Get "summary") }}
-<!---->{{ errorf "missing param 'summary': %s" .Position }}
-<!---->{{ else if not (.Get "content") }}{{ warnf "missing param 'content': %s"
-.Position }}
-<!---->{{ end }}
+<!---->{{- if not (.Get "summary") -}}
+<!---->{{- errorf "missing param 'summary': %s" .Position -}}
+<!---->{{ else if not (.Get "content") }}{{- warnf "missing param 'content': %s"
+.Position -}}
+<!---->{{- end -}}
 
-<details {{ if (eq (.Get `openByDefault`) true) }}open="true" {{ end }}>
-  <summary markdown="span">{{ .Get "summary" | markdownify }}</summary>
-  {{ .Get "content" | markdownify }}
+<details {{- if (eq (.Get `openByDefault`) true) -}} open="true" {{- end -}}>
+  <summary markdown="span">{{- .Get "summary" | markdownify -}}</summary>
+  {{- .Get "content" | markdownify -}}
 </details>

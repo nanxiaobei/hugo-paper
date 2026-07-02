@@ -1,25 +1,30 @@
 {
   "name": "hugo-paper",
-  "version": "6.21.0",
-  "repository": "https://github.com/nanxiaobei/hugo-paper.git",
+  "version": "6.31.0",
   "author": "nanxiaobei <nanxiaobei@gmail.com>",
+  "repository": "https://github.com/nanxiaobei/hugo-paper.git",
   "license": "MIT",
   "scripts": {
-    "__FOR_DEV__": "please change all `192.168.0.102` to your local IP",
-    "dev:tailwind": "pnpm tailwindcss -i ./assets/app.css -o ./assets/main.css --watch",
-    "dev:server": "hugo server --buildDrafts --watch --minify --disableFastRender --themesDir=../.. --source=exampleSite --baseURL=192.168.0.102 --bind=192.168.0.102 --port=1313",
-    "dev:open": "open http://192.168.0.102:1313/",
+    "dev:css": "postcss ./assets/app.css -o ./assets/main.css --watch",
+    "dev:server": "hugo server --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --buildDrafts --openBrowser",
+    "dev": "bun dev:css & bun dev:server",
     "build:go": "cp exampleSite/go.default.mod exampleSite/go.mod",
-    "build:generate": "hugo --gc --minify --themesDir=../.. --source=exampleSite --config=go.toml,config.toml",
-    "dev": "killall hugo & pnpm dev:tailwind & pnpm dev:server & pnpm dev:open",
-    "build": "pnpm build:go & pnpm build:generate"
+    "build:css": "postcss ./assets/app.css -o ./assets/main.css",
+    "build:generate": "hugo --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --minify",
+    "build": "bun build:go & bun build:css & bun build:generate"
   },
-  "dependencies": {
-    "@tailwindcss/typography": "^0.5.9",
-    "prettier": "^3.0.2",
-    "prettier-plugin-tailwindcss": "^0.5.3",
-    "stylelint": "^15.10.3",
-    "stylelint-config-one": "^2.4.0",
-    "tailwindcss": "^3.3.3"
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-preset-env": "^11.1.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-css-order": "^2.2.0",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwindcss": "^4.1.18"
   }
 }

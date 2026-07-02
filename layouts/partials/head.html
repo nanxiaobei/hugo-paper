@@ -6,91 +6,111 @@
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
   />
 
-  <!-- Title -->
-  <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ site.Title }}</title>
+  <!-- title -->
+  <title>
+    {{- if not .IsHome -}}{{- .Title }} - {{ end -}}{{- site.Title -}}
+  </title>
 
-  <!-- Meta -->
+  <!-- meta -->
   <meta name="theme-color" />
 
-  {{ $site_author := or site.Author.name site.Params.name site.Title }}
+  <!-- author -->
+  {{- $site_author := or .Params.author site.Params.author site.Title -}}
+
   <!---->
-  {{ if eq .Kind "page" }}
-  <meta name="description" content="{{ .Summary }}" />
-  <meta name="author" content="{{ or .Params.author $site_author }}" />
-  {{ else }}
+  {{- if eq .Kind "page" -}}
+  <meta name="description" content="{{- .Summary -}}" />
+  <meta name="author" content="{{- or .Params.author $site_author -}}" />
+  {{- else -}}
   <!---->
   <meta
     name="description"
-    content="{{ site.Params.description | default (print `A personal blog`) }}"
+    content="{{- site.Params.description | default (print `A personal blog`) -}}"
   />
-  <meta name="author" content="{{ $site_author }}" />
-  {{ end }}
+  <meta name="author" content="{{- $site_author -}}" />
+  {{- end -}}
 
-  <!-- Styles & Scripts -->
-  {{ $main := resources.Get "main.css" }}
+  <!-- css & js -->
+  {{- $main := resources.Get "main.css" -}}
   <!---->
-  {{ $custom := resources.Get "custom.css" }}
+  {{- $custom := resources.Get "custom.css" -}}
   <!---->
-  {{ $css := slice $main $custom | resources.Concat "main.css" | minify }}
-  <link rel="preload stylesheet" as="style" href="{{ $css.Permalink }}" />
+  {{- $css := slice $main $custom | resources.Concat "main.css" | minify | fingerprint -}}
+  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" integrity="{{ $css.Data.Integrity }}" />
 
-  {{ if and .IsPage (not site.Params.disableHLJS) }}
+  <!-- dark icon -->
+  {{- $dark_icon := "theme.png" -}}
+  <!---->
+  {{- if site.Params.monoDarkIcon -}}{{- $dark_icon = "theme.svg" -}}{{- end -}}
+  <!---->
+  <link rel="preload" as="image" href="{{- $dark_icon | absURL -}}" />
+
+  <!-- avatar -->
+  {{- $avatar_url := $.Scratch.Get "avatar_url" -}}
+  <!---->
+  {{- if $avatar_url -}}
+  <link rel="preload" as="image" href="{{- $avatar_url -}}" />
+  {{- end -}}
+  <!---->
+
+  <!-- social list -->
+  {{- range $.Scratch.Get "social_list" -}}
+  <link rel="preload" as="image" href="{{- printf `%s.svg` . | absURL -}}" />
+  {{- end -}}
+  <!---->
+
+  <!-- highlight js -->
+  {{- if and .IsPage (not site.Params.disableHLJS) -}}
   <script
     defer
-    src="{{ `highlight.min.js` | absURL }}"
-    onload="hljs.initHighlightingOnLoad();"
+    src="{{- `highlight.min.js` | absURL -}}"
+    onload="hljs.initHighlightingOnLoad()"
   ></script>
-  {{ end }}
+  {{- end -}}
 
-  <!-- Preload -->
-  {{ $dark_icon := "theme.png" }} {{ if site.Params.monoDarkIcon }} {{
-  $dark_icon = "theme.svg" }} {{ end }}
-  <link rel="preload" as="image" href="{{ $dark_icon | absURL }}" />
-
-  {{ $avatar_url := $.Scratch.Get "avatar_url" }}
+  <!-- math -->
+  {{- if or .Params.math site.Params.math -}}
   <!---->
-  {{ if $avatar_url }}
-  <link rel="preload" as="image" href="{{ $avatar_url }}" />
-  {{ end }}
+  {{- partial "math.html" . -}}
+  <!---->
+  {{- end -}}
   <!---->
 
-  {{ range $.Scratch.Get "social_list" }}
-  <link rel="preload" as="image" href="{{ printf `%s.svg` . | absURL }}" />
-  {{ end }}
-  <!---->
-
-  {{ if or .Params.math site.Params.math }}
-  <!---->
-  {{ partial "math.html" . }}
-  <!---->
-  {{ end }}
-  <!---->
-
-  <!-- Favicon -->
-  <link rel="icon" href="{{ `favicon.ico` | absURL }}" />
-  <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}" />
-
-  <!-- Generator -->
-  {{ hugo.Generator }}
-
-  <!-- RSS -->
-  {{ range .AlternativeOutputFormats }}
+  <!-- favicon -->
   <link
-    rel="{{ .Rel }}"
-    type="{{ .MediaType.Type }}"
-    href="{{ .Permalink }}"
-    title="{{ site.Title }}"
+    rel="icon"
+    href="{{- site.Params.favicon | default `favicon.ico` | absURL -}}"
   />
-  {{ end }}
+  <link
+    rel="apple-touch-icon"
+    href="{{- site.Params.appleTouchIcon | default `apple-touch-icon.png` | absURL -}}"
+  />
 
-  <!-- Misc -->
-  {{ if or hugo.IsProduction (eq site.Params.env "production") }}
+  <!-- generator -->
+  {{- hugo.Generator -}}
+
+  <!-- production -->
+  {{- if or hugo.IsProduction (eq site.Params.env "production") -}}
   <!---->
-  {{ template "_internal/google_analytics.html" . }}
+  {{- template "_internal/google_analytics.html" . -}}
   <!---->
-  {{ template "_internal/schema.html" . }}
+  {{- template "_internal/schema.html" . -}}
   <!---->
-  {{ template "_internal/twitter_cards.html" . }}
+  {{- template "_internal/opengraph.html" . -}}
   <!---->
-  {{ end }}
+  {{- template "_internal/twitter_cards.html" . -}}
+  <!-- RSS -->
+  {{- range .AlternativeOutputFormats -}}
+  <link
+    rel="{{- .Rel -}}"
+    type="{{- .MediaType.Type -}}"
+    href="{{- .Permalink -}}"
+    title="{{- site.Title -}}"
+  />
+  {{- end -}}
+
+  <!-- canonical -->
+  <link rel="canonical" href="{{- .Permalink -}}" />
+  {{- end -}}
+  <!---->
 </head>
