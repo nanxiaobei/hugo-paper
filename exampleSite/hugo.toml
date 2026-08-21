@@ -2,7 +2,7 @@ baseURL = "https://hugo-paper.vercel.app/"
 title = "Paper"
 author = "Steve Francia"
 copyright = "© 2025, lee.so"
-languageCode = "en"
+locale = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
 # prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
