@@ -36,7 +36,7 @@
 <html
   class="not-ready lg:text-base"
   style="--bg: {{- $bg_color -}}"
-  lang="{{- or site.LanguageCode site.Language.Lang -}}"
+  lang="{{- .Site.Language.Locale -}}"
   dir="{{- if site.Params.direction -}}{{- site.Params.direction -}}{{- else -}}ltr{{- end -}}"
 >
   {{- partial "head.html" . -}}
