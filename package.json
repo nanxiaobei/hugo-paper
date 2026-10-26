@@ -11,7 +11,7 @@
     "build:go": "cp exampleSite/go.default.mod exampleSite/go.mod",
     "build:css": "postcss ./assets/app.css -o ./assets/main.css",
     "build:generate": "hugo --config exampleSite/hugo.toml --contentDir exampleSite/content --gc --minify",
-    "build": "bun build:go & bun build:css & bun build:generate"
+    "build": "bun build:go && bun build:css && bun build:generate"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",
