@@ -36,7 +36,13 @@
   {{- $custom := resources.Get "custom.css" -}}
   <!---->
   {{- $css := slice $main $custom | resources.Concat "main.css" | minify | fingerprint -}}
-  <link rel="preload stylesheet" as="style" href="{{- $css.Permalink -}}" integrity="{{ $css.Data.Integrity }}" />
+  <link
+    rel="preload stylesheet"
+    as="style"
+    href="{{- $css.RelPermalink -}}"
+    integrity="{{ $css.Data.Integrity }}"
+    crossorigin="anonymous"
+  />
 
   <!-- dark icon -->
   {{- $dark_icon := "theme.png" -}}
